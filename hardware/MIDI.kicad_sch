@@ -1403,19 +1403,19 @@
 		(uuid "ac5eaa14-9bbe-4b62-beac-7fdad40141ff")
 	)
 	(no_connect
-		(at 63.5 52.07)
+		(at 63.5 50.8)
 		(uuid "225c81c1-1efd-4473-b257-c8ae703e5da9")
 	)
 	(no_connect
-		(at 55.88 104.14)
+		(at 54.61 104.14)
 		(uuid "2be99f29-a681-45d3-981d-9f147d82f099")
 	)
 	(no_connect
-		(at 63.5 93.98)
+		(at 63.5 91.44)
 		(uuid "7a754e3d-b155-40cc-b390-7bbafea5bd54")
 	)
 	(no_connect
-		(at 55.88 62.23)
+		(at 53.34 62.23)
 		(uuid "dd52b492-f3ce-4256-8524-fac8b8f66448")
 	)
 	(wire
@@ -1447,6 +1447,16 @@
 			(type default)
 		)
 		(uuid "04273db4-23d1-4114-8f27-c0883ffb2599")
+	)
+	(wire
+		(pts
+			(xy 53.34 62.23) (xy 55.88 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06f8379f-d6b7-4b66-84d9-eb29e1171825")
 	)
 	(wire
 		(pts
@@ -1490,6 +1500,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 91.44) (xy 63.5 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "469a7f79-aea5-4b69-bdcf-18c6d7647891")
+	)
+	(wire
+		(pts
 			(xy 134.62 76.2) (xy 134.62 78.74)
 		)
 		(stroke
@@ -1510,7 +1530,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 99.06) (xy 55.88 99.06)
+			(xy 50.8 99.06) (xy 55.88 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1527,6 +1547,16 @@
 			(type default)
 		)
 		(uuid "4f660868-9e13-4677-8dd7-1681a423fe84")
+	)
+	(wire
+		(pts
+			(xy 63.5 50.8) (xy 63.5 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52d59172-fd8d-48f9-9a06-ac3ae9a64230")
 	)
 	(wire
 		(pts
@@ -1567,6 +1597,16 @@
 			(type default)
 		)
 		(uuid "764fb192-41fe-4eb3-bcab-46c785e33fdc")
+	)
+	(wire
+		(pts
+			(xy 54.61 104.14) (xy 55.88 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "765c03cb-fbb1-453a-b8ea-020033cad5e5")
 	)
 	(wire
 		(pts
@@ -1690,7 +1730,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 99.06) (xy 52.07 102.87)
+			(xy 50.8 99.06) (xy 50.8 102.87)
 		)
 		(stroke
 			(width 0)
@@ -1958,7 +1998,7 @@
 	)
 	(symbol
 		(lib_id "4ms_Power-symbol:GND")
-		(at 52.07 102.87 0)
+		(at 50.8 102.87 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1967,7 +2007,7 @@
 		(fields_autoplaced yes)
 		(uuid "5b16d716-3a00-4439-9d01-4c43927d8e63")
 		(property "Reference" "#PWR014"
-			(at 52.07 109.22 0)
+			(at 50.8 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1976,7 +2016,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 52.07 107.95 0)
+			(at 50.8 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1985,7 +2025,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 52.07 102.87 0)
+			(at 50.8 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1994,7 +2034,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 52.07 102.87 0)
+			(at 50.8 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2003,7 +2043,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 52.07 102.87 0)
+			(at 50.8 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)

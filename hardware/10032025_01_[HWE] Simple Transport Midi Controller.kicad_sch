@@ -5,8 +5,58 @@
 	(uuid "4f4cdf46-015d-4b38-9cc1-de7a767260f6")
 	(paper "A4")
 	(lib_symbols)
+	(wire
+		(pts
+			(xy 87.63 77.47) (xy 88.9 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25f5f561-8dd1-4d5a-8311-7e457df4af5d")
+	)
+	(wire
+		(pts
+			(xy 87.63 77.47) (xy 87.63 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f2a298d-d46a-483a-9c1a-31b61a54bed6")
+	)
+	(wire
+		(pts
+			(xy 115.57 73.66) (xy 163.83 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65d5bfda-a868-4536-beef-d971d45f540e")
+	)
+	(wire
+		(pts
+			(xy 87.63 76.2) (xy 62.865 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c81b14d-b1de-4369-9476-5473a11b45dd")
+	)
+	(wire
+		(pts
+			(xy 62.865 81.28) (xy 88.9 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f53f19bd-f25d-4ed0-8ec0-ad31b91d8659")
+	)
 	(sheet
-		(at 38.1 69.85)
+		(at 37.465 68.58)
 		(size 25.4 22.86)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -22,7 +72,7 @@
 		)
 		(uuid "1cf1d960-9678-42ca-8223-9c2d1c27161c")
 		(property "Sheetname" "MIDI INTERFACE"
-			(at 38.1 69.1384 0)
+			(at 37.465 67.8684 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31,12 +81,32 @@
 			)
 		)
 		(property "Sheetfile" "MIDI.kicad_sch"
-			(at 38.1 93.2946 0)
+			(at 37.465 92.0246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "RX" input
+			(at 62.865 76.2 0)
+			(uuid "821d1e58-268a-4d4e-88ea-b8a5f63601d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TX" output
+			(at 62.865 81.28 0)
+			(uuid "f91470e7-8746-484c-a6c7-b953c2c6fe58")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -81,6 +151,36 @@
 				(justify left top)
 			)
 		)
+		(pin "I2C" bidirectional
+			(at 115.57 73.66 0)
+			(uuid "4f960385-554c-4703-af09-3bdbfc186dcd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "RX" output
+			(at 88.9 77.47 180)
+			(uuid "2685597f-40f0-4ae0-8ee4-85060f65c411")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "TX" output
+			(at 88.9 81.28 180)
+			(uuid "c0c31556-2d5a-4cbb-bd56-f2b7e92e783d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6"
@@ -121,6 +221,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "I2C" bidirectional
+			(at 163.83 73.66 180)
+			(uuid "02ecdab3-bdf1-45fa-a029-f76aab914b98")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances

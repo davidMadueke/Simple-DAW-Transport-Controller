@@ -4,5 +4,2799 @@
 	(generator_version "9.0")
 	(uuid "043e91d4-e943-4ea6-95b1-0949db20262b")
 	(paper "A4")
-	(lib_symbols)
+	(lib_symbols
+		(symbol "4ms_Power-symbol:+5V"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(hide yes)
+					(name "+5V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "4ms_Power-symbol:GND"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x05"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x05"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x05_1_1"
+				(rectangle
+					(start -1.27 6.35)
+					(end 1.27 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(bus_entry
+		(at 64.77 78.105)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ae17739-582a-4129-9050-6801ce915ed5")
+	)
+	(bus_entry
+		(at 64.77 74.93)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad966aac-6669-4d7e-84ee-419dcf903df0")
+	)
+	(wire
+		(pts
+			(xy 58.42 171.45) (xy 57.15 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08dfe24f-7d33-4396-8e7c-43cded1f0bcf")
+	)
+	(wire
+		(pts
+			(xy 62.23 158.75) (xy 62.23 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09763afe-5840-4463-b53d-93355c2a29ef")
+	)
+	(wire
+		(pts
+			(xy 62.23 163.83) (xy 57.15 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b23acd2-2724-4e75-9522-b041ae1e96e2")
+	)
+	(wire
+		(pts
+			(xy 59.69 166.37) (xy 59.69 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b73e086-a2be-49e9-8a78-8af68cf3b792")
+	)
+	(wire
+		(pts
+			(xy 62.23 161.29) (xy 57.15 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c023b59-3d5a-45d5-a9d2-ad104604e854")
+	)
+	(wire
+		(pts
+			(xy 58.42 171.45) (xy 58.42 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13492697-9aeb-4e9a-b69a-f2b126b7c58b")
+	)
+	(wire
+		(pts
+			(xy 82.55 76.2) (xy 82.55 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "144bcdd8-0717-4cbd-a3a7-a57e1fa010fc")
+	)
+	(wire
+		(pts
+			(xy 73.66 101.6) (xy 86.36 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15601212-c6da-429d-af1d-accd7487cedd")
+	)
+	(wire
+		(pts
+			(xy 43.18 142.24) (xy 41.91 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17d7ec8b-b7fa-4525-a189-69374710fe71")
+	)
+	(wire
+		(pts
+			(xy 95.25 129.54) (xy 97.79 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a4b850d-d91e-4deb-9e27-6e5091c40959")
+	)
+	(wire
+		(pts
+			(xy 41.91 102.87) (xy 39.37 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b03bde7-9184-4242-b673-7b6d3599d37f")
+	)
+	(wire
+		(pts
+			(xy 78.74 63.5) (xy 78.74 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d82e961-733b-4142-af36-e34df609c38e")
+	)
+	(wire
+		(pts
+			(xy 83.82 133.35) (xy 96.52 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "203df404-bc07-4379-881d-5eac597a15c4")
+	)
+	(wire
+		(pts
+			(xy 43.18 139.7) (xy 41.91 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20fcd618-7a39-4ea3-8810-17bad964289a")
+	)
+	(wire
+		(pts
+			(xy 40.64 105.41) (xy 39.37 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21a1103b-3c63-4cd0-8847-4bff98a98eff")
+	)
+	(wire
+		(pts
+			(xy 96.52 134.62) (xy 97.79 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2452a828-128f-403d-81f1-e8b7464a2073")
+	)
+	(wire
+		(pts
+			(xy 86.36 102.87) (xy 86.36 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2515acd4-3ed8-46f5-ab79-98cec15cdcbe")
+	)
+	(wire
+		(pts
+			(xy 71.12 170.18) (xy 58.42 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2632b331-1691-4e89-92d0-2a068254a5a1")
+	)
+	(wire
+		(pts
+			(xy 46.99 134.62) (xy 41.91 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26a9e037-665e-4b34-a9f5-3d0fc9f5d7e0")
+	)
+	(wire
+		(pts
+			(xy 69.85 74.93) (xy 82.55 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a392bb8-1935-40fa-af5a-44a73150857b")
+	)
+	(wire
+		(pts
+			(xy 86.36 100.33) (xy 86.36 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30ed1846-1d82-4de7-a877-7946167ee564")
+	)
+	(wire
+		(pts
+			(xy 96.52 134.62) (xy 96.52 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3361161e-be4f-45c1-9d61-5960e0efb3fc")
+	)
+	(wire
+		(pts
+			(xy 64.77 162.56) (xy 62.23 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3668f165-e429-4575-91f4-78b11aff83fb")
+	)
+	(wire
+		(pts
+			(xy 82.55 90.17) (xy 82.55 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "371ca147-920a-41f0-8c00-e46e185dd94d")
+	)
+	(wire
+		(pts
+			(xy 82.55 73.66) (xy 82.55 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e819072-b219-4f77-927e-6d7a44e508eb")
+	)
+	(wire
+		(pts
+			(xy 53.34 106.68) (xy 40.64 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fbcd28b-b86a-4f9c-a018-2a4882c4d290")
+	)
+	(wire
+		(pts
+			(xy 40.64 105.41) (xy 40.64 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43822c9e-4e7c-41a4-a76f-b4599a9c7467")
+	)
+	(wire
+		(pts
+			(xy 95.25 129.54) (xy 95.25 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44c45c02-dbdb-42a7-b07f-0716203c4b52")
+	)
+	(wire
+		(pts
+			(xy 62.23 162.56) (xy 62.23 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49614332-497c-433c-a56e-e57b51f90683")
+	)
+	(bus
+		(pts
+			(xy 64.77 78.105) (xy 64.77 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c8ffd69-5ff7-495a-b23b-f7344a814062")
+	)
+	(wire
+		(pts
+			(xy 82.55 73.66) (xy 83.82 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e192003-68d5-41a5-8789-d2d1acc57798")
+	)
+	(wire
+		(pts
+			(xy 92.71 125.73) (xy 92.71 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53a3209e-bc03-43a1-92dd-26641dfd24be")
+	)
+	(bus
+		(pts
+			(xy 68.58 149.86) (xy 97.79 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "566da2f1-a4b6-4bd1-a8e3-3c1500528461")
+	)
+	(wire
+		(pts
+			(xy 92.71 124.46) (xy 97.79 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "587a94f1-3f18-4877-9134-287e389d2024")
+	)
+	(wire
+		(pts
+			(xy 69.215 75.565) (xy 69.85 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a02aee2-bcdd-4f45-9591-51373909e407")
+	)
+	(wire
+		(pts
+			(xy 56.515 141.605) (xy 55.88 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61d1f1cc-5218-43ce-8aa2-44f66ed680be")
+	)
+	(wire
+		(pts
+			(xy 76.2 67.31) (xy 78.74 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62d64f90-370c-4337-9d91-a9fe5979fba5")
+	)
+	(wire
+		(pts
+			(xy 78.74 67.31) (xy 78.74 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68c31175-bc38-4428-8bbc-77208af216e1")
+	)
+	(wire
+		(pts
+			(xy 44.45 95.25) (xy 44.45 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6adc7654-48bb-4eac-b51e-fca126683c63")
+	)
+	(wire
+		(pts
+			(xy 71.755 170.815) (xy 71.12 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b383f19-837d-4c82-b23c-5058ca036dc5")
+	)
+	(wire
+		(pts
+			(xy 40.64 107.95) (xy 40.64 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e5574b6-82c9-41d1-b801-c4e9b725fbb5")
+	)
+	(wire
+		(pts
+			(xy 82.55 92.71) (xy 87.63 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78b878fb-96e7-40bf-ab42-acd9b90befe3")
+	)
+	(wire
+		(pts
+			(xy 49.53 133.35) (xy 46.99 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b82ba99-4ec7-4fcc-8174-75bf0f81494f")
+	)
+	(wire
+		(pts
+			(xy 40.64 107.95) (xy 39.37 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c104214-2253-4e15-9826-161db1133c62")
+	)
+	(wire
+		(pts
+			(xy 78.74 66.04) (xy 83.82 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c88d839-de0c-45c2-928a-7c9c46014191")
+	)
+	(wire
+		(pts
+			(xy 82.55 76.2) (xy 83.82 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "821818cc-e7d4-4195-97bf-7fa2509e83de")
+	)
+	(wire
+		(pts
+			(xy 85.09 97.79) (xy 85.09 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "821a1e6c-44cf-4238-9ffa-0db40c2df80b")
+	)
+	(wire
+		(pts
+			(xy 46.99 133.35) (xy 46.99 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8390ec77-dea5-47ea-b737-6373340807b4")
+	)
+	(wire
+		(pts
+			(xy 90.17 125.73) (xy 92.71 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a28e69c-f6ed-4841-b968-89658df46bea")
+	)
+	(wire
+		(pts
+			(xy 82.55 93.98) (xy 82.55 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e2eedb4-c5f8-4ec8-bfc6-1e777aee5ca4")
+	)
+	(wire
+		(pts
+			(xy 46.99 99.06) (xy 44.45 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90714adc-751f-4a72-b543-e67ba94ed490")
+	)
+	(wire
+		(pts
+			(xy 80.01 93.98) (xy 82.55 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "945dfa6b-f7d0-4f2a-b7d2-fd4eecd65559")
+	)
+	(wire
+		(pts
+			(xy 55.88 140.97) (xy 43.18 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "970b80c3-8194-468e-b316-8e5fe2a9cd16")
+	)
+	(wire
+		(pts
+			(xy 78.74 68.58) (xy 83.82 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a43cf4c-0fd3-43c0-9006-2602bd565d74")
+	)
+	(wire
+		(pts
+			(xy 72.39 105.41) (xy 86.36 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cffa4f6-cdb7-468e-9676-3d2fd714fcfd")
+	)
+	(wire
+		(pts
+			(xy 41.91 102.87) (xy 41.91 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d993e14-a1ce-4787-a1f0-06f6e00069bd")
+	)
+	(wire
+		(pts
+			(xy 46.99 129.54) (xy 46.99 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a02304a7-ca19-4c06-a346-fd71ccaa82d2")
+	)
+	(wire
+		(pts
+			(xy 92.71 121.92) (xy 92.71 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2ed6fbf-db99-4fe0-bd01-4604f6e273cc")
+	)
+	(wire
+		(pts
+			(xy 43.18 139.7) (xy 43.18 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a613eefe-ce46-4e45-af18-e2499061a2f2")
+	)
+	(wire
+		(pts
+			(xy 77.47 137.16) (xy 96.52 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6444c59-e38e-4ab8-94f0-0f20eff3c1a4")
+	)
+	(wire
+		(pts
+			(xy 85.09 97.79) (xy 87.63 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a73f80c8-adbb-41da-bdcf-faefbfd86890")
+	)
+	(wire
+		(pts
+			(xy 81.28 71.12) (xy 81.28 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a74939fa-9d82-47c0-ab41-843900c6d54a")
+	)
+	(wire
+		(pts
+			(xy 43.18 142.24) (xy 43.18 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b40249e1-dbcf-4d6b-9140-ef21cda31d5d")
+	)
+	(wire
+		(pts
+			(xy 44.45 97.79) (xy 39.37 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8dbce54-e470-4df2-b54f-a52dc7958f02")
+	)
+	(wire
+		(pts
+			(xy 82.55 95.25) (xy 87.63 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba07948b-a43a-40ab-ad72-2541e2c20179")
+	)
+	(wire
+		(pts
+			(xy 86.36 100.33) (xy 87.63 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba098f14-49b7-4d40-8ff4-e97dd55648f8")
+	)
+	(wire
+		(pts
+			(xy 54.61 110.49) (xy 40.64 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c08929f7-a615-459f-8bc4-c7cc0c98556e")
+	)
+	(wire
+		(pts
+			(xy 44.45 137.16) (xy 44.45 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0f03571-0262-4f6c-bf04-1bc0ffc8c25e")
+	)
+	(wire
+		(pts
+			(xy 86.36 102.87) (xy 87.63 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2d160e1-8641-4f8a-8aae-d0c5c6e7bbd1")
+	)
+	(wire
+		(pts
+			(xy 44.45 100.33) (xy 39.37 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3dd4ea3-7102-4b84-ab7c-2c112aa301ff")
+	)
+	(wire
+		(pts
+			(xy 92.71 127) (xy 97.79 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c56be759-837d-4b88-a26b-94f2e97ba99e")
+	)
+	(wire
+		(pts
+			(xy 81.28 173.99) (xy 58.42 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb44ed12-27f8-46e5-b916-4a1b082df5ff")
+	)
+	(bus
+		(pts
+			(xy 60.96 60.96) (xy 64.77 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc2edf7a-5ad8-4f87-94f6-fb20d08b3b90")
+	)
+	(wire
+		(pts
+			(xy 83.185 133.985) (xy 83.82 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3ad3958-7aa2-4e39-9557-8d497c1bf860")
+	)
+	(bus
+		(pts
+			(xy 68.58 149.86) (xy 64.77 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6487fef-8be2-44d9-a1f1-ecec0a965360")
+	)
+	(wire
+		(pts
+			(xy 67.31 75.565) (xy 69.215 75.565)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8c5dbfa-e2d9-44a4-bb3f-672d078e7d53")
+	)
+	(wire
+		(pts
+			(xy 44.45 99.06) (xy 44.45 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd207df0-6247-4950-8ad2-21ec54f746bd")
+	)
+	(bus
+		(pts
+			(xy 64.77 74.93) (xy 64.77 78.105)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1f98693-8941-4792-a221-dae7b6cce725")
+	)
+	(wire
+		(pts
+			(xy 53.975 107.315) (xy 53.34 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6853ccb-0213-4f97-be2b-e650a1a46a63")
+	)
+	(wire
+		(pts
+			(xy 67.31 72.39) (xy 81.28 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7c56f84-8080-4478-8648-b0faf464948e")
+	)
+	(wire
+		(pts
+			(xy 60.96 144.78) (xy 43.18 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7fb70b3-7af2-40c7-9b00-8295861557cb")
+	)
+	(wire
+		(pts
+			(xy 44.45 137.16) (xy 41.91 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebb81ac3-2806-4d84-86fb-d3c78437b468")
+	)
+	(wire
+		(pts
+			(xy 58.42 168.91) (xy 57.15 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f18a33dd-1a69-4cc0-8744-e730ee49633e")
+	)
+	(wire
+		(pts
+			(xy 46.99 132.08) (xy 41.91 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f18ea97f-fd4b-4ea1-8ae4-50cd4b08b990")
+	)
+	(wire
+		(pts
+			(xy 96.52 132.08) (xy 96.52 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f25173e0-30cc-44dc-bbac-a54fbbcd182a")
+	)
+	(bus
+		(pts
+			(xy 64.77 60.96) (xy 64.77 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f25ebaf0-fe55-4972-b898-c05e9d6fe36f")
+	)
+	(wire
+		(pts
+			(xy 73.025 102.235) (xy 73.66 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f79cdefd-b249-4cbd-99d2-c987ee3b6476")
+	)
+	(wire
+		(pts
+			(xy 96.52 132.08) (xy 97.79 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7b06d11-ca00-4246-9968-952e799a660c")
+	)
+	(wire
+		(pts
+			(xy 59.69 166.37) (xy 57.15 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f82eb87d-fe5a-47ef-92f5-4dbcf2a80db0")
+	)
+	(wire
+		(pts
+			(xy 81.28 71.12) (xy 83.82 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8c885ca-c19c-48fb-bcbf-049ec262ddcc")
+	)
+	(wire
+		(pts
+			(xy 58.42 168.91) (xy 58.42 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc4beca4-4589-4503-b049-3e0ea42e6d49")
+	)
+	(wire
+		(pts
+			(xy 68.58 78.74) (xy 82.55 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fcf7fdbd-fe66-464c-a9bf-a10b6186175d")
+	)
+	(label "SCL"
+		(at 67.31 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "00ec19f3-cc5d-47a9-938d-7380e439153a")
+	)
+	(label "SDA"
+		(at 53.34 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1051cbb3-492a-42de-b1ef-cb74a5b8fe0a")
+	)
+	(label "BTN_REC_INT"
+		(at 72.39 105.41 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1418263f-3fdd-455d-b449-2ba1e5772460")
+	)
+	(label "SDA"
+		(at 69.85 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2df549e9-4eca-450d-a656-04776af865d3")
+	)
+	(label "BTN_STOP_INT"
+		(at 54.61 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "30c9156c-9fe7-4f93-83c4-f15e638e1a5f")
+	)
+	(label "SDA"
+		(at 55.88 140.97 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3ad76b3c-5002-4e34-a1c1-7dfc1221a7fe")
+	)
+	(label "SDA"
+		(at 71.12 170.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4f0dea8d-1c07-4735-842e-da8da047ca32")
+	)
+	(label "BTN_OVERDUB_INT"
+		(at 77.47 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5bb759aa-a881-462d-9b6e-2b2881f0f9f8")
+	)
+	(label "BTN_PLAY_INT"
+		(at 68.58 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5c29c6ee-bf29-4896-8d0d-7dbfd63d192a")
+	)
+	(label "BTN_METRONOME_INT"
+		(at 81.28 173.99 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6c27aaa1-f512-4d47-9ebd-33851d4b8c3b")
+	)
+	(label "SDA"
+		(at 73.66 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a539cb3c-3be5-428e-8596-5888a1cc0f85")
+	)
+	(label "SDA"
+		(at 83.82 133.35 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cbec94a5-afb7-45f1-9d50-f4adfc74b8de")
+	)
+	(label "BTN_QUANTISE_INT"
+		(at 60.96 144.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cda1cd3f-ef2c-4469-aeb8-d3554b98cf10")
+	)
+	(label "{I2C}"
+		(at 88.5064 162.8555 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f6abb524-acc6-4f41-bbab-3c39e1624004")
+	)
+	(hierarchical_label "I2C"
+		(shape bidirectional)
+		(at 60.96 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "26fe0499-a304-4784-8156-bcdc6d6ef79b")
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 44.45 95.25 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0c18d3bf-3687-4392-8664-062e258e3c3a")
+		(property "Reference" "#PWR028"
+			(at 44.45 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 44.45 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 44.45 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2e90d9a2-6211-4b2a-b3cc-aaf201b64edd")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x05")
+		(at 36.83 137.16 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1f0177ed-56f4-4920-91c1-aaa8512b7710")
+		(property "Reference" "J7"
+			(at 36.83 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTN_QUANTISE"
+			(at 36.83 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 36.83 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 36.83 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 36.83 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "57960b30-83de-449f-a0cc-66e686e2fc84")
+		)
+		(pin "4"
+			(uuid "aadb2bdb-a99e-4e25-b605-f54f606df476")
+		)
+		(pin "1"
+			(uuid "cdaa3f28-1223-4345-8356-bd69311bb1b2")
+		)
+		(pin "5"
+			(uuid "55d7e7be-422a-4f48-aea8-8ea4837f4812")
+		)
+		(pin "3"
+			(uuid "51f20a5c-626a-441f-816b-68f16500df09")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:GND")
+		(at 80.01 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3fa37aa3-acfb-4954-9f9c-d71a621b43a3")
+		(property "Reference" "#PWR025"
+			(at 80.01 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 80.01 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 80.01 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 80.01 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 80.01 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6b385eed-6f89-437e-98bb-edd6d48e4481")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x05")
+		(at 92.71 97.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "47806246-faee-49e7-99ef-0ee704f8e51a")
+		(property "Reference" "J5"
+			(at 95.25 96.5199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BTN_REC"
+			(at 95.25 99.0599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 92.71 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 92.71 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 92.71 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "98f86a5f-44fd-48fa-bf1d-57d0522c0315")
+		)
+		(pin "4"
+			(uuid "e366c83e-bc39-4097-bb6c-f56fa9784236")
+		)
+		(pin "1"
+			(uuid "ffd67942-c365-44de-8d26-8b0ccd8599fa")
+		)
+		(pin "5"
+			(uuid "f28ac5cc-7bad-4712-8ce3-e17f62760a5f")
+		)
+		(pin "3"
+			(uuid "2b64b9f6-7c0b-4393-9368-f96b4f135d1e")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 78.74 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "48b067fd-0662-4172-aaf1-f5a747d987fd")
+		(property "Reference" "#PWR023"
+			(at 78.74 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 78.74 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "26ccd590-5380-4b10-9296-f8b6b35aa582")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 92.71 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "557f104f-a205-4cd5-b457-ca48637db94a")
+		(property "Reference" "#PWR031"
+			(at 92.71 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 92.71 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 92.71 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.71 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 92.71 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f4102d5a-f9de-47dd-a66e-3018f3b71925")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x05")
+		(at 34.29 102.87 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "58d756f9-fb4a-4111-82c5-76003dc8c4ad")
+		(property "Reference" "J6"
+			(at 34.29 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTN_STOP"
+			(at 34.29 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 34.29 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 34.29 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 34.29 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6cc5e610-17bd-4408-b683-6688a19cceb8")
+		)
+		(pin "4"
+			(uuid "67186dcb-af39-4248-bcd7-78c4ee33b453")
+		)
+		(pin "1"
+			(uuid "f8671453-4d0d-44a7-a90d-8edf00724b06")
+		)
+		(pin "5"
+			(uuid "c3ba3337-79d2-4ef7-bda2-8b5e6517b362")
+		)
+		(pin "3"
+			(uuid "5e431609-5067-44d4-a025-8da00533afc8")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 62.23 158.75 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7503d43b-cdda-4de7-b139-1d88054ff68d")
+		(property "Reference" "#PWR033"
+			(at 62.23 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 62.23 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 62.23 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 62.23 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2f07709b-a752-4a6d-acc9-df62d091c144")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:GND")
+		(at 46.99 99.06 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84f1f536-ef2a-41b5-a5d9-de39ea299887")
+		(property "Reference" "#PWR027"
+			(at 46.99 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 46.99 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 46.99 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 46.99 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 46.99 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "132b29d2-4c10-4a5a-b0f1-f908680a4ed8")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:GND")
+		(at 49.53 133.35 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "873900a2-47bb-485f-98b2-f37361cb28ef")
+		(property "Reference" "#PWR030"
+			(at 49.53 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 49.53 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4f93dc33-3938-4ab7-a835-a71c89a6ee7c")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x05")
+		(at 52.07 166.37 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "87efc820-128d-42ff-be2b-b07efb74bc70")
+		(property "Reference" "J9"
+			(at 52.07 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTN_METRONOME"
+			(at 52.07 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 52.07 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 52.07 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 52.07 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4cc12934-b669-45aa-9355-7686ca88fd8a")
+		)
+		(pin "4"
+			(uuid "b0d02f10-07a1-4916-b59d-e24c673e1d09")
+		)
+		(pin "1"
+			(uuid "c1ba4abc-f7f5-4bcb-94e0-b11d33439b67")
+		)
+		(pin "5"
+			(uuid "2c9b8f49-5059-4e15-8666-1b877b781e1d")
+		)
+		(pin "3"
+			(uuid "489def80-1b14-47d2-b48f-aa2ea95f282b")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 46.99 129.54 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "897944e1-8a3f-411c-a2f1-e2d9f3fba347")
+		(property "Reference" "#PWR029"
+			(at 46.99 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 46.99 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 46.99 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 46.99 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 46.99 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b3f90688-bd6f-414f-8c6a-0e4dd9959bc2")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 82.55 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "954f3fa4-703b-4f3e-ba42-cdc34b9f241e")
+		(property "Reference" "#PWR026"
+			(at 82.55 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 82.55 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 82.55 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 82.55 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5d46b24a-6b3e-433f-9f3d-3da7f50dc623")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x05")
+		(at 88.9 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9a081037-eac6-4473-af5c-c92520e93f1d")
+		(property "Reference" "J4"
+			(at 91.44 69.8499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BTN_PLAY"
+			(at 91.44 72.3899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 88.9 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 88.9 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "329de951-e883-4031-b223-0d328ad2a219")
+		)
+		(pin "4"
+			(uuid "ebb4bdae-371e-46fa-aa7e-b7e59a8c848e")
+		)
+		(pin "1"
+			(uuid "80d9be97-062c-4a8d-ba82-71918d590ceb")
+		)
+		(pin "5"
+			(uuid "ef85969c-751f-4a09-8d7c-ff237c4feedf")
+		)
+		(pin "3"
+			(uuid "dd4b8994-42e8-47e2-aef2-acba8ba2427f")
+		)
+		(instances
+			(project ""
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:GND")
+		(at 76.2 67.31 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b021685c-0997-4b85-adf8-b1a1356f9dba")
+		(property "Reference" "#PWR024"
+			(at 76.2 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 76.2 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "21fad7df-cea8-4fc7-9e80-b9c0a7b45cd8")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:GND")
+		(at 90.17 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e4bfe730-b524-40df-a976-220e10538ad9")
+		(property "Reference" "#PWR032"
+			(at 90.17 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 90.17 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 90.17 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cf789094-96a3-4d27-ab8e-2a852a6044b1")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x05")
+		(at 102.87 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6c1b26c-c8c6-43f6-a65b-ab31acf106ae")
+		(property "Reference" "J8"
+			(at 102.87 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTN_OVERDUB"
+			(at 102.87 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.87 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 102.87 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 102.87 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "67a468a8-db6a-4ce2-a0a6-0bf5f75a28d9")
+		)
+		(pin "4"
+			(uuid "72d38f79-d0af-4c28-a81b-f22840c197f7")
+		)
+		(pin "1"
+			(uuid "48aee801-c72a-477b-bdd6-960b849fd3b0")
+		)
+		(pin "5"
+			(uuid "d5cd5396-ddce-40a1-bf56-72206be7b049")
+		)
+		(pin "3"
+			(uuid "86820bb6-0ef2-443e-9bab-80f4dc1674c8")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:GND")
+		(at 64.77 162.56 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f754393d-fa51-4792-baf2-1ddbe7e0f60a")
+		(property "Reference" "#PWR034"
+			(at 64.77 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 64.77 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 64.77 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 64.77 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4a546df1-96c2-49e7-b235-1ea24964b265")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
 )
