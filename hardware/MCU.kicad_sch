@@ -3951,6 +3951,17 @@
 		)
 		(uuid "5262b4ec-6f9a-40c7-83f0-7d24a0b851e8")
 	)
+	(hierarchical_label "JACK_TAP-TEMPO"
+		(shape bidirectional)
+		(at 68.58 62.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f7547535-486f-4286-92be-cdfa1b1dc776")
+	)
 	(symbol
 		(lib_id "4ms_Power-symbol:GND")
 		(at 93.98 113.03 0)
