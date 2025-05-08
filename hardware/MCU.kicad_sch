@@ -2688,6 +2688,17 @@
 		)
 		(uuid "557a93ce-9032-4cd1-890c-053a7efa5795")
 	)
+	(text "Note: ESP-32 draws half the peak current from the 3.3V regulator,\n(advice from Adafruit wiki)Use 5V for LEDs, Motors, etc with an additional regulator"
+		(exclude_from_sim no)
+		(at 211.836 17.526 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+			(href "https://learn.adafruit.com/adafruit-esp32-feather-v2/power-management-2")
+		)
+		(uuid "93212cb8-8554-4f20-9108-e73e90422d16")
+	)
 	(junction
 		(at 121.92 90.17)
 		(diameter 0)
@@ -3106,6 +3117,26 @@
 	)
 	(wire
 		(pts
+			(xy 218.44 71.12) (xy 222.25 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62280343-188b-47c8-ad70-7f30d1ff8cda")
+	)
+	(wire
+		(pts
+			(xy 218.44 68.58) (xy 222.25 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "644c80a9-9f4e-475d-b8b6-f233b9c467ae")
+	)
+	(wire
+		(pts
 			(xy 232.41 60.96) (xy 232.41 62.23)
 		)
 		(stroke
@@ -3123,6 +3154,16 @@
 			(type default)
 		)
 		(uuid "685a0a5b-a7e8-4032-ae2c-01e2db639398")
+	)
+	(wire
+		(pts
+			(xy 68.58 62.23) (xy 76.2 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a76ec46-7c03-48ec-be8a-377a36516f51")
 	)
 	(wire
 		(pts
@@ -3363,6 +3404,16 @@
 			(type default)
 		)
 		(uuid "9e686483-342b-49c4-92f1-2475c3dcdce3")
+	)
+	(wire
+		(pts
+			(xy 218.44 73.66) (xy 222.25 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ea50367-7761-4b9d-b105-0db81b7862b2")
 	)
 	(wire
 		(pts
@@ -3834,6 +3885,28 @@
 		)
 		(uuid "eb1fcb93-68a4-4731-b872-4a379065ccc5")
 	)
+	(hierarchical_label "ENC_INF-SCROLL_B"
+		(shape input)
+		(at 222.25 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "278eb413-d320-4b6d-88a9-35a378739b4c")
+	)
+	(hierarchical_label "ENC_INF-SCROLL_G"
+		(shape input)
+		(at 222.25 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "39131afe-fd8b-4d6f-8e83-9a6d2f69298b")
+	)
 	(hierarchical_label "I2C"
 		(shape output)
 		(at 165.1 43.18 0)
@@ -3855,6 +3928,17 @@
 			(justify right)
 		)
 		(uuid "5011bf34-73c8-4e18-beba-650a056f9a88")
+	)
+	(hierarchical_label "ENC_INF-SCROLL_R"
+		(shape input)
+		(at 222.25 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "514c7982-a1bd-4d39-8102-df8938cd6cb3")
 	)
 	(hierarchical_label "TX"
 		(shape output)

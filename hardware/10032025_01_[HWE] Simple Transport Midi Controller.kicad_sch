@@ -7,6 +7,16 @@
 	(lib_symbols)
 	(wire
 		(pts
+			(xy 62.865 87.63) (xy 88.9 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15036664-47a8-41e8-b83b-21ad044b5959")
+	)
+	(wire
+		(pts
 			(xy 87.63 77.47) (xy 88.9 77.47)
 		)
 		(stroke
@@ -44,6 +54,36 @@
 			(type default)
 		)
 		(uuid "8c81b14d-b1de-4369-9476-5473a11b45dd")
+	)
+	(wire
+		(pts
+			(xy 115.57 53.34) (xy 163.83 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5c67887-7887-4402-bac7-09c65f14b2c0")
+	)
+	(wire
+		(pts
+			(xy 115.57 49.53) (xy 163.83 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2dcd38c-b04d-4ecd-8627-d0dfaeaa65dd")
+	)
+	(wire
+		(pts
+			(xy 115.57 57.15) (xy 163.83 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4e58836-7bf8-4574-b38d-29414341449c")
 	)
 	(wire
 		(pts
@@ -109,6 +149,16 @@
 				(justify right)
 			)
 		)
+		(pin "JACK_TAP-TEMPO" bidirectional
+			(at 62.865 87.63 0)
+			(uuid "15d13672-8cf4-45ca-8bfc-06c17e058aff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6"
@@ -118,8 +168,8 @@
 		)
 	)
 	(sheet
-		(at 88.9 68.58)
-		(size 26.67 20.32)
+		(at 88.9 46.355)
+		(size 26.67 81.915)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -134,7 +184,7 @@
 		)
 		(uuid "701e2ee7-1555-4be3-8e0c-a769d2df25b2")
 		(property "Sheetname" "Microcontroller Unit"
-			(at 88.9 67.8684 0)
+			(at 88.9 45.6434 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -143,7 +193,7 @@
 			)
 		)
 		(property "Sheetfile" "MCU.kicad_sch"
-			(at 88.9 89.4846 0)
+			(at 88.9 128.8546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -174,6 +224,46 @@
 		(pin "TX" output
 			(at 88.9 81.28 180)
 			(uuid "c0c31556-2d5a-4cbb-bd56-f2b7e92e783d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_INF-SCROLL_B" input
+			(at 115.57 57.15 0)
+			(uuid "5c2cccab-425f-46fd-bc5b-c5ebdf5fb304")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "ENC_INF-SCROLL_G" input
+			(at 115.57 53.34 0)
+			(uuid "f4a53ee4-b527-42f1-aed2-403b388dd5c4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "ENC_INF-SCROLL_R" input
+			(at 115.57 49.53 0)
+			(uuid "333f37d6-1fda-4450-8025-87a11a451dc8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "JACK_TAP-TEMPO" bidirectional
+			(at 88.9 87.63 180)
+			(uuid "e0b1b34f-dd1c-4969-b18a-443aba2550ef")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -226,6 +316,156 @@
 		(pin "I2C" bidirectional
 			(at 163.83 73.66 180)
 			(uuid "02ecdab3-bdf1-45fa-a029-f76aab914b98")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BTN_METRONOME_INT" output
+			(at 163.83 105.41 180)
+			(uuid "d4e0df81-9f83-4b37-b7b7-01e8d6ff37aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BTN_OVERDUB_INT" output
+			(at 163.83 109.22 180)
+			(uuid "5106603e-8ae3-4add-b7d0-83cf21026e14")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BTN_PLAY_INT" output
+			(at 163.83 113.03 180)
+			(uuid "2b664af7-0e56-4766-988e-7b130f9f520b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BTN_QUANTISE_INT" output
+			(at 163.83 116.84 180)
+			(uuid "2f3ac159-3ae2-4437-9f1c-4d03dd51292f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BTN_REC_INT" output
+			(at 163.83 120.65 180)
+			(uuid "9522cad9-54d3-462e-ab0a-17de3237c4f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "BTN_STOP_INT" output
+			(at 163.83 124.46 180)
+			(uuid "b93a085d-a23b-448e-8d3f-09f3732af810")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_INF-SCROLL_B" output
+			(at 163.83 57.15 180)
+			(uuid "4cf8a153-d70e-41e6-9158-327a9d79c1d1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_INF-SCROLL_G" output
+			(at 163.83 53.34 180)
+			(uuid "50e212c2-c861-4eec-8545-d294f4190466")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_INF-SCROLL_R" output
+			(at 163.83 49.53 180)
+			(uuid "cdc520df-1164-4624-86d1-c40b45129c64")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_INF-SCROLL_SW" output
+			(at 163.83 60.96 180)
+			(uuid "b9ce7d61-9512-4e4f-8e2f-3adb64a9ee05")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_INF_SCROLL_W1" output
+			(at 163.83 64.77 180)
+			(uuid "7a6e126e-0d0f-4440-a637-818a9e899e65")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_INF_SCROLL_W2" output
+			(at 163.83 68.58 180)
+			(uuid "048e95bd-ba28-4bc8-8dcb-4131ab1e4fef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_VOLUME_SW" output
+			(at 163.83 80.01 180)
+			(uuid "a36acddb-df19-4b2c-a54a-4bd97c6c33bf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_VOLUME_W1" output
+			(at 163.83 83.82 180)
+			(uuid "fc62422d-2f66-41fa-9899-ed6ad6b73f0a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_VOLUME_W2" output
+			(at 163.83 86.36 180)
+			(uuid "58397e04-2a1f-4e74-a4c7-d138fad2bfd0")
 			(effects
 				(font
 					(size 1.27 1.27)
