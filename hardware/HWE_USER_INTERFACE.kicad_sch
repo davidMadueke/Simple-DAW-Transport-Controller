@@ -1551,6 +1551,189 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:R_US"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R_US"
+				(at -2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.016 -0.254 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor, US symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_US_0_1"
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.286) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_US_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "Current-limiting Resistors"
+		(exclude_from_sim no)
+		(at 166.116 16.256 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+			)
+		)
+		(uuid "144034c3-a19f-4344-ad2d-771570832621")
 	)
 	(text "Following Elegoo Pinout for their OLED Display\n"
 		(exclude_from_sim no)
@@ -1765,6 +1948,16 @@
 	)
 	(wire
 		(pts
+			(xy 171.45 29.21) (xy 173.99 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a529c09-7099-40d6-a6ba-834bdf2d3355")
+	)
+	(wire
+		(pts
 			(xy 60.96 119.38) (xy 55.88 119.38)
 		)
 		(stroke
@@ -1855,7 +2048,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 39.37) (xy 173.99 39.37)
+			(xy 160.02 39.37) (xy 163.83 39.37)
 		)
 		(stroke
 			(width 0)
@@ -2075,13 +2268,23 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 34.29) (xy 173.99 34.29)
+			(xy 161.29 31.75) (xy 162.56 31.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "3ce5e00e-37ba-42e3-9de0-a559367c8fdb")
+	)
+	(wire
+		(pts
+			(xy 161.29 31.75) (xy 161.29 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e2a2440-70e4-46d7-aa71-a34bda695c17")
 	)
 	(wire
 		(pts
@@ -2112,6 +2315,16 @@
 			(type default)
 		)
 		(uuid "402c7bcc-4e31-4b4c-a527-4c4cb93596e2")
+	)
+	(wire
+		(pts
+			(xy 172.72 34.29) (xy 173.99 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "409bbec6-302b-4f18-a792-088d3642221f")
 	)
 	(wire
 		(pts
@@ -2325,6 +2538,16 @@
 	)
 	(wire
 		(pts
+			(xy 170.18 31.75) (xy 172.72 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ad2088e-1e3a-4c76-9dd4-f15498bf3146")
+	)
+	(wire
+		(pts
 			(xy 184.15 34.29) (xy 187.96 34.29)
 		)
 		(stroke
@@ -2475,6 +2698,16 @@
 	)
 	(wire
 		(pts
+			(xy 171.45 24.13) (xy 171.45 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94e62382-6e87-4f60-8217-824d7666fb14")
+	)
+	(wire
+		(pts
 			(xy 96.52 29.21) (xy 101.6 29.21)
 		)
 		(stroke
@@ -2565,7 +2798,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 29.21) (xy 173.99 29.21)
+			(xy 160.02 24.13) (xy 162.56 24.13)
 		)
 		(stroke
 			(width 0)
@@ -2605,6 +2838,16 @@
 	)
 	(wire
 		(pts
+			(xy 161.29 34.29) (xy 160.02 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aba5ed4f-698b-4027-8df3-d33be975d75e")
+	)
+	(wire
+		(pts
 			(xy 60.96 102.87) (xy 60.96 105.41)
 		)
 		(stroke
@@ -2612,6 +2855,16 @@
 			(type default)
 		)
 		(uuid "b40249e1-dbcf-4d6b-9140-ef21cda31d5d")
+	)
+	(wire
+		(pts
+			(xy 172.72 31.75) (xy 172.72 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b669eb26-3f98-435e-a464-6a087ef03195")
 	)
 	(bus
 		(pts
@@ -2745,6 +2998,16 @@
 	)
 	(wire
 		(pts
+			(xy 171.45 39.37) (xy 173.99 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5d20fb9-e4d2-421d-aef7-975d5cad7856")
+	)
+	(wire
+		(pts
 			(xy 93.98 118.11) (xy 99.06 118.11)
 		)
 		(stroke
@@ -2865,6 +3128,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 24.13) (xy 160.02 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e74e9fd7-8280-4daa-af45-e7cae87e2237")
+	)
+	(wire
+		(pts
 			(xy 85.09 33.02) (xy 99.06 33.02)
 		)
 		(stroke
@@ -2912,6 +3185,16 @@
 			(type default)
 		)
 		(uuid "ece3fd09-3fb9-4b7a-a52c-a4e32251555d")
+	)
+	(wire
+		(pts
+			(xy 170.18 24.13) (xy 171.45 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecebf40d-d231-4825-8cad-559dd807940d")
 	)
 	(bus
 		(pts
@@ -2972,6 +3255,16 @@
 			(type default)
 		)
 		(uuid "f365aeb1-2706-4076-b2de-f1130c71606b")
+	)
+	(wire
+		(pts
+			(xy 160.02 29.21) (xy 157.48 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5608a35-92d0-46cd-9032-2f3945a81836")
 	)
 	(wire
 		(pts
@@ -4080,7 +4373,7 @@
 	)
 	(hierarchical_label "ENC_INF-SCROLL_R"
 		(shape output)
-		(at 168.91 29.21 180)
+		(at 157.48 29.21 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4113,7 +4406,7 @@
 	)
 	(hierarchical_label "ENC_INF-SCROLL_G"
 		(shape output)
-		(at 168.91 34.29 180)
+		(at 160.02 34.29 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4190,7 +4483,7 @@
 	)
 	(hierarchical_label "ENC_INF-SCROLL_B"
 		(shape output)
-		(at 168.91 39.37 180)
+		(at 160.02 39.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4378,6 +4671,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_US")
+		(at 166.37 24.13 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0ee57cac-db1e-4b93-8ea0-8e1187fb9116")
+		(property "Reference" "R12"
+			(at 166.116 19.558 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_US"
+			(at 166.37 21.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 166.624 23.114 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 166.37 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 166.37 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2192c9e6-c259-4ee5-83d2-4ff78e1a9ac4")
+		)
+		(pin "1"
+			(uuid "2412b253-0975-4d53-9f8f-e388b6e39609")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x05")
 		(at 54.61 97.79 0)
 		(mirror y)
@@ -4526,6 +4886,73 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 166.37 31.75 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "311057e1-7118-40b2-8305-d2ed90ec674d")
+		(property "Reference" "R13"
+			(at 166.116 27.178 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_US"
+			(at 166.37 29.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 166.624 30.734 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 166.37 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 166.37 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "32b68271-dc90-4b79-8e5d-3628b50d8711")
+		)
+		(pin "1"
+			(uuid "e98dbf61-5770-4c1b-90b1-3ef7e084b175")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -6391,6 +6818,73 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "#PWR037")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 167.64 39.37 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cc442ecc-d7a4-4da8-90bc-f45c456ec3ed")
+		(property "Reference" "R14"
+			(at 167.386 34.798 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_US"
+			(at 167.64 36.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 167.894 38.354 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 167.64 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 167.64 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "57042455-1286-4693-83e2-b4bf3c593a76")
+		)
+		(pin "1"
+			(uuid "fd9e34ed-e26e-4142-b7c5-99ff85c60dab")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "R14")
 					(unit 1)
 				)
 			)
