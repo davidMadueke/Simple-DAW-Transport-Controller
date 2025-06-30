@@ -18,15 +18,17 @@ Button::Button(uint8_t i2cAddr, uint32_t dbTime): m_i2cAddr(i2cAddr), m_dbTime(d
 
 void Button::setLedColour(uint8_t r, uint8_t g, uint8_t b)
 {
-    r /= m_ledBrightnessPrescaler;
-    g /= m_ledBrightnessPrescaler;
-    b /= m_ledBrightnessPrescaler;
-    
-    RGBButton->setRGBColor(r, g, b);
     //set the previous non-off LED state to this colour
     m_prevLedState_red = r;
     m_prevLedState_green = g;
     m_prevLedState_blue = b;
+    
+    r /= m_ledBrightnessPrescaler;
+    g /= m_ledBrightnessPrescaler;
+    b /= m_ledBrightnessPrescaler;
+
+    RGBButton->setRGBColor(r, g, b);
+    
 }
 
 void Button::setBrightness(uint8_t brightnessPrescaler)
@@ -91,7 +93,9 @@ bool Button::read(bool State)
         }
     }
 
-    if (wasPressed()) {
+    if (isPressed()) {
+        //  
+        //if(!pressedFor(5))
         ledOn();
         Serial.println("Is Pressed");
     } 
@@ -106,8 +110,10 @@ bool Button::read(bool State)
                 (m_prevLedState_green == 0) &&
                 (m_prevLedState_blue == 0)
             ) {
+                Serial.println("led off");
                 ledOff();
             } else {
+                Serial.println("Prev LED state");
                 prevLedState();
             } 
             Serial.println("Is not Pressed");
@@ -125,7 +131,21 @@ bool Button::read(bool State)
  *----------------------------------------------------------------------*/
 uint8_t Button::multiPressRead(bool State) {
 
-    if (read(State)) {
+    if(m_multiPressRead_longSinglePress && wasReleased())
+        {
+            Serial.println("asserting MPRLSP2 off");
+            m_multiPressRead_longSinglePress = false;
+            return 1;
+        }
+    // Makes a note of whether a single press has exceed the multipress time limit
+    if(pressedFor(m_multiPressTimeLimit)) 
+    {
+        Serial.println("asserting MPRLSP on");
+        m_multiPressRead_longSinglePress = true;
+    }
+    
+    bool readState = read(State);
+    if (readState) {
         //makes sure it counts the press ONLY once
         if (!m_pressRead) {
             m_pressCount++;
@@ -134,12 +154,14 @@ uint8_t Button::multiPressRead(bool State) {
         return checkMultiPress();
     }
 
-    if (!read(State)) {
+    if (!readState) {
         m_pressRead = false;
         return checkMultiPress();
     }
 
-    return 0;
+    
+        //else {return 0;}
+        return 0;
 }
 
 /*----------------------------------------------------------------------*
@@ -152,14 +174,12 @@ uint8_t Button::checkMultiPress() {
         uint8_t numberOfPresses = m_pressCount;
         m_pressCount = 0;
         m_prevNumberOfPresses = numberOfPresses;
+        
         return numberOfPresses;
     }
     else {
-        /* if(releasedFor(m_multiPressTimeLimit))
-        {
-           return 1; 
-        }
-        else {return 0;} */
+        
+        Serial.println("returning zero");
         return 0;
     }
 }

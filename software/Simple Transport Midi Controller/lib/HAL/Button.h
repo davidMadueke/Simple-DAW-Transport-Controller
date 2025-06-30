@@ -36,6 +36,9 @@
     
     uint32_t m_multiPressTimeLimit = 150; //time in ms it allows for next press to arrive to count as a multi-press
     uint8_t m_prevNumberOfPresses = 0;
+    bool m_multiPressRead_longSinglePress = false; // A flag for when a single press exceeds the multi - press time limit
+
+
     //checks if the next press arrives
     //in the allowed time limit or not
     uint8_t checkMultiPress();
