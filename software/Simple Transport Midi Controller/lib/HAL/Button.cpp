@@ -1,6 +1,5 @@
 
 #include "Button.h"
-
 Button::Button(uint8_t i2cAddr, uint32_t dbTime): m_i2cAddr(i2cAddr), m_dbTime(dbTime)
 {
     m_i2cAddr = i2cAddr;
