@@ -117,6 +117,16 @@
 	)
 	(wire
 		(pts
+			(xy 131.445 74.93) (xy 163.83 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75b6097b-3cd9-48b0-889e-0eb48d21678b")
+	)
+	(wire
+		(pts
 			(xy 131.445 109.22) (xy 163.83 109.22)
 		)
 		(stroke
@@ -289,7 +299,7 @@
 	)
 	(sheet
 		(at 88.9 46.355)
-		(size 42.545 81.915)
+		(size 42.545 93.345)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -313,7 +323,7 @@
 			)
 		)
 		(property "Sheetfile" "MCU.kicad_sch"
-			(at 88.9 128.8546 0)
+			(at 88.9 140.2846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -511,7 +521,7 @@
 				(justify right)
 			)
 		)
-		(pin "SPI" output
+		(pin "SPI" bidirectional
 			(at 131.445 74.93 0)
 			(uuid "8997d050-a8fb-4429-872e-db8828814fa8")
 			(effects
@@ -531,7 +541,7 @@
 	)
 	(sheet
 		(at 163.83 46.99)
-		(size 33.02 80.01)
+		(size 33.02 92.71)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -555,7 +565,7 @@
 			)
 		)
 		(property "Sheetfile" "HWE_USER_INTERFACE.kicad_sch"
-			(at 163.83 127.5846 0)
+			(at 163.83 140.2846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -716,6 +726,36 @@
 		(pin "ENC_VOLUME_W2" output
 			(at 163.83 95.25 180)
 			(uuid "58397e04-2a1f-4e74-a4c7-d138fad2bfd0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SPI" bidirectional
+			(at 163.83 74.93 180)
+			(uuid "840a7df5-9d36-4bf7-af9c-e36f512f05aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "DC_SPI_OLED_DISPLAY" output
+			(at 163.83 130.81 180)
+			(uuid "0f0a29e3-8366-491c-ad8a-7cd2b72f2258")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RESET_SPI_OLED_DISPLAY" output
+			(at 163.83 134.62 180)
+			(uuid "9f37e071-20e9-41ee-acfe-405abf086b96")
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -1,18 +1,17 @@
 #include <Arduino.h>
-
-// put function declarations here:
-int myFunction(int, int);
+#include <DFRobot_RGBButton.h>
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  bool I2C1_INIT = Wire1.setPins(SDA,SCL);
+  Serial.begin(115200);
+
+  pinMode(SDA, OUTPUT);
+  Serial.println("Asserting I2C pins high \n");
+  digitalWrite(SDA, HIGH);
+  Wire1.begin();
+  Serial.println("Communication with device succeeded");
+  
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
 }
