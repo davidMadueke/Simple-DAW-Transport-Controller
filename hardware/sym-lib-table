@@ -48,4 +48,5 @@
   (lib (name "WeMos_battery_shield")(type "Legacy")(uri "${KIPRJMOD}/library/symbols/WeMos_battery_shield.lib")(options "")(descr ""))
   (lib (name "wemos_mini")(type "Legacy")(uri "${KIPRJMOD}/library/symbols/wemos_mini.lib")(options "")(descr ""))
   (lib (name "Adafruit_Feather_ESP32_V2")(type "KiCad")(uri "${KIPRJMOD}/library/symbols/Adafruit_Feather_ESP32_V2.kicad_sym")(options "")(descr ""))
+  (lib (name "SX1509")(type "KiCad")(uri "${KIPRJMOD}/library/symbols/SX1509BIULTRT.kicad_sym")(options "")(descr ""))
 )

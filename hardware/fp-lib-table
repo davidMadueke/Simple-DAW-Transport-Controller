@@ -50,4 +50,5 @@
   (lib (name "wemos_battery_shield")(type "KiCad")(uri "${KIPRJMOD}/library/footprints/wemos_battery_shield.pretty")(options "")(descr ""))
   (lib (name "wemos_d1_mini")(type "KiCad")(uri "${KIPRJMOD}/library/footprints/wemos_d1_mini.pretty")(options "")(descr ""))
   (lib (name "Adafruit_Feather_ESP32_V2")(type "KiCad")(uri "${KIPRJMOD}/library/footprints/Adafruit_Feather_ESP32_V2.pretty")(options "")(descr ""))
+  (lib (name "GPIO_Expanders")(type "KiCad")(uri "${KIPRJMOD}/library/footprints/GPIO_Expander.pretty")(options "")(descr ""))
 )
