@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 77.4, "left": 18.6, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": 10, "left": 180, "attrs": {} },
+    { "type": "wokwi-led", "id": "led", "top": -13.2, "left": 109.4, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -44.05,
+      "left": 105.6,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.1", "sw1:2", "black", [ "v-2", "*", "v8" ] ],
+    [ "uno:5", "sw1:3", "green", [ "v-2", "*", "v8" ] ],
+    [ "uno:5V", "r1:1", "red", [ "v47.9", "h-226.6", "v-355.2" ] ],
+    [ "r1:2", "led:A", "green", [ "v0" ] ],
+    [ "led:C", "sw1:1", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
