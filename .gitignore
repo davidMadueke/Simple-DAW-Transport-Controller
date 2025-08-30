@@ -29,3 +29,4 @@ fp-info-cache
 *.csv
 software/Simple Transport Midi Controller/.vscode
 assets/prev SW Architectures
+*.code-workspace
