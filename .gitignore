@@ -30,3 +30,5 @@ fp-info-cache
 software/Simple Transport Midi Controller/.vscode
 assets/prev SW Architectures
 *.code-workspace
+software/.DS_Store
+.DS_Store
