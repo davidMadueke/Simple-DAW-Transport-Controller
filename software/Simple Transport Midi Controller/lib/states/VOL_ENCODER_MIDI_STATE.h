@@ -5,6 +5,7 @@ struct VOL_ENCODER_MIDI_STATE {
     bool SW_pressEvent;
     uint8_t SW_numOfPresses;
     uint8_t SW_longPress;
+    bool POT_changeEvent;
     uint8_t POT_value;
 };
 
