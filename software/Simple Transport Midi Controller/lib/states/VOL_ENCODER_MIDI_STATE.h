@@ -15,3 +15,11 @@ enum VOL_ENCODER_MODE
     MODE2;
     MODE3;
 };
+
+struct VOL_ENCODER_RGB_LED_RING_STATE
+{
+    uint8_t COLOUR_RED;
+    uint8_t COLOUR_GREEN;
+    uint8_t COLOUR_BLUE;
+    uint8_t POSITION
+}
