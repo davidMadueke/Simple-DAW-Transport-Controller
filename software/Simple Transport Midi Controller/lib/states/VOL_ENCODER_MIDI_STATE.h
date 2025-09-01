@@ -1,7 +1,7 @@
 struct VOL_ENCODER_MIDI_STATE {
     
     VOL_ENCODER_MODE mode;
-    uint8_t ledRing_Position;
+    VOL_ENCODER_RGB_LED_RING_STATE ledRingState;
     bool SW_pressEvent;
     uint8_t SW_numOfPresses;
     uint8_t SW_longPress;
