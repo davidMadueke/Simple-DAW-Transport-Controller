@@ -5,40 +5,40 @@
 
 // MCP23017 Pin Declarations
 // GPA pins (Port A)
-#define MCP_GPA0 0
-#define MCP_GPA1 1
-#define MCP_GPA2 2
-#define MCP_GPA3 3
-#define MCP_GPA4 4
-#define MCP_GPA5 5
-#define MCP_GPA6 6
-#define MCP_GPA7 7
+#define SX1509_PIN0 0
+#define SX1509_PIN1 1
+#define SX1509_PIN2 2
+#define SX1509_PIN3 3
+#define SX1509_PIN4 4
+#define SX1509_PIN5 5
+#define SX1509_PIN6 6
+#define SX1509_PIN7 7
 
 // GPB pins (Port B)
-#define MCP_GPB0 8
-#define MCP_GPB1 9
-#define MCP_GPB2 10
-#define MCP_GPB3 11
-#define MCP_GPB4 12
-#define MCP_GPB5 13
-#define MCP_GPB6 14
-#define MCP_GPB7 15
+#define SX1509_PIN8 8
+#define SX1509_PIN9 9
+#define SX1509_PIN10 10
+#define SX1509_PIN11 11
+#define SX1509_PIN12 12
+#define SX1509_PIN13 13
+#define SX1509_PIN14 14
+#define SX1509_PIN15 15
 
 // Pin declarations for the MCP23017 INTA INTB interrupt pins sent to the ESP32
-#define MCP_INTA 14
-#define MCP_INTB 32
+#define SX1509_INTA 14
+#define SX1509_INTB 32
 
 // Encoders Pin declarations
-#define PIN_ENC_INF_SCROLL_R 0
-#define PIN_ENC_INF_SCROLL_G 1
-#define PIN_ENC_INF_SCROLL_B 2
-#define PIN_ENC_INF_SCROLL_W1 MCP_GPA0
-#define PIN_ENC_INF_SCROLL_W2 MCP_GPA1
-#define PIN_ENC_INF_SCROLL_SW MCP_GPB2
+#define PIN_ENC_INF_SCROLL_R SX1509_PIN8
+#define PIN_ENC_INF_SCROLL_G SX1509_PIN9
+#define PIN_ENC_INF_SCROLL_B SX1509_PIN10
+#define PIN_ENC_INF_SCROLL_W1 0
+#define PIN_ENC_INF_SCROLL_W2 1
+#define PIN_ENC_INF_SCROLL_SW SX1509_PIN2
 
-#define PIN_ENC_VOLUME_W1 MCP_GPA2
-#define PIN_ENC_VOLUME_W2 MCP_GPA3
-#define PIN_ENC_VOLUME_SW MCP_GPB1
+#define PIN_ENC_VOLUME_W1 2
+#define PIN_ENC_VOLUME_W2 3
+#define PIN_ENC_VOLUME_SW SX1509_PIN1
 
 // Button Interrupts Pins
 #define PIN_BTN_PLAY_INT 15
@@ -49,7 +49,7 @@
 #define PIN_BTN_OVERDUB_INT 4
 
 // TAP Tempo Jack Inputs
-#define PIN_JACK_TAP_TEMPO MCP_GPB0
+#define PIN_JACK_TAP_TEMPO SX1509_GPB0
 
 
 #endif /* PINS_H */

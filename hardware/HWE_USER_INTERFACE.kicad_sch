@@ -2471,6 +2471,30 @@
 		(uuid "1f50b82e-faab-4ad3-98d1-148068fd0bdc")
 	)
 	(junction
+		(at 238.76 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "50dbc3ce-a80f-4c9f-b75f-110f6d23e8f6")
+	)
+	(junction
+		(at 251.46 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "56bb7160-28c7-4b0c-9f69-4380a2b4a91f")
+	)
+	(junction
+		(at 242.57 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "64581963-c389-4a0c-860c-9f8e47ea2cce")
+	)
+	(junction
+		(at 255.27 87.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a1d85885-51f2-45c1-bd26-270174fbfd90")
+	)
+	(junction
 		(at 227.33 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2769,6 +2793,16 @@
 	)
 	(wire
 		(pts
+			(xy 254 35.56) (xy 251.46 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11d2cb05-375a-4729-836c-a47a3d9cd54d")
+	)
+	(wire
+		(pts
 			(xy 99.06 116.84) (xy 100.33 116.84)
 		)
 		(stroke
@@ -2979,6 +3013,16 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 35.56) (xy 251.46 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2eae04b8-3cf1-4731-9bf5-b6bff94882b5")
+	)
+	(wire
+		(pts
 			(xy 85.09 119.38) (xy 100.33 119.38)
 		)
 		(stroke
@@ -3029,7 +3073,7 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 71.12) (xy 223.52 73.66)
+			(xy 223.52 74.93) (xy 223.52 77.47)
 		)
 		(stroke
 			(width 0)
@@ -3076,6 +3120,16 @@
 			(type default)
 		)
 		(uuid "371ca147-920a-41f0-8c00-e46e185dd94d")
+	)
+	(wire
+		(pts
+			(xy 261.62 35.56) (xy 265.43 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3890fcae-3ec2-4ade-aa21-f42119912cd4")
 	)
 	(wire
 		(pts
@@ -3149,6 +3203,16 @@
 	)
 	(wire
 		(pts
+			(xy 242.57 81.28) (xy 264.16 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "414b9db9-dd20-4973-a91a-a49dcf7728b1")
+	)
+	(wire
+		(pts
 			(xy 58.42 66.04) (xy 58.42 67.31)
 		)
 		(stroke
@@ -3159,7 +3223,17 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 41.91) (xy 228.6 45.72)
+			(xy 265.43 69.85) (xy 269.24 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47ddf3db-b6f0-490a-8ac7-4cd4baae1a4e")
+	)
+	(wire
+		(pts
+			(xy 228.6 41.91) (xy 228.6 46.99)
 		)
 		(stroke
 			(width 0)
@@ -3176,6 +3250,16 @@
 			(type default)
 		)
 		(uuid "49614332-497c-433c-a56e-e57b51f90683")
+	)
+	(wire
+		(pts
+			(xy 265.43 35.56) (xy 265.43 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4afc6094-cbe6-46b0-ba94-1e2f4f517508")
 	)
 	(bus
 		(pts
@@ -3309,7 +3393,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 71.12) (xy 228.6 76.2)
+			(xy 228.6 74.93) (xy 228.6 81.28)
 		)
 		(stroke
 			(width 0)
@@ -3366,6 +3450,16 @@
 			(type default)
 		)
 		(uuid "6adc7654-48bb-4eac-b51e-fca126683c63")
+	)
+	(wire
+		(pts
+			(xy 242.57 76.2) (xy 242.57 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e2545a8-14b5-44d7-8dc4-a8fe4a9d22f9")
 	)
 	(wire
 		(pts
@@ -3459,6 +3553,16 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 76.2) (xy 251.46 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cbf2777-9441-440e-b044-d2f261d7178a")
+	)
+	(wire
+		(pts
 			(xy 100.33 36.83) (xy 101.6 36.83)
 		)
 		(stroke
@@ -3486,6 +3590,16 @@
 			(type default)
 		)
 		(uuid "8390ec77-dea5-47ea-b737-6373340807b4")
+	)
+	(wire
+		(pts
+			(xy 269.24 69.85) (xy 269.24 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "854bf68a-9ba1-4840-804b-6a9fe2c47478")
 	)
 	(wire
 		(pts
@@ -3579,6 +3693,26 @@
 	)
 	(wire
 		(pts
+			(xy 255.27 87.63) (xy 218.44 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97511ee0-6513-4b6e-a3e7-3076ef64d7c8")
+	)
+	(wire
+		(pts
+			(xy 255.27 69.85) (xy 255.27 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97c457f2-190a-480d-a34a-e0257159ac22")
+	)
+	(wire
+		(pts
 			(xy 96.52 29.21) (xy 101.6 29.21)
 		)
 		(stroke
@@ -3629,7 +3763,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 41.91) (xy 218.44 45.72)
+			(xy 218.44 41.91) (xy 218.44 50.8)
 		)
 		(stroke
 			(width 0)
@@ -3699,7 +3833,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 76.2) (xy 242.57 76.2)
+			(xy 228.6 81.28) (xy 242.57 81.28)
 		)
 		(stroke
 			(width 0)
@@ -3859,6 +3993,16 @@
 	)
 	(wire
 		(pts
+			(xy 250.19 76.2) (xy 251.46 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bea7344f-02ca-4af8-89a5-f71b6252e421")
+	)
+	(wire
+		(pts
 			(xy 62.23 71.12) (xy 58.42 71.12)
 		)
 		(stroke
@@ -3869,13 +4013,33 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 45.72) (xy 233.68 45.72)
+			(xy 246.38 41.91) (xy 247.65 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c089f99d-f4d8-44fe-a65f-1f58d46b23a2")
+	)
+	(wire
+		(pts
+			(xy 228.6 46.99) (xy 238.76 46.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c0b36d42-bbc3-4695-a595-c7f4f0b1714c")
+	)
+	(wire
+		(pts
+			(xy 251.46 50.8) (xy 218.44 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c162dae3-a03e-4ce0-9903-0e3d876f4b36")
 	)
 	(wire
 		(pts
@@ -3999,7 +4163,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 71.12) (xy 218.44 76.2)
+			(xy 218.44 74.93) (xy 218.44 87.63)
 		)
 		(stroke
 			(width 0)
@@ -4009,7 +4173,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 76.2) (xy 218.44 76.2)
+			(xy 262.89 87.63) (xy 255.27 87.63)
 		)
 		(stroke
 			(width 0)
@@ -4019,7 +4183,7 @@
 	)
 	(wire
 		(pts
-			(xy 212.09 45.72) (xy 218.44 45.72)
+			(xy 261.62 50.8) (xy 251.46 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4036,6 +4200,16 @@
 			(type default)
 		)
 		(uuid "d8c5dbfa-e2d9-44a4-bb3f-672d078e7d53")
+	)
+	(wire
+		(pts
+			(xy 257.81 69.85) (xy 255.27 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9bca25f-bc41-4716-819c-f3152f1c6bf2")
 	)
 	(wire
 		(pts
@@ -4067,6 +4241,16 @@
 		)
 		(uuid "dd6b76cc-230d-445a-ac55-9858c0594a28")
 	)
+	(wire
+		(pts
+			(xy 238.76 46.99) (xy 262.89 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e000a6a1-0860-4d81-b71e-4bf881369e32")
+	)
 	(bus
 		(pts
 			(xy 82.55 35.56) (xy 82.55 38.735)
@@ -4086,6 +4270,16 @@
 			(type default)
 		)
 		(uuid "e2103514-0c12-4f90-bf85-29a835996680")
+	)
+	(wire
+		(pts
+			(xy 247.65 41.91) (xy 247.65 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6f80b43-69fe-430c-aa76-84817bd5f3e4")
 	)
 	(wire
 		(pts
@@ -4286,6 +4480,16 @@
 			(type default)
 		)
 		(uuid "fcf7fdbd-fe66-464c-a9bf-a10b6186175d")
+	)
+	(wire
+		(pts
+			(xy 238.76 41.91) (xy 238.76 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe40c58a-919e-40f8-a6fe-33c8a1484d2c")
 	)
 	(image
 		(at 114.935 160.02)
@@ -5212,7 +5416,25 @@
 			"AAA+9zBAAD0EgAAAAAAAAAAAAwAAAAAAAABwKSO8PgIAAAEAAAAAAAAAAAAAAAAAAAA79z9AAD4E"
 			"gEM6L1dJTkRPV1MvZm9udHNcU2l0a2FWRi50dGYAAAAAAAAAAAAAAAA49zpAAD8EgAAAAAAAAAAA"
 			"BAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAl9zlAAEAEgAAAAAAAAAAAAwAAAAAAAABw"
-			"fSG8PgIAAAEAAAAAAAAAAAAAAAAAAAAi9yRAAEEEgAAAAAAAAAAABAAAAAAAAAABAAAAAAAAAA=="
+			"fSG8PgIAAAEAAAAAAAAAAAAAAAAAAAAi9yRAAEEEgAAAAAAAAAAABAAAAAAAAAABAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
 		)
 	)
 	(label "SCL"
@@ -5472,7 +5694,7 @@
 	)
 	(hierarchical_label "ENC_INF_SCROLL_W2"
 		(shape output)
-		(at 233.68 45.72 0)
+		(at 262.89 46.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5538,23 +5760,23 @@
 	)
 	(hierarchical_label "ENC_INF_SCROLL_W1"
 		(shape output)
-		(at 212.09 45.72 180)
+		(at 261.62 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "9373c9f5-027f-4e5c-8118-f9c600e9dd0a")
 	)
 	(hierarchical_label "ENC_VOLUME_W2"
 		(shape output)
-		(at 208.28 76.2 180)
+		(at 262.89 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "948addb0-794c-4a54-af20-0c86c58b953b")
 	)
@@ -5615,7 +5837,7 @@
 	)
 	(hierarchical_label "ENC_VOLUME_W1"
 		(shape output)
-		(at 242.57 76.2 0)
+		(at 264.16 81.28 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5820,6 +6042,73 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 242.57 41.91 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1e76a21c-1c0c-4e88-bf23-1fc28cb7d3db")
+		(property "Reference" "R20"
+			(at 241.9985 37.0205 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_US"
+			(at 242.2525 39.0525 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 242.824 40.894 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 242.57 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 242.57 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "727e8e5a-0991-4713-9c1a-0b91d60295fd")
+		)
+		(pin "1"
+			(uuid "5ea0c5f2-a342-4ac8-8a47-8f627d0d5a07")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -6348,7 +6637,7 @@
 	)
 	(symbol
 		(lib_id "4ms_Power-symbol:GND")
-		(at 223.52 73.66 0)
+		(at 223.52 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6357,7 +6646,7 @@
 		(fields_autoplaced yes)
 		(uuid "4cb1a643-c91e-4bad-b4b8-ab320b6795db")
 		(property "Reference" "#PWR041"
-			(at 223.52 80.01 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6366,7 +6655,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 223.52 78.74 0)
+			(at 223.52 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6375,7 +6664,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 223.52 73.66 0)
+			(at 223.52 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6384,7 +6673,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 223.52 73.66 0)
+			(at 223.52 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6393,7 +6682,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 223.52 73.66 0)
+			(at 223.52 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6474,6 +6763,72 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "#PWR031")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 251.46 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5692a97c-45b7-4da5-a9fd-4a1a79c3fe5b")
+		(property "Reference" "#PWR056"
+			(at 251.46 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 251.46 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 251.46 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 251.46 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ce5b359c-820d-46f7-bfed-ab6d0b4585a7")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -6830,9 +7185,142 @@
 		)
 	)
 	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 247.65 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5dd36ece-d2f5-4af3-b495-141859d93f77")
+		(property "Reference" "#PWR053"
+			(at 247.65 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 247.65 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8b3f567d-fe00-4884-b0c5-23929060c09a")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 261.62 69.85 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "63ba9867-c0d8-4904-8536-42858c20818f")
+		(property "Reference" "R23"
+			(at 261.366 65.278 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_US"
+			(at 261.62 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 261.874 68.834 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 261.62 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 261.62 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "22d16721-a64f-49dc-b76d-12ed6edfa13c")
+		)
+		(pin "1"
+			(uuid "2461072b-5bdf-4013-a0cd-7bebc6c32e41")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "R23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "Encoder_Rotary_11mm_SPST_DShaft_1")
 		(lib_id "4ms_Switch:Encoder_Rotary_11mm_SPST_DShaft")
-		(at 223.52 66.04 0)
+		(at 223.52 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6841,7 +7329,7 @@
 		(fields_autoplaced yes)
 		(uuid "69178689-92b3-45d5-b354-0ca1938566d7")
 		(property "Reference" "ENC2"
-			(at 232.41 60.96 0)
+			(at 232.41 64.77 0)
 			(effects
 				(font
 					(size 1.143 1.143)
@@ -6850,7 +7338,7 @@
 			)
 		)
 		(property "Value" "ENC_VOLUME"
-			(at 232.41 63.5 0)
+			(at 232.41 67.31 0)
 			(effects
 				(font
 					(size 1.143 1.143)
@@ -6859,7 +7347,7 @@
 			)
 		)
 		(property "Footprint" "4ms_Encoder:ENC_SPST_12mm"
-			(at 224.155 53.34 0)
+			(at 224.155 57.15 0)
 			(effects
 				(font
 					(size 0.508 0.508)
@@ -6868,7 +7356,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 214.63 72.39 0)
+			(at 214.63 76.2 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6877,7 +7365,7 @@
 			)
 		)
 		(property "Description" "Rotary Encoder 11mm with SPST, No Detent, 20mm D-shaft"
-			(at 223.52 66.04 0)
+			(at 223.52 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6886,7 +7374,7 @@
 			)
 		)
 		(property "Manufacturer" "Alpha Taiwan"
-			(at 223.52 78.74 0)
+			(at 223.52 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6895,7 +7383,7 @@
 			)
 		)
 		(property "Part Number" "RE111F-41B3N-20F-20P-N"
-			(at 223.52 81.28 0)
+			(at 223.52 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6904,7 +7392,7 @@
 			)
 		)
 		(property "Specifications" "Rotary Encoder 11mm with SPST, No Detent, 20mm D-shaft"
-			(at 226.06 76.2 0)
+			(at 226.06 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6913,7 +7401,7 @@
 			)
 		)
 		(property "Manufacturer 2" "Bourns"
-			(at 223.52 83.82 0)
+			(at 223.52 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6922,7 +7410,7 @@
 			)
 		)
 		(property "Part Number 2" "PEC11L-4020F-S0020"
-			(at 224.79 86.36 0)
+			(at 224.79 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6931,7 +7419,7 @@
 			)
 		)
 		(property "Production Stage" "C"
-			(at 223.52 66.04 0)
+			(at 223.52 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7800,6 +8288,72 @@
 		)
 	)
 	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 269.24 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a108e376-0475-4684-b32e-a3eca8577b2e")
+		(property "Reference" "#PWR057"
+			(at 269.24 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 269.24 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e2c11ebb-9496-4322-9b83-bdb9536f948b")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR057")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "4ms_Power-symbol:GND")
 		(at 97.79 114.3 0)
 		(unit 1)
@@ -8062,6 +8616,72 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:+5V")
+		(at 265.43 34.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bda1cbea-eb4e-43d6-8d34-555e4c49a2b7")
+		(property "Reference" "#PWR055"
+			(at 265.43 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 265.43 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 265.43 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 265.43 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 265.43 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e25f20e6-4d86-4f06-8aad-68a5ac9f9c07")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -8481,6 +9101,140 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 257.81 35.56 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f36a019d-f93b-45c0-9066-3b3a01aef508")
+		(property "Reference" "R21"
+			(at 257.556 30.988 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_US"
+			(at 257.81 33.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 258.064 34.544 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 257.81 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 257.81 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2050ca30-3143-4a38-a529-369d909825c5")
+		)
+		(pin "1"
+			(uuid "a2ec6add-0f29-40e0-9ced-42befe12d895")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 246.38 76.2 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f65ac22e-e0fc-4da5-ad4f-643ac6cfc62d")
+		(property "Reference" "R22"
+			(at 245.8085 71.3105 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_US"
+			(at 246.0625 73.3425 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.634 75.184 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 246.38 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 246.38 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c63fe6da-1bb4-485a-a40f-d3c70f8e8d4f")
+		)
+		(pin "1"
+			(uuid "850e3053-6213-4f8a-b09b-3f301927ad7c")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "R22")
 					(unit 1)
 				)
 			)
