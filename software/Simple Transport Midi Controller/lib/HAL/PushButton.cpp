@@ -11,23 +11,6 @@ PushButton::PushButton(uint8_t pinAddr, uint32_t dbTime): m_pinAddr(pinAddr), m_
     m_pressRead = false;
 }
 
-PushButton::PushButton(uint32_t dbTime): m_dbTime(dbTime)
-{
-    m_time = millis();
-    m_state = false;
-    m_lastState = false;
-    m_changed = false;
-    m_lastChange = m_time;
-
-    m_pressCount = 0;
-    m_pressRead = false;
-}
-
-bool PushButton::getButtonStatus()
-{
-    return RGBButton->getButtonStatus();
-}
-
 // Code adapted from JC_Button https://github.com/Kuantronic/JC_Button
 
 bool PushButton::read(bool State) 

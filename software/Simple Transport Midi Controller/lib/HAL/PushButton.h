@@ -33,8 +33,6 @@
     PushButton(uint8_t pinAddr, uint32_t dbTime);
     PushButton(uint32_t dbTime);
 
-    bool getButtonStatus();
-
     // Inspired by https://github.com/Kuantronic/JC_Button impl
     // Returns the current debounced button state, true for pressed,
         // false for released. Call this function frequently to ensure

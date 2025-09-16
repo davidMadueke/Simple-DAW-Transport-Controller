@@ -8,101 +8,51 @@
 #include "Arduino.h"
 #include "RotaryEncoder.h"
 
-/*
- * The below state table has, for each state (row), the new state
- * to set based on the next encoder output. From left to right in,
- * the table, the encoder outputs are 00, 01, 10, 11, and the value
- * in that position is the new state to set.
- */
-
-#define R_START 0x0
-
-#ifdef HALF_STEP
-// Use the half-step state table (emits a code at 00 and 11)
-#define R_CCW_BEGIN 0x1
-#define R_CW_BEGIN 0x2
-#define R_START_M 0x3
-#define R_CW_BEGIN_M 0x4
-#define R_CCW_BEGIN_M 0x5
-const unsigned char ttable[6][4] = {
-  // R_START (00)
-  {R_START_M,            R_CW_BEGIN,     R_CCW_BEGIN,  R_START},
-  // R_CCW_BEGIN
-  {R_START_M | DIR_CCW, R_START,        R_CCW_BEGIN,  R_START},
-  // R_CW_BEGIN
-  {R_START_M | DIR_CW,  R_CW_BEGIN,     R_START,      R_START},
-  // R_START_M (11)
-  {R_START_M,            R_CCW_BEGIN_M,  R_CW_BEGIN_M, R_START},
-  // R_CW_BEGIN_M
-  {R_START_M,            R_START_M,      R_CW_BEGIN_M, R_START | DIR_CW},
-  // R_CCW_BEGIN_M
-  {R_START_M,            R_CCW_BEGIN_M,  R_START_M,    R_START | DIR_CCW},
-};
-#else
-// Use the full-step state table (emits a code at 00 only)
-#define R_CW_FINAL 0x1
-#define R_CW_BEGIN 0x2
-#define R_CW_NEXT 0x3
-#define R_CCW_BEGIN 0x4
-#define R_CCW_FINAL 0x5
-#define R_CCW_NEXT 0x6
-
-const unsigned char ttable[7][4] = {
-  // R_START
-  {R_START,    R_CW_BEGIN,  R_CCW_BEGIN, R_START},
-  // R_CW_FINAL
-  {R_CW_NEXT,  R_START,     R_CW_FINAL,  R_START | DIR_CW},
-  // R_CW_BEGIN
-  {R_CW_NEXT,  R_CW_BEGIN,  R_START,     R_START},
-  // R_CW_NEXT
-  {R_CW_NEXT,  R_CW_BEGIN,  R_CW_FINAL,  R_START},
-  // R_CCW_BEGIN
-  {R_CCW_NEXT, R_START,     R_CCW_BEGIN, R_START},
-  // R_CCW_FINAL
-  {R_CCW_NEXT, R_CCW_FINAL, R_START,     R_START | DIR_CCW},
-  // R_CCW_NEXT
-  {R_CCW_NEXT, R_CCW_FINAL, R_CCW_BEGIN, R_START},
-};
-#endif
 
 /*
  * Constructor. Each arg is the pin number for each encoder contact.
  */
-RotaryEncoder::RotaryEncoder(char _pin1, char _pin2) {
+RotaryEncoder::RotaryEncoder(uint8_t enc_pinA, uint8_t enc_pinB, uint8_t sw_pinAddr, uint32_t sw_dbTime) {
   // Assign variables.
-  pin1 = _pin1;
-  pin2 = _pin2;
-  // Initialise state.
-  state = R_START;
-
-  //code for donig pin mode etc is moved to extra function outside of constructor
-  //avoid calling into pinMode and digitalWrite in the constructor call phase
-  //before firmware could be initialized.
+  m_enc_pinA = enc_pinA;
+  m_enc_pinB = enc_pinB;
+  m_sw_pin = sw_pinAddr;
+  m_sw_dbTime = sw_dbTime;
+  encoder = new ESP_Knob(enc_pinA, enc_pinB);
+  sw = new PushButton(m_sw_pin, m_sw_dbTime);
 }
 
-void RotaryEncoder::initPinsAndState() {
-  //this is only needed correct you're working with a rotary encoder
-  //connected *directly* to the microcontroller. here we're just 
-  //abusing the state function, so we actually never want execute this code in the
-  //MCP23017 case.
-  // Set pins to input.
-  pinMode(pin1, INPUT);
-  pinMode(pin2, INPUT);
-#ifdef ENABLE_PULLUPS
-  digitalWrite(pin1, HIGH);
-  digitalWrite(pin2, HIGH);
-#endif
+void RotaryEncoder::begin() {
+  encoder->begin();
 }
 
-unsigned char RotaryEncoder::process() {
-	return process(digitalRead(pin2), digitalRead(pin1));
+void RotaryEncoder::attachLeftEventCallback(std::function<void(int, void *)> callback) {
+  // Attach the given callback function to the left event in the ESP_Knob
+  // object.
+  encoder->attachLeftEventCallback(callback);
 }
 
-unsigned char RotaryEncoder::process(unsigned char pin1State, unsigned char pin2State) {
-	  // Grab state of input pins.
-	  unsigned char pinstate = (pin2State << 1) | pin1State;
-	  // Determine new state from the pins and state table.
-	  state = ttable[state & 0xf][pinstate];
-	  // Return emit bits, ie the generated event.
-	  return state & 0x30;
+void RotaryEncoder::detachLeftEventCallback(void) {
+  // Detach the callback function from the left event in the ESP_Knob object.
+  encoder->detachLeftEventCallback();
+}
+
+void RotaryEncoder::attachRightEventCallback(std::function<void(int, void *)> callback) {
+  // Attach the given callback function to the right event in the ESP_Knob
+  // object.
+  encoder->attachRightEventCallback(callback);
+
+
+}
+
+void RotaryEncoder::detachRightEventCallback(void) {
+  // Detach the callback function from the right event in the ESP_Knob object.
+  encoder->detachRightEventCallback();
+}
+
+bool RotaryEncoder::sw_read(bool State){
+  return sw->read(State);
+}
+bool RotaryEncoder::sw_wasPressed(){
+  return sw->wasPressed();
 }
