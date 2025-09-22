@@ -13,5 +13,4 @@ struct BUTTON_HAL_STATE
 {
     bool buttonPressEvent;
     uint8_t numOfPresses;
-    uint8_t longPress;
-}
+    bool longPress;};struct BUTTON_LED_STATE{    uint8_t Red;    uint8_t Blue;    uint8_t Green;};
