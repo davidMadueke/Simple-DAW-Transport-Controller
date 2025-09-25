@@ -74,3 +74,40 @@
         // count as a multi-press
         void setMultiPressTimer(uint32_t multiPressTimeLimit);
  };
+
+ // a derived class for a "push-on, push-off" (toggle) type button.
+// initial state can be given, default is off (false).
+// inspired by JChristensen's Impl https://github.com/JChristensen/JC_Button
+class ToggleSwitch : public PushButton
+{
+    public:
+
+        // constructor is similar to Button, but includes the initial state for the toggle.
+        ToggleSwitch(uint8_t pin, bool initialState=false, uint32_t dbTime=25)
+            : PushButton(pin, dbTime), m_toggleState(initialState) {}
+
+        // read the button and return its state.
+        // should be called frequently.
+        bool read(bool State)
+        {
+            PushButton::read(State);
+            if (wasPressed()) {
+                m_toggleState = !m_toggleState;
+                m_changed = true;
+            }
+            else {
+                m_changed = false;
+            }
+            return m_toggleState;
+        }
+
+        // has the state changed?
+        bool changed() const {return m_changed;}
+
+        // return the current state
+        bool toggleState() const {return m_toggleState;}
+
+    private:
+        bool m_toggleState;
+        bool m_changed = false;
+};
