@@ -1,5 +1,6 @@
 #include <INF_SCROLL_MIDI_STATE.h>
 #include <VOL_ENCODER_MIDI_STATE.h>
+#include <BLUETOOTH_MIDI_STATE.h>
 
 struct  DISPLAY_STATE {
     INF_SCROLL_MODE INF_SCROLL_MODE;
@@ -10,9 +11,11 @@ struct  DISPLAY_STATE {
     unsigned char VOL_POT_Value;
 
     unsigned char DAW_TEMPO;
-    bool TAP_TEMPO_Event
+    bool TAP_TEMPO_Event;
 
     BATTERY_DISPLAY_STATE BATTERY_Stats;
+
+    BLUETOOTH_MIDI_STATE BLE_Flags;
 };
 
 struct BATTERY_DISPLAY_STATE {
@@ -20,4 +23,4 @@ struct BATTERY_DISPLAY_STATE {
     bool isCharging;
     bool noBatteryConnected;
     float cellPercentage;
-}
+};
