@@ -1,25 +1,29 @@
 #include <Button.h>
 #include "Arduino.h"
 #include <BUTTON_MIDI_STATE.h>
+#include <TAP_TEMPO_STATE.h>
 #include <MIDI_Button.h>
 
 // Object that describes lower level features of the Metronome (Tap Tempo) button
 class MetButton : public MIDI_Button
 {
+    private:
+    TAP_TEMPO_STATE* s_TEMPO;
 public:
     enum ButtonMode {
         METRONOME_OFF,
-        METRONOME_ON
+        METRONOME_ON,
         toLONG_PRESS,
         LONG_PRESS,
         toMETRONOME_OFF
     };
     
     MetButton(uint8_t i2cAddr, uint32_t dbTime, BUTTON_LED_STATE* longPressState, 
-        BUTTON_LED_STATE* singlePressState, BUTTON_LED_STATE* toggleLedState,
+        BUTTON_LED_STATE* singlePressState, BUTTON_LED_STATE* toggleLedState, TAP_TEMPO_STATE* tapTempoState,
         uint8_t timeForLongPress = 100)
         : MIDI_Button(i2cAddr, dbTime) 
         {
+            s_TEMPO = tapTempoState;
             setup_singlePressLedIndicator(singlePressState);
             setup_longPress(longPressState, timeForLongPress);
             setup_toggleLedState(toggleLedState);
@@ -75,6 +79,8 @@ public:
                 else {
                     HAL->longPress = true;
                     HAL->numOfPresses = numOfPresses;
+
+                    s_TEMPO->tapTempoEvent = true;
                     if (!button->isPressed()) {
                         setLedColour(longPressLedState);
                     }
