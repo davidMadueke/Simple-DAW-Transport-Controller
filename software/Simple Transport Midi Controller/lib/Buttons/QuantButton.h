@@ -9,8 +9,8 @@ class QuantButton : public MIDI_Button
 
         QuantButton(
             uint8_t i2cAddr, uint32_t dbTime,
-            BUTTON_MIDI_STATE* singlePressState
-        ) : MIDI_BUTTON(i2cAddr, dbTime)
+            BUTTON_LED_STATE* singlePressState
+        ) : MIDI_Button(i2cAddr, dbTime)
         {
             setup_singlePressLedIndicator(singlePressState);
         };
@@ -20,5 +20,5 @@ class QuantButton : public MIDI_Button
             uint8_t numOfPresses = button->multiPressRead(ISR_State);
             if (numOfPresses > 0){ HAL->buttonPressEvent = true; } // We will need to handle turning off the press event as soon as MIDI msg is compiled
             
-        }
-}
+        };
+};

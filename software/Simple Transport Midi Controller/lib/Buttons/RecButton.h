@@ -13,14 +13,14 @@ class RecButton : public MIDI_Button
                 setup_toggleLedState(toggleLedState);
             }
 
-        void begin() override
+        void begin();
         enum ButtonMode {
             ON,
             OFF
         };
+        ButtonMode MODE = ON;
 
         void stateMachine(bool ISR_State, BUTTON_HAL_STATE* HAL) override {
-            static ButtonMode MODE;
 
             switch (MODE)
             {
@@ -45,5 +45,5 @@ class RecButton : public MIDI_Button
                     break;
             
             }
-        }
-}   
+        };
+} ;  

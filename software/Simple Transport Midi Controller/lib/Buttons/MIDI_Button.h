@@ -75,9 +75,9 @@ public:
         }
     }
 
-    virtual void setTimeForLongPress(uint8_t time_ms) { m_LONG_PRESS_ms = time_ms; }
+    virtual void setTimeForLongPress(uint8_t time_ms) { m_LONG_PRESS_ms = time_ms; };
 
-    virtual uint8_t getTimeForLongPress(){ return m_LONG_PRESS_ms }
+    virtual uint8_t getTimeForLongPress(){ return m_LONG_PRESS_ms; };
 
     // Virtual stateMachine to be overridden
     virtual void stateMachine(bool ISR_State, BUTTON_HAL_STATE* HAL) = 0;
