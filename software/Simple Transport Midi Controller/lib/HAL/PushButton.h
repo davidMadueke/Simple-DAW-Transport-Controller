@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <Wire.h>
-
+#pragma once
 /**
  * @class Button
  * @brief A class that represents a general push button

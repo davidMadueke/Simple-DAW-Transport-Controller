@@ -91,33 +91,33 @@ bool Button::read(bool State)
             
         }
     }
-
-    if (isPressed()) {
-        //  
-        //if(!pressedFor(5))
-        ledOn();
-        Serial.println("Is Pressed");
-    } 
-    else {
-        if(wasReleased())
-        {
-            // check whether previous LED state was not off
-            // if so then revert to the previous LED state
-            // if not then turn the LED off
-            if (
-                (m_prevLedState_red == 0) &&
-                (m_prevLedState_green == 0) &&
-                (m_prevLedState_blue == 0)
-            ) {
-                Serial.println("led off");
-                ledOff();
-            } else {
-                Serial.println("Prev LED state");
-                prevLedState();
-            } 
-            Serial.println("Is not Pressed");
+    if(m_singlePressLedIndicator){
+        if (isPressed()) {
+            //  
+            
+            ledOn();
+            Serial.println("Is Pressed");
         } 
-    } 
+        else {
+            if(wasReleased())
+            {
+                // check whether previous LED state was not off
+                // if so then revert to the previous LED state
+                // if not then turn the LED off
+                if (
+                    (m_prevLedState_red == 0) &&
+                    (m_prevLedState_green == 0) &&
+                    (m_prevLedState_blue == 0)
+                ) {
+                    Serial.println("led off");
+                    ledOff();
+                } else {
+                    Serial.println("Prev LED state");
+                    prevLedState();
+                } 
+                Serial.println("Is not Pressed");
+            } 
+    } }
     m_time = ms;
     return m_state;
 }
