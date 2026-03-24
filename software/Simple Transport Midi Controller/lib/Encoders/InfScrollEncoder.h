@@ -5,6 +5,8 @@ class InfScrollEncoder {
     private:
     RotaryEncoder *encoder;
     uint8_t m_encoderValue; // A value that ranges from 0 to 127 - following midi spec
+    uint8_t m_encoderDirection;
+    
     uint8_t m_ledState_R; // Current state of the red LED
     uint8_t m_ledState_G; // Current state of the green LED
     uint8_t m_ledState_B; // Current state of the blue LED
@@ -24,10 +26,23 @@ class InfScrollEncoder {
     // If no args, simply returns the currently stored Encoder value
     uint8_t getEncoderValue(){ return m_encoderValue; };
 
-    uint8_t processEncoderValue(unsigned char pin1State, unsigned char pin2State){
-        m_encoderValue = encoder->process(pin1State, pin2State);
-        return m_encoderValue;
-    };
+    uint8_t process(unsigned char pin1State, unsigned char pin2State){
+        m_encoderDirection = encoder->process(pin1State, pin2State);
+
+        if(m_encoderDirection == RotaryEncoder::TurnDirection::Clockwise){
+            m_encoderValue += 1;
+        }
+
+        if (m_encoderDirection == RotaryEncoder::TurnDirection::CounterClockwise){
+            m_encoderValue -= 1;
+        }
+
+        // Use the Arduino inbuilt constrain function to ensure that the new encoder value
+        // is between 0 and 127
+        m_encoderValue = constrain(m_encoderValue, 0, 127);
+
+        return m_encoderDirection;
+    }
 
     void ledSetup() {
         pinMode(m_ledPin_R, OUTPUT);
