@@ -3,7 +3,7 @@
 #ifndef PINS_H
 #define PINS_H
 
-// MCP23017 Pin Declarations
+// SX1509 Pin Declarations
 // GPA pins (Port A)
 #define SX1509_PIN0 0
 #define SX1509_PIN1 1
@@ -24,9 +24,8 @@
 #define SX1509_PIN14 14
 #define SX1509_PIN15 15
 
-// Pin declarations for the MCP23017 INTA INTB interrupt pins sent to the ESP32
-#define SX1509_INTA 14
-#define SX1509_INTB 32
+// Pin declarations for the SX1509 GPIO Expander interrupt pins sent to the ESP32
+#define SX1509_INT 5
 
 // Encoders Pin declarations
 #define PIN_ENC_INF_SCROLL_R SX1509_PIN8
@@ -41,15 +40,18 @@
 #define PIN_ENC_VOLUME_SW SX1509_PIN1
 
 // Button Interrupts Pins
-#define PIN_BTN_PLAY_INT 15
-#define PIN_BTN_STOP_INT 33
-#define PIN_REC_INT 27
-#define PIN_BTN_QUANTISE_INT 37
-#define PIN_BTN_METRONOME_INT 3
-#define PIN_BTN_OVERDUB_INT 4
+#define PIN_BTN_PLAY_INT 9
+#define PIN_BTN_STOP_INT 10
+#define PIN_REC_INT 11
+#define PIN_BTN_QUANTISE_INT 12
+#define PIN_BTN_METRONOME_INT 4
+#define PIN_BTN_OVERDUB_INT 5
 
 // TAP Tempo Jack Inputs
 #define PIN_JACK_TAP_TEMPO SX1509_GPB0
+
+// "Power" Button
+#define PIN_SYS_SW_PWR 6
 
 
 #endif /* PINS_H */

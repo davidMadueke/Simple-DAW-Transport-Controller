@@ -4,6 +4,13 @@
 	(generator_version "9.0")
 	(uuid "4f4cdf46-015d-4b38-9cc1-de7a767260f6")
 	(paper "A4")
+	(title_block
+		(title "Simple Midi Transport Controller")
+		(date "2026-04-06")
+		(rev "1")
+		(company "Madueke Systems and Technologies")
+		(comment 1 "Used the combination of the Adafruit Feather ESP32-V2 Dev Board and the SX1509 IO expander")
+	)
 	(lib_symbols)
 	(wire
 		(pts

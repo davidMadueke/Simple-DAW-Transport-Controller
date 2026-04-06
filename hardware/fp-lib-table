@@ -51,4 +51,5 @@
   (lib (name "wemos_d1_mini")(type "KiCad")(uri "${KIPRJMOD}/library/footprints/wemos_d1_mini.pretty")(options "")(descr ""))
   (lib (name "Adafruit_Feather_ESP32_V2")(type "KiCad")(uri "${KIPRJMOD}/library/footprints/Adafruit_Feather_ESP32_V2.pretty")(options "")(descr ""))
   (lib (name "GPIO_Expanders")(type "KiCad")(uri "${KIPRJMOD}/library/footprints/GPIO_Expander.pretty")(options "")(descr ""))
+  (lib (name "Adafruit_Feather_ESP32_S3_with_headers")(type "KiCad")(uri "${KIPRJMOD}/library/footprints/Adafruit_Feather_ESP32_S3_with_headers.pretty")(options "")(descr ""))
 )
