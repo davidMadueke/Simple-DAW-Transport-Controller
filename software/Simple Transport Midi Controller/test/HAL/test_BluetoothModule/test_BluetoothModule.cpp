@@ -7,7 +7,6 @@
 #include "deviceNames.h"
 #include <BluetoothModule.h>
 #include <BLUETOOTH_MIDI_STATE.h>
-#include "test_simple_MIDI_IF_Manager.h"
 
 void setUp(void)
 {}
@@ -20,21 +19,18 @@ void test_led_builtin_pin_number(void)
   TEST_ASSERT_EQUAL(13, LED_BUILTIN);
 }
 
-int BUTTON_BUILTIN = BUTTON; // From ESP32-Feather-V2 Variants
 int LED_SX1509_PIN = 0;
 
 // Initialise BLUETOOTH MIDI STATE
-BLUETOOTH_MIDI_STATE* MIDI_STATE = new BLUETOOTH_MIDI_STATE{false, false, false, false};
+BLUETOOTH_MIDI_STATE* MIDI_STATE = new BLUETOOTH_MIDI_STATE{false, false, false};
 
 BLEMIDI_CREATE_INSTANCE(BT_DEVICE_NAME, MIDI_bt) 
 
 BluetoothModule* test_module = new BluetoothModule(
-    BUTTON_BUILTIN,/*Enable Pin*/
     LED_BUILTIN,
     MIDI_STATE
 );
 
-MIDI_IF* test_midi_interface = new MIDI_IF(test_module, MIDI_STATE);
 
 /*
 // SX1509 I2C address (set by ADDR1 and ADDR0 (00 by default):
@@ -63,8 +59,7 @@ void setup()
     Serial.println("Communication with device succeeded");
 
     pinMode(LED_BUILTIN,OUTPUT);
-    pinMode(BUTTON_BUILTIN,INPUT);
-    attachInterrupt(BUTTON_BUILTIN, BUTTON_BUILTIN_isr, CHANGE);
+
 
     /*
     //i2c_Bus_Scan(Wire);
@@ -84,8 +79,10 @@ void setup()
     );
 
     test_module->createInstance(&BLEMIDI_bt, &MIDI_bt);
-    //test_midi_interface->initialise();
-    /*
+
+    Serial.printf("Starting Midi Begin");
+    MIDI_bt.begin();
+    
     xTaskCreatePinnedToCore(
         ReadCB,           //See FreeRTOS for more multitask info  
         "MIDI-READ",
@@ -94,15 +91,16 @@ void setup()
         1,
         NULL,
         1
-    );*/
+    );
 
     UNITY_BEGIN(); // IMPORTANT LINE!
     RUN_TEST(test_led_builtin_pin_number);
-    UNITY_END(); // stop unit testing
+    //UNITY_END(); // stop unit testing
     //digitalWrite(LED_BUILTIN, HIGH);
     /* io->digitalWrite(LED_SX1509_PIN, HIGH);
     delay(2000);
     io->digitalWrite(LED_SX1509_PIN, HIGH); */
+    Serial.printf("Starting Loop...");
 };
 
 uint8_t numOfPresses = 0;
@@ -110,14 +108,6 @@ unsigned long t0 = millis();
 
 void loop()
 {
-    Serial.printf("Starting Loop...");
-    //MIDI_bt.read();
-    
-    //uint8_t numOfPresses = test_module->buttonStateMachine(BUTTON_BUILTIN_ISR_State);
-
-    //auto MIDI = test_midi_interface->getInterface();
-
-    test_midi_interface->stateMachine(&BLEMIDI_bt, &MIDI_bt);
 
     int printToTerminalTime = 4000 /*ms*/;
     
@@ -126,20 +116,14 @@ void loop()
         t0 = millis();
 
         MIDI_bt.sendNoteOn(60, 100, 1); // note 60, velocity 100 on channel 1
-        //vTaskDelay(250/portTICK_PERIOD_MS);
-        //MIDI_bt.sendNoteOff(60, 0, 1);
     }
     if (MIDI_STATE->enable && (millis() - t0) > 2000)
     {
         t0 = millis();
-
-        //MIDI_bt.sendNoteOn(60, 100, 1); // note 60, velocity 100 on channel 1
-        //vTaskDelay(250/portTICK_PERIOD_MS);
         MIDI_bt.sendNoteOff(60, 0, 1);
     }
 
     if ((millis() - t0) > printToTerminalTime){
-        Serial.printf("Number of presses: %d\n", numOfPresses);
         Serial.printf("Current Bluetooth Midi Enable State: %s\n", 
             (MIDI_STATE->enable ? "true" : "false"));
 
@@ -150,6 +134,12 @@ void loop()
 
 void ReadCB(void *parameter)
 {
-    test_midi_interface->FREERTOS_MIDI_Read_CB(&MIDI_bt);
+    
+    for (;;)
+            {
+                MIDI_bt.read();
+                vTaskDelay(1 / portTICK_PERIOD_MS); //Feed the watchdog of FreeRTOS.
+            
+            }
 }
 

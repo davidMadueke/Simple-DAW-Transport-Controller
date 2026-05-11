@@ -4,8 +4,6 @@
 struct BLUETOOTH_MIDI_STATE
 {
     bool enable;
-    bool scanning; // if true start advertising till a connection is made
-    bool isInitialised;
     bool midi_Rx;
     bool midi_Tx;
 };
