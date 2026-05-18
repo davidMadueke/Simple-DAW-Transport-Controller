@@ -53,5 +53,9 @@
 // "Power" Button
 #define PIN_SYS_SW_PWR 6
 
+// "Serial" RX and TX pins
+#define PIN_SERIAL_RX 38
+#define PIN_SERIAL_TX 39
+
 
 #endif /* PINS_H */
