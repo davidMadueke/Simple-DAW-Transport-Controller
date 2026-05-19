@@ -1,6 +1,7 @@
 #include <MIDI_PACKET.h>
 #include <BLEMIDI_Transport.h>
 #include <hardware/BLEMIDI_ESP32_NimBLE.h>
+#include <BluetoothModule.h>
 #include <MIDI.h>
 #include <pins.h>
 #include <Arduino.h>
@@ -21,13 +22,17 @@ class TransportManager
 {
     private:
 
+    BluetoothModule* btModule = nullptr;
+    
+
+
     public:
     TransportManager();
 
     void begin();
-    void attachBleInterface();
-    void attachUsbInterface();
-    void attachSerialInterface();
+    void attachBleInterface(auto* bleMIDI);
+    void attachUsbInterface(auto* usbMIDI);
+    void attachSerialInterface(auto* serMIDI);
     void read();
 
     void send(MIDI_PACKET);
