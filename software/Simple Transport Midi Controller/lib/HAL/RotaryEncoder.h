@@ -18,50 +18,6 @@ class RotaryEncoder
       /*To initialise both the EC11 Encoder and the Pushbutton (Rotary Encoder Switch)*/
       void begin();
 
-    /**
-   * @brief Attach the knob left callback function
-   * @param callback Callback function to be attached
-   */
-  void attachLeftEventCallback(std::function<void(int, void *)> callback);
-
-  /**
-   * @brief Detach the knob left callback function
-   */
-  void detachLeftEventCallback(void);
-
-  /**
-   * @brief Attach the knob right callback function
-   * @param callback Callback function to be attached
-   */
-  void attachRightEventCallback(std::function<void(int, void *)> callback);
-
-  /**
-   * @brief Detach the knob right callback function
-   */
-  void detachRightEventCallback(void);
-
-  int getCount() {
-    // Return the count value from the ESP_Knob object.
-    // Note: The count value on the ESP_Knob increases by 2 for every click.
-    return encoder->getCountValue();
-  }
-
-  int getPrevEspCount(){
-    return m_PREV_ESP_COUNT;
-  }
-
-  void setPrevEspCount(int count){
-    m_PREV_ESP_COUNT = count;
-  }
-
-  void clearCount() {
-    // Clear the count value in the ESP_Knob object.
-    encoder->clearCountValue();
-  }
-
-  bool sw_wasPressed();
-
-  bool sw_read(bool State);
     
   private:
     ESP_Knob *encoder;

@@ -26,33 +26,3 @@ void RotaryEncoder::begin() {
   encoder->begin();
 }
 
-void RotaryEncoder::attachLeftEventCallback(std::function<void(int, void *)> callback) {
-  // Attach the given callback function to the left event in the ESP_Knob
-  // object.
-  encoder->attachLeftEventCallback(callback);
-}
-
-void RotaryEncoder::detachLeftEventCallback(void) {
-  // Detach the callback function from the left event in the ESP_Knob object.
-  encoder->detachLeftEventCallback();
-}
-
-void RotaryEncoder::attachRightEventCallback(std::function<void(int, void *)> callback) {
-  // Attach the given callback function to the right event in the ESP_Knob
-  // object.
-  encoder->attachRightEventCallback(callback);
-
-
-}
-
-void RotaryEncoder::detachRightEventCallback(void) {
-  // Detach the callback function from the right event in the ESP_Knob object.
-  encoder->detachRightEventCallback();
-}
-
-bool RotaryEncoder::sw_read(bool State){
-  return sw->read(State);
-}
-bool RotaryEncoder::sw_wasPressed(){
-  return sw->wasPressed();
-}
