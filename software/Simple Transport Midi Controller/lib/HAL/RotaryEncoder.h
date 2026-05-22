@@ -1,13 +1,12 @@
-/*
- * Rotary encoder library for Arduino. Adapted from https://github.com/maxgerhardt/rotary-encoder-over-mcp23017.git
- */
 
 #ifndef RotaryEncoder_h
 #define RotaryEncoder_h
 
 #include "Arduino.h"
-#include <ESP_KNOB.h>
+#include <RotaryEncoder.h> // Matthias Hertel Rotary Encoder Lib
 #include <PushButton.h>
+
+typedef RotaryEncoder RE;
 class RotaryEncoder
 {
   public:
@@ -20,7 +19,7 @@ class RotaryEncoder
 
     
   private:
-    ESP_Knob *encoder;
+    RE *encoder;
     PushButton *sw;
 
     int encoderCount;
