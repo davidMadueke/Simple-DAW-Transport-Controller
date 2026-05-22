@@ -3,8 +3,7 @@
 #include <Wire.h>
 #include "deviceNames.h"
 #include <MIDI.h>
-#include <UsbMidiModule.h>
-
+#include <Adafruit_TinyUSB.h>
 
 void setUp(void)
 {}
@@ -17,12 +16,10 @@ void test_led_builtin_pin_number(void)
   TEST_ASSERT_EQUAL(13, LED_BUILTIN);
 }
 
-UsbMidiModule test_module;
-//Adafruit_USBD_MIDI usb_midi = test_module.getInstance();
 
-//Adafruit_USBD_MIDI usb_midi;
+Adafruit_USBD_MIDI usb_midi;
 
-MIDI_CREATE_INSTANCE(Adafruit_USBD_MIDI, test_module.getInstance(), MIDI);
+MIDI_CREATE_INSTANCE(Adafruit_USBD_MIDI, usb_midi, MIDI);
 
 // Variable that holds the current position in the sequence.
 uint32_t position = 0;
@@ -59,8 +56,6 @@ void handleNoteOff(byte channel, byte pitch, byte velocity) {
 }
 
 void setup() {
-
-test_module.begin();
 // Manual begin() is required on core without built-in support e.g. mbed rp2040
   if (!TinyUSBDevice.isInitialized()) {
     TinyUSBDevice.begin(0);
@@ -68,7 +63,7 @@ test_module.begin();
 
   Serial.begin(115200);
 
-  //usb_midi.setStringDescriptor(USB_DEVICE_NAME);
+  usb_midi.setStringDescriptor(USB_DEVICE_NAME);
 
   // Initialize MIDI, and listen to all MIDI channels
   // This will also call usb_midi's begin()
@@ -91,7 +86,7 @@ test_module.begin();
 void loop() {
 
   // not enumerated()/mounted() yet: nothing to do
-  if (!test_module.isMounted()) {
+  if (!TinyUSBDevice.mounted()) {
     return;
   }
 
