@@ -1,9 +1,9 @@
 #include "Arduino.h"
-#include <RotaryEncoder.h>
+#include <HAL_RotaryEncoder.h>
 
 class InfScrollEncoder {
     private:
-    RotaryEncoder *encoder;
+    HAL_RotaryEncoder *encoder;
     uint8_t m_encoderValue; // A value that ranges from 0 to 127 - following midi spec
     uint8_t m_encoderDirection;
     
@@ -18,8 +18,8 @@ class InfScrollEncoder {
     public:
     InfScrollEncoder(uint8_t ledPin_R, uint8_t ledPin_G, uint8_t ledPin_B) 
         : m_ledPin_R(ledPin_R), m_ledPin_G(ledPin_G), m_ledPin_B(ledPin_B) {
-        int dummyPin1, dummyPin2 = 0; // As RotEncoder not connected to mcu directly set up dummy pins for RotaryEncoder class
-        encoder = new RotaryEncoder(dummyPin1, dummyPin2);
+        int dummyPin1, dummyPin2 = 0; // As RotEncoder not connected to mcu directly set up dummy pins for HAL_RotaryEncoder class
+        encoder = new HAL_RotaryEncoder(dummyPin1, dummyPin2);
         m_encoderValue = 0;
     };
 
@@ -29,11 +29,11 @@ class InfScrollEncoder {
     uint8_t process(unsigned char pin1State, unsigned char pin2State){
         m_encoderDirection = encoder->process(pin1State, pin2State);
 
-        if(m_encoderDirection == RotaryEncoder::TurnDirection::Clockwise){
+        if(m_encoderDirection == HAL_RotaryEncoder::TurnDirection::Clockwise){
             m_encoderValue += 1;
         }
 
-        if (m_encoderDirection == RotaryEncoder::TurnDirection::CounterClockwise){
+        if (m_encoderDirection == HAL_RotaryEncoder::TurnDirection::CounterClockwise){
             m_encoderValue -= 1;
         }
 

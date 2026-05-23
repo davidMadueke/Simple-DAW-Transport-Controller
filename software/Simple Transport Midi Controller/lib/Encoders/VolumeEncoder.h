@@ -1,10 +1,10 @@
 #include "Arduino.h"
-#include <RotaryEncoder.h>
+#include <HAL_RotaryEncoder.h>
 
 class VolumeEncoder {
     private:
 
-    RotaryEncoder *encoder;
+    HAL_RotaryEncoder *encoder;
     uint8_t m_encoderValue; // A value that ranges from 0 to 127 - following midi spec
     uint8_t m_encoderRotationScaling = 0; // A constant that will affect how many rotations needed to reach 0 or 127 
 
@@ -12,7 +12,7 @@ class VolumeEncoder {
     VolumeEncoder(uint8_t enc_pinA, uint8_t enc_pinB, 
       uint8_t sw_pinAddr, 
       uint32_t sw_dbTime, uint8_t enc_rotScaling){
-        encoder = new RotaryEncoder(enc_pinA, enc_pinB, 
+        encoder = new HAL_RotaryEncoder(enc_pinA, enc_pinB, 
       sw_pinAddr, sw_dbTime);
         m_encoderValue = 0;
         m_encoderRotationScaling = enc_rotScaling;

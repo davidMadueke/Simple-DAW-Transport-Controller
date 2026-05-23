@@ -6,13 +6,13 @@
  */
 
 #include "Arduino.h"
-#include "RotaryEncoder.h"
+#include "HAL_RotaryEncoder.h"
 
 
 /*
  * Constructor. Each arg is the pin number for each encoder contact.
  */
-RotaryEncoder::RotaryEncoder(uint8_t enc_pinA, uint8_t enc_pinB, uint8_t sw_pinAddr, uint32_t sw_dbTime) {
+HAL_RotaryEncoder::HAL_RotaryEncoder(uint8_t enc_pinA, uint8_t enc_pinB, uint8_t sw_pinAddr, uint32_t sw_dbTime) {
   // Assign variables.
   m_enc_pinA = enc_pinA;
   m_enc_pinB = enc_pinB;
@@ -22,7 +22,7 @@ RotaryEncoder::RotaryEncoder(uint8_t enc_pinA, uint8_t enc_pinB, uint8_t sw_pinA
   sw = new PushButton(m_sw_pin, m_sw_dbTime);
 }
 
-void RotaryEncoder::begin() {
+void HAL_RotaryEncoder::begin() {
   encoder->begin();
 }
 

@@ -6,12 +6,11 @@
 #include <RotaryEncoder.h> // Matthias Hertel Rotary Encoder Lib
 #include <PushButton.h>
 
-typedef RotaryEncoder RE;
-class RotaryEncoder
+class HAL_RotaryEncoder
 {
   public:
  
-    RotaryEncoder(uint8_t enc_pinA, uint8_t enc_pinB, 
+    HAL_RotaryEncoder(uint8_t enc_pinA, uint8_t enc_pinB, 
       uint8_t sw_pinAddr, 
       uint32_t sw_dbTime);
       /*To initialise both the EC11 Encoder and the Pushbutton (Rotary Encoder Switch)*/
@@ -19,7 +18,7 @@ class RotaryEncoder
 
     
   private:
-    RE *encoder;
+    RotaryEncoder* encoder;
     PushButton *sw;
 
     int encoderCount;
