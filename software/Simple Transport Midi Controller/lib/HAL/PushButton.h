@@ -117,7 +117,7 @@ private:
  */
 class ToggleSwitch : public PushButton {
 public:
-    ToggleSwitch(uint8_t pin, bool initialState = false, uint32_t dbTime = 25);
+    ToggleSwitch(const char* name, uint8_t pin, bool initialState = false, uint32_t dbTime = 25);
 
     void begin(PushButtonDelivery delivery = PushButtonDelivery::Polling,
                QueueHandle_t eventQueue = nullptr,

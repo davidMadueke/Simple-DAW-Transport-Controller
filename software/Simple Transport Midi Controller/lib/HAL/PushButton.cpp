@@ -281,8 +281,8 @@ bool PushButton::isLongPressActive() const
 
 // --- ToggleSwitch ---
 
-ToggleSwitch::ToggleSwitch(uint8_t pin, bool initialState, uint32_t dbTime)
-    : PushButton(pin, dbTime), m_toggleState(initialState)
+ToggleSwitch::ToggleSwitch(const char* name, uint8_t pin, bool initialState, uint32_t dbTime)
+    : PushButton(name, pin, dbTime), m_toggleState(initialState)
 {
 }
 

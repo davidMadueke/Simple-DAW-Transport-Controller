@@ -11,7 +11,7 @@ void HAL_RotaryEncoder::begin(){
     attachInterrupt(digitalPinToInterrupt(_pinEnc1), std::bind(&HAL_RotaryEncoder::ISR_Encoder, this), CHANGE);
     attachInterrupt(digitalPinToInterrupt(_pinEnc2), std::bind(&HAL_RotaryEncoder::ISR_Encoder, this), CHANGE);
 
-    _button = new PushButton(_pinBtn, _dbTime);
+    _button = new PushButton("ROT_ENC",_pinBtn, _dbTime);
     _button->begin(PushButtonDelivery::Polling);
 }
 
