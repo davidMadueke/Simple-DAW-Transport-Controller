@@ -7,6 +7,8 @@
 #include <freertos/queue.h>
 #include <freertos/timers.h>
 
+
+using DigitalReadCallback = std::function<bool()>;
 struct PushButtonEvent {
     enum class Type : uint8_t {
         Pressed,
@@ -109,6 +111,18 @@ private:
     TaskHandle_t hdl_buttonTask = nullptr;
     TimerHandle_t m_multiPressTimer = nullptr;
     portMUX_TYPE m_stateMux = portMUX_INITIALIZER_UNLOCKED;
+
+    // Attaching Digital Read Callback functionality
+    public:
+    void attachDigitalReadCallback(DigitalReadCallback callback);
+
+    protected:
+        bool readPressed() {
+            if (m_digitalReadCallback) return m_digitalReadCallback();
+            return digitalRead(_pinBtn) == LOW;
+        }
+    private:
+        DigitalReadCallback m_digitalReadCallback;
 };
 
 /**

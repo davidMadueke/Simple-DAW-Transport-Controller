@@ -55,7 +55,7 @@ void PushButton::processTaskLoop()
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         ulTaskNotifyTake(pdTRUE, debounceDelay);
 
-        bool pressed = (digitalRead(_pinBtn) == LOW);
+        bool pressed = readPressed();
         applyStableState(pressed);
 
 #ifdef BUTTON_DEBUG
