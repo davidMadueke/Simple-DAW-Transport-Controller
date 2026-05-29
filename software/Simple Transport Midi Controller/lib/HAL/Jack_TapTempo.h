@@ -4,25 +4,24 @@
 
 class Jack_TapTempo
 {
-    private:
+private:
     PushButton* button;
 
-    public:
-    Jack_TapTempo(uint8_t pinAddr, uint32_t dbTime){
+public:
+    Jack_TapTempo(uint8_t pinAddr, uint32_t dbTime)
+    {
         button = new PushButton(pinAddr, dbTime);
-    };
+    }
 
-    bool read(uint8_t State) { return button->read(State); };
+    void begin()
+    {
+        button->begin(PushButtonDelivery::Polling);
+    }
 
-    // Method that returns true if pushbutton has been pressed
-    bool wasPressed() { return button->wasPressed(); };
-
-    // Method that takes as input a TAP TEMPO STATE and changes its value depending on if the tap tempo switch has been pressed
-    void polling(TAP_TEMPO_STATE* TEMPO){
-        if (wasPressed())
-        {
-            TEMPO->tapTempoEvent = true; //asserting this flag off will need to be handled someplace else
+    void polling(TAP_TEMPO_STATE* TEMPO)
+    {
+        if (button->consumePressEdge()) {
+            TEMPO->tapTempoEvent = true;
         }
-    };
-
+    }
 };
