@@ -9,14 +9,19 @@ class PowerManager_ESP32
     private:
     SysPowerSwitch *pwr_switch;
 
+    TaskHandle_t hdl_sysPwrTask = nullptr;
+
     public:
     /* Requires a defined GPIO pin for a HW power switch. Note that only RTC IO can be used as a source for external wake
-  source on the ESP 32. 
-  They are pins: 0,2,4,12-15,25-27,32-39.*/
-    PowerManager_ESP32(uint8_t pin_pwr_switch);
+  source on the ESP 32.*/
+    PowerManager_ESP32(uint8_t pin_pwr_switch, uint32_t db_time = 500U);
 
-    // This calls the read member method of the Power Switch Object to get the current state of the Power Switch
-    bool readOnOffButton(bool state_pwr_switch);
+    // The FreeRTOS callback attachd to the FreeRTOS SysPower Task
+    static void vSysPwrTask(void* pvParameters);
+    void processTaskLoop();
+
+    // Initialises the toggle button and sets up its associated FreeRTOS task
+    void begin();
     
     // Method that when called sends the ESP32 to light sleep mode. CPU is paused in action, WI-FI and BT switched off
     void lightSleep();

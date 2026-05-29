@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <PushButton.h>
 /**
  * @class SysPowerSwitch
  * @brief A class that represents the HW Button that controls System Power
@@ -6,27 +7,29 @@
 
  class SysPowerSwitch
  {
+
     private:
-    uint8_t m_pin_number;
-   
-    uint8_t m_dbTime; // debounce time (ms)
-    uint8_t m_state;
+    ToggleSwitch* button;
+    uint8_t _pin;
+    uint32_t _dbTime;
 
-    bool m_lastState;       // previous button state
-    bool m_changed;         // state changed since last read
-    uint32_t m_time;        // time of current state (ms from millis)
-    uint32_t m_lastChange;  // time of last state change (ms)
+public:
+    SysPowerSwitch(uint8_t pin, uint32_t dbTime = 500 /*ms*/) : _pin(pin), _dbTime(dbTime)
+    {
+        button = new ToggleSwitch("PWR", pin, true, dbTime);
+    }
+    
+    void begin()
+    {
+        button->begin(PushButtonDelivery::Polling);
+    }
 
-    public:
-    SysPowerSwitch(uint8_t pin, uint32_t dbTime = 500 /*ms*/);
+    ToggleSwitch* getButton() { return button;};
 
-    // Reads a boolean - presumably from a ISR variable
-    bool read(bool State);
-
-    // Returns true if the button state was changed to On.
+    // Returns true if the power button has been switched off.
     // Does not cause the button to be read.
-    bool isSwitchedOn();
+    bool getToggleState() { return button->toggleState();};
 
-    uint8_t getPin();
+    uint8_t getPin() {return _pin;};
 
  };

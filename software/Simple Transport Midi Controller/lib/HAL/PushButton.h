@@ -130,6 +130,6 @@ protected:
     void onStableStateApplied() override;
 
 private:
-    bool m_toggleState = false;
+    bool m_toggleState;
     bool m_changed = false;
 };
