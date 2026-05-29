@@ -3695,7 +3695,7 @@
 	)
 	(text "For toggling MCU Deep Sleep Mode"
 		(exclude_from_sim no)
-		(at 35.306 50.292 0)
+		(at 33.02 45.974 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3713,9 +3713,9 @@
 		)
 		(uuid "409d64a9-102a-43b1-840b-c0276dbbb70e")
 	)
-	(text "May require SW Input Pullups"
+	(text "Requires SW Input Pullups"
 		(exclude_from_sim no)
-		(at 35.306 53.594 0)
+		(at 33.02 49.276 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3725,7 +3725,7 @@
 	)
 	(text "Has both a USB-C connector and a Stemma-QT Adaptor for solderless connections\n"
 		(exclude_from_sim no)
-		(at 215.9 117.094 0)
+		(at 215.392 120.904 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3771,10 +3771,16 @@
 		(uuid "1e57ec8f-229e-4240-aae1-8a256d390646")
 	)
 	(junction
-		(at 207.01 33.02)
+		(at 207.01 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "24e11037-4d7d-44d9-966b-8deb4c98266f")
+	)
+	(junction
+		(at 205.74 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2d3e16ad-a187-4059-a8b3-ec27e8b82250")
 	)
 	(junction
 		(at 43.18 166.37)
@@ -3831,10 +3837,22 @@
 		(uuid "c5f8b25a-6dac-4c6e-8d73-12013d054b60")
 	)
 	(junction
-		(at 214.63 33.02)
+		(at 214.63 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cc9e69b1-640e-478d-b72d-df5cde763938")
+	)
+	(junction
+		(at 207.01 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d2e66d79-c3d8-4295-a2fd-533682d5009f")
+	)
+	(junction
+		(at 214.63 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d9243e16-7dd8-4778-91e8-ab7ad61302f1")
 	)
 	(no_connect
 		(at 78.74 91.44)
@@ -3987,6 +4005,16 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 31.75) (xy 207.01 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "058486f8-6559-43b9-ad67-1c4bd094065b")
+	)
+	(wire
+		(pts
 			(xy 161.29 135.89) (xy 161.29 140.97)
 		)
 		(stroke
@@ -4107,7 +4135,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 33.02) (xy 217.17 33.02)
+			(xy 214.63 40.64) (xy 217.17 40.64)
 		)
 		(stroke
 			(width 0)
@@ -4134,6 +4162,16 @@
 			(type default)
 		)
 		(uuid "1f5ee278-c1fe-4259-ba57-ea67753726c9")
+	)
+	(wire
+		(pts
+			(xy 214.63 31.75) (xy 214.63 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20329fa3-82c1-4f54-b912-65e9dbdf3d7a")
 	)
 	(wire
 		(pts
@@ -4277,7 +4315,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 107.95) (xy 205.74 109.22)
+			(xy 205.74 107.95) (xy 205.74 113.03)
 		)
 		(stroke
 			(width 0)
@@ -4577,6 +4615,16 @@
 	)
 	(wire
 		(pts
+			(xy 205.74 113.03) (xy 205.74 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74fd7f3d-4e27-43bf-8305-0497c945cf2a")
+	)
+	(wire
+		(pts
 			(xy 160.02 24.13) (xy 160.02 27.94)
 		)
 		(stroke
@@ -4707,7 +4755,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 33.02) (xy 214.63 41.91)
+			(xy 214.63 40.64) (xy 214.63 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4754,6 +4802,16 @@
 			(type default)
 		)
 		(uuid "8c766c5d-1e43-49df-acb0-d98c929625c5")
+	)
+	(wire
+		(pts
+			(xy 214.63 31.75) (xy 218.44 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cf9b07c-7538-490d-aebf-b9eb1db57025")
 	)
 	(wire
 		(pts
@@ -4907,7 +4965,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 33.02) (xy 207.01 33.02)
+			(xy 203.2 39.37) (xy 207.01 39.37)
 		)
 		(stroke
 			(width 0)
@@ -4917,7 +4975,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 33.02) (xy 207.01 41.91)
+			(xy 207.01 39.37) (xy 207.01 41.91)
 		)
 		(stroke
 			(width 0)
@@ -4997,6 +5055,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 113.03) (xy 205.74 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c066f56c-cbbb-4d70-926b-8c47d08aab56")
+	)
+	(wire
+		(pts
 			(xy 157.48 175.26) (xy 157.48 176.53)
 		)
 		(stroke
@@ -5007,7 +5075,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 29.21) (xy 207.01 33.02)
+			(xy 207.01 29.21) (xy 207.01 31.75)
 		)
 		(stroke
 			(width 0)
@@ -5067,7 +5135,7 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 38.1) (xy 200.66 43.18)
+			(xy 200.66 40.64) (xy 200.66 43.18)
 		)
 		(stroke
 			(width 0)
@@ -5117,7 +5185,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 29.21) (xy 214.63 33.02)
+			(xy 214.63 29.21) (xy 214.63 31.75)
 		)
 		(stroke
 			(width 0)
@@ -5264,6 +5332,16 @@
 			(type default)
 		)
 		(uuid "f56e7d92-db62-4561-9eb4-d22549b42def")
+	)
+	(wire
+		(pts
+			(xy 203.2 31.75) (xy 207.01 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f59ec16f-8f37-42e6-a540-12747a4e3f92")
 	)
 	(bus
 		(pts
@@ -5867,7 +5945,7 @@
 	)
 	(symbol
 		(lib_id "4ms_Power-symbol:GND")
-		(at 205.74 109.22 0)
+		(at 205.74 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5876,7 +5954,7 @@
 		(fields_autoplaced yes)
 		(uuid "0520b75a-2b6b-4dae-8a97-63b28a0a21fc")
 		(property "Reference" "#PWR02"
-			(at 205.74 115.57 0)
+			(at 205.74 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5885,7 +5963,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 205.74 114.3 0)
+			(at 205.74 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5894,7 +5972,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 109.22 0)
+			(at 205.74 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5903,7 +5981,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 109.22 0)
+			(at 205.74 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5912,7 +5990,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 205.74 109.22 0)
+			(at 205.74 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7733,7 +7811,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 203.2 33.02 0)
+		(at 203.2 39.37 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7742,7 +7820,7 @@
 		(fields_autoplaced yes)
 		(uuid "415a882c-1cb1-4ba4-a67e-4ee76256f617")
 		(property "Reference" "#FLG01"
-			(at 203.2 31.115 0)
+			(at 203.2 37.465 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7751,7 +7829,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 203.2 27.94 0)
+			(at 203.2 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7760,7 +7838,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 203.2 33.02 0)
+			(at 203.2 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7769,7 +7847,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 203.2 33.02 0)
+			(at 203.2 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7778,7 +7856,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 203.2 33.02 0)
+			(at 203.2 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7865,8 +7943,139 @@
 		)
 	)
 	(symbol
+		(lib_id "4ms_Connector:CAPSENSE_PAD")
+		(at 222.25 31.75 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4731f301-9243-49c6-af6f-afd9ef1fbe75")
+		(property "Reference" "J14"
+			(at 222.25 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 222.25 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "4ms_Connector:CAPSENSE_PAD"
+			(at 232.156 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 222.25 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 222.25 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c61ffa4c-e710-46fc-9074-4cf3b57c19ae")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/701e2ee7-1555-4be3-8e0c-a769d2df25b2"
+					(reference "J14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Connector:CAPSENSE_PAD")
+		(at 199.39 31.75 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4a506f95-414d-4a8c-8bde-48229f78d331")
+		(property "Reference" "J15"
+			(at 199.136 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 199.39 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "4ms_Connector:CAPSENSE_PAD"
+			(at 189.484 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 199.39 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 199.39 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7055c428-75df-4096-b683-5342f2a6347d")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/701e2ee7-1555-4be3-8e0c-a769d2df25b2"
+					(reference "J15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 217.17 33.02 0)
+		(at 217.17 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -7874,7 +8083,7 @@
 		(dnp no)
 		(uuid "501b5e1c-063d-45ec-9e37-ee554db9e9e3")
 		(property "Reference" "#FLG02"
-			(at 217.17 31.115 0)
+			(at 217.17 38.735 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7883,7 +8092,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 223.52 30.988 0)
+			(at 223.52 38.608 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7891,7 +8100,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 217.17 33.02 0)
+			(at 217.17 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7900,7 +8109,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 217.17 33.02 0)
+			(at 217.17 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7909,7 +8118,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 217.17 33.02 0)
+			(at 217.17 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9640,6 +9849,71 @@
 		)
 	)
 	(symbol
+		(lib_id "4ms_Connector:CAPSENSE_PAD")
+		(at 199.39 113.03 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dd1d5472-c9f9-4f98-9e1f-138c87a20c02")
+		(property "Reference" "J16"
+			(at 199.39 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 199.39 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "4ms_Connector:CAPSENSE_PAD"
+			(at 189.484 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 199.39 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 199.39 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "caaff99b-bea1-4345-8f25-2768e071e048")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/701e2ee7-1555-4be3-8e0c-a769d2df25b2"
+					(reference "J16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 31.75 33.02 90)
 		(unit 1)
@@ -9930,7 +10204,7 @@
 	)
 	(symbol
 		(lib_id "4ms_Connector:CAPSENSE_PAD")
-		(at 196.85 38.1 180)
+		(at 196.85 40.64 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9939,7 +10213,7 @@
 		(fields_autoplaced yes)
 		(uuid "f0d8964b-438f-4f0e-88e3-4cf94b9fbe4f")
 		(property "Reference" "J1"
-			(at 196.85 33.02 0)
+			(at 196.85 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9947,7 +10221,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 196.85 35.56 0)
+			(at 196.85 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9956,7 +10230,7 @@
 			)
 		)
 		(property "Footprint" "4ms_Connector:CAPSENSE_PAD"
-			(at 186.944 33.02 0)
+			(at 186.944 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9965,7 +10239,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 196.85 38.1 0)
+			(at 196.85 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9974,7 +10248,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 196.85 38.1 0)
+			(at 196.85 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
