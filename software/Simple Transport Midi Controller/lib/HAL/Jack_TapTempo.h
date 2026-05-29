@@ -8,9 +8,9 @@ private:
     PushButton* button;
 
 public:
-    Jack_TapTempo(uint8_t pinAddr, uint32_t dbTime)
+    Jack_TapTempo(const char* name, uint8_t pinAddr, uint32_t dbTime)
     {
-        button = new PushButton(pinAddr, dbTime);
+        button = new PushButton(name, pinAddr, dbTime);
     }
 
     void begin()

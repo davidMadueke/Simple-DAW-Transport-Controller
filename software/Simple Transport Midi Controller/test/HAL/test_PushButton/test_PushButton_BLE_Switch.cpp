@@ -20,7 +20,7 @@ void test_pushbutton_constructed(void)
 void setup()
 {
     Serial.begin(115200);
-    testButton = new PushButton(TEST_BTN_PIN, 25);
+    testButton = new PushButton("Hello World", TEST_BTN_PIN, 25);
     testButton->setMultiPressTimer(150);
     testButton->setLongPressTime(1000);
     testButton->begin(PushButtonDelivery::Polling);
