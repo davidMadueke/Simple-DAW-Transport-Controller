@@ -41,8 +41,9 @@ public:
                QueueHandle_t eventQueue = nullptr,
                UBaseType_t queueLength = 4);
 
+    void vSetTaskStackSize(uint32_t size) { _taskStackSize = size;}
     static void vButtonTask(void* pvParameters);
-    void IRAM_ATTR ISR_PushButton();
+    void ISR_PushButton();
     void processTaskLoop();
 
     bool isPressed();

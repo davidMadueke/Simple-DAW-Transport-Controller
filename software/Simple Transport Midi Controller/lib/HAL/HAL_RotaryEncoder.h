@@ -14,7 +14,7 @@ class HAL_RotaryEncoder
 
     static void vEncoderTask(void *pvParameters);
 
-    void IRAM_ATTR ISR_Encoder();
+    void ISR_Encoder();
 
     void processTaskLoop();
 
