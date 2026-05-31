@@ -25,7 +25,7 @@
 #define SX1509_PIN15 15
 
 // Pin declarations for the SX1509 GPIO Expander interrupt pins sent to the ESP32
-#define SX1509_INT 5
+#define SX1509_INT T5
 
 // Encoders Pin declarations
 #define PIN_ENC_INF_SCROLL_R SX1509_PIN8
@@ -40,10 +40,10 @@
 #define PIN_ENC_VOLUME_SW SX1509_PIN1
 
 // Button Interrupts Pins
-#define PIN_BTN_PLAY_INT A9
-#define PIN_BTN_STOP_INT A10
-#define PIN_REC_INT A11
-#define PIN_BTN_QUANTISE_INT A12
+#define PIN_BTN_PLAY_INT T9
+#define PIN_BTN_STOP_INT T10
+#define PIN_REC_INT T11
+#define PIN_BTN_QUANTISE_INT T12
 #define PIN_BTN_METRONOME_INT A4
 #define PIN_BTN_OVERDUB_INT A5
 
@@ -51,11 +51,11 @@
 #define PIN_JACK_TAP_TEMPO SX1509_GPB0
 
 // "Power" Button
-#define PIN_SYS_SW_PWR 6
+#define PIN_SYS_SW_PWR T6
 
 // "Serial" RX and TX pins
-#define PIN_SERIAL_RX 38
-#define PIN_SERIAL_TX 39
+#define PIN_SERIAL_RX RX1
+#define PIN_SERIAL_TX TX1
 
 
 #endif /* PINS_H */

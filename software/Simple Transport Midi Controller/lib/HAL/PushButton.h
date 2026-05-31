@@ -2,6 +2,7 @@
 
 #include <Arduino.h>
 #include <FunctionalInterrupt.h>
+#include <functional>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <freertos/queue.h>
@@ -35,7 +36,7 @@ enum class PushButtonDelivery {
  */
 class PushButton {
 public:
-    PushButton(const char* name, uint8_t pinAddr, uint32_t dbTime);
+    PushButton(const char* name, uint8_t pinAddr, uint32_t dbTime, bool isInterruptPin = false);
 
     void begin(PushButtonDelivery delivery = PushButtonDelivery::Polling,
                QueueHandle_t eventQueue = nullptr,
@@ -75,6 +76,9 @@ private:
     void finalizeMultiPress(uint8_t count);
     void postEvent(PushButtonEvent::Type type, uint8_t pressCount = 0);
     static void multiPressTimerCallback(TimerHandle_t timer);
+    static void longPressTimerCallback(TimerHandle_t timer);
+    void longPressDetectedBegin();
+    
 
     bool m_state = false;
     bool m_lastState = false;
@@ -83,39 +87,47 @@ private:
     uint32_t m_lastChange = 0;
 
     uint8_t m_pressCount = 0;
-    bool m_pressRead = false;
+    bool m_pressIsCounted = false;
 
     uint32_t m_multiPressTimeLimit = 150;
     bool m_longSinglePressPending = false;
+    
+   
+    uint32_t m_longPressTimeMs = 500; 
 
-    uint32_t m_longPressTimeMs = 1000;
     bool m_longPressActive = false;
-    bool m_longPressEdgeFired = false;
-    bool m_longPressEdge = false;
+    bool mPOLL_longPressEdgeFired = false;
+    bool mPOLL_longPressEdge = false;
 
     volatile uint8_t m_latchedMultiPress = 0;
-    volatile bool m_multiPressReady = false;
+    volatile bool mPOLL_multiPressReady = false;
 
-    bool m_pressEdge = false;
-    bool m_releaseEdge = false;
+    bool mPOLL_pressEdge = false;
+    bool mPOLL_releaseEdge = false;
 
     PushButtonDelivery m_delivery = PushButtonDelivery::Polling;
     QueueHandle_t m_eventQueue = nullptr;
     bool m_queueOwned = false;
 
+    uint32_t _taskStackSize = 2048;
+
     uint8_t _pinBtn;
     uint32_t _dbTime;
+    bool _isInterruptPin; // Checker to make sure that attached pin isn't a button (requiring pinMode())
 
     // Reserve a fixed-size buffer matching FreeRTOS max task name length (16 bytes)
     char taskName[16]; 
 
     TaskHandle_t hdl_buttonTask = nullptr;
     TimerHandle_t m_multiPressTimer = nullptr;
+    TimerHandle_t m_longPressTimer = nullptr;
     portMUX_TYPE m_stateMux = portMUX_INITIALIZER_UNLOCKED;
 
     // Attaching Digital Read Callback functionality
     public:
-    void attachDigitalReadCallback(DigitalReadCallback callback);
+    void attachDigitalReadCallback(DigitalReadCallback callback){
+        m_digitalReadCallback = std::move(callback);
+    };
 
     protected:
         bool readPressed() {

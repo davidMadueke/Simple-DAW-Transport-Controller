@@ -2,6 +2,8 @@
 #define BUTTON_DEBOUNCE_TIME_MS 25
 #define TOGGLE_SWITCH_DEBOUNCE_TIME_MS 500
 
+#define RGB_BUTTON_FREERTOS_STACK_SIZE  8192
+
 #define PWR_WAKEUP_GPIO GPIO_NUM_6
 
 #define uS_TO_S_FACTOR 1000000ULL  // Conversion factor for micro seconds to seconds
