@@ -2,6 +2,7 @@
 #include <PushButton.h>
 #include <Arduino.h>
 #include <Wire.h>
+#pragma once
 
 /**
  * @class Button
@@ -44,6 +45,7 @@
     bool getButtonStatus();
 
     void setSinglePressLedIndicator(uint8_t r, uint8_t g, uint8_t b);
+    void enableSinglePressIndicator(bool on);
 
     protected:
     void onStableStateApplied() override;

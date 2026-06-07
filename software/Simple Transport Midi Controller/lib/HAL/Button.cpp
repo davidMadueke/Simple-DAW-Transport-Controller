@@ -26,8 +26,8 @@ void Button::ledSetup() {
 void Button::onStableStateApplied() 
 {
     if(!m_singlePressLedIndicator){ return;}
-    if(wasPressed()) { ledOn();}
-    else if (wasReleased()){
+    if(consumePressEdge()) { ledOn();}
+    else if (consumeReleaseEdge()){
         // check whether previous LED state was not off
         // if so then revert to the previous LED state
         // if not then turn the LED off
@@ -36,10 +36,10 @@ void Button::onStableStateApplied()
             (m_prevLedState_green == 0) &&
             (m_prevLedState_blue == 0)
         ) {
-            //Serial.println("led off");
+            Serial.println("led off");
             ledOff();
         } else {
-            //Serial.println("Prev LED state");
+            Serial.println("Prev LED state");
             prevLedState();
         } 
     }
@@ -72,6 +72,7 @@ void Button::prevLedState()
 
 void Button::ledOn()
 {
+    // Use the backend setRGBColor so as for the object to not remember ledIndicator LED State in prevLedState()
     RGBButton->setRGBColor(m_ledIndicator_red, m_ledIndicator_green, m_ledIndicator_blue);
 }
 
@@ -99,4 +100,15 @@ void Button::setSinglePressLedIndicator(uint8_t r, uint8_t g, uint8_t b)
     m_ledIndicator_red = r;
     m_ledIndicator_green = g;
     m_ledIndicator_blue = b;
+}
+
+void Button::enableSinglePressIndicator(bool on)
+{
+    m_singlePressLedIndicator = on;
+    // if (!on) {
+    //     // Make sure we don't leave the indicator colour latched on.
+    //     // Revert to the last real (non-indicator) colour, or off.
+    //     consumePressEdge();      // drop any pending edge so it can't re-light
+    //     consumeReleaseEdge();
+    // }
 }

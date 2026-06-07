@@ -25,7 +25,7 @@ void PushButton::begin(PushButtonDelivery delivery,
         }
     }
 
-    if (!_isInterruptPin) { pinMode(_pinBtn, INPUT_PULLUP);}
+    if (!_isInterruptPin) {Serial.println("Pulled it Up"); pinMode(_pinBtn, INPUT_PULLUP);}
     
 
     m_multiPressTimer = xTimerCreate(
@@ -43,7 +43,7 @@ void PushButton::begin(PushButtonDelivery delivery,
         longPressTimerCallback);
 
     xTaskCreatePinnedToCore(
-        vButtonTask, this->taskName, _taskStackSize, this, 3, &hdl_buttonTask, 1);
+        vButtonTask, this->taskName, _taskStackSize, this, PUSH_BUTTON_FREERTOS_PRIORITY, &hdl_buttonTask, 1);
 
     attachInterrupt(
         digitalPinToInterrupt(_pinBtn),
@@ -146,6 +146,9 @@ void PushButton::applyStableState(bool pressed)
             mPOLL_releaseEdge = true;
             postEvent(PushButtonEvent::Type::Released);
 
+            // Emit a regular Press event (Pressed + Released) - for non press edge applications
+            if (!mPOLL_longPressEdgeFired) { postEvent(PushButtonEvent::Type::RegularPressComplete);}
+
             if (ms - m_lastChange >= m_multiPressTimeLimit && !mPOLL_longPressEdgeFired) {
                 m_pressCount = 0;
                 if (m_multiPressTimer != nullptr) {
@@ -214,8 +217,32 @@ void PushButton::postEvent(PushButtonEvent::Type type, uint8_t pressCount)
         return;
     }
 
+    if (type == PushButtonEvent::Type::Pressed)  {Serial.println("On"); digitalLedWrite(HIGH);}
+    else if (type == PushButtonEvent::Type::Released){Serial.println("Off"); digitalLedWrite(LOW);}
+
     PushButtonEvent event{type, pressCount};
-    xQueueSend(m_eventQueue, &event, 0);
+    xQueueSend(m_eventQueue, (void *)&event, 0);
+}
+
+void PushButton::postEventPublic(PushButtonEvent::Type type, uint8_t pressCount)
+{
+    switch (type) {
+            case PushButtonEvent::Type::Pressed:
+                mPOLL_pressEdge = true;
+                postEvent(PushButtonEvent::Type::Pressed, pressCount);
+                break;
+            case PushButtonEvent::Type::Released:
+                mPOLL_releaseEdge = true;
+                postEvent(PushButtonEvent::Type::Released, pressCount);
+                break;
+
+            case PushButtonEvent::Type::MultiPressComplete:
+                finalizeMultiPress(pressCount);
+                break;
+
+            default:
+                break;
+        }
 }
 
 bool PushButton::isPressed()
@@ -280,7 +307,7 @@ bool PushButton::consumeLongPressEdge()
     return true;
 }
 
-uint8_t PushButton::getAndClearMultiPress()
+uint8_t PushButton::consumeMultiPress()
 {
     uint8_t count = 0;
     portENTER_CRITICAL(&m_stateMux);
@@ -304,7 +331,7 @@ void PushButton::setMultiPressTimer(uint32_t multiPressTimeLimit)
     }
 }
 
-void PushButton::setLongPressTime(uint32_t ms)
+void PushButton::setLongPressTimer(uint32_t ms)
 {
     m_longPressTimeMs = ms;
 

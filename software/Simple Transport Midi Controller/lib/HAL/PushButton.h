@@ -8,12 +8,18 @@
 #include <freertos/queue.h>
 #include <freertos/timers.h>
 
+#ifndef PUSH_BUTTON_FREERTOS_PRIORITY
+    #define PUSH_BUTTON_FREERTOS_PRIORITY 4
+#endif
+
 
 using DigitalReadCallback = std::function<bool()>;
+using LedWriteCallback = std::function<void(bool)>;
 struct PushButtonEvent {
     enum class Type : uint8_t {
         Pressed,
         Released,
+        RegularPressComplete,
         MultiPressComplete,
         LongPress,
         LongPressEnd
@@ -42,6 +48,8 @@ public:
                QueueHandle_t eventQueue = nullptr,
                UBaseType_t queueLength = 4);
 
+    void setButtonMode(uint8_t mode) {_buttonPinMode = mode;}
+
     void vSetTaskStackSize(uint32_t size) { _taskStackSize = size;}
     static void vButtonTask(void* pvParameters);
     void ISR_PushButton();
@@ -58,14 +66,21 @@ public:
     bool consumePressEdge();
     bool consumeReleaseEdge();
 
-    uint8_t getAndClearMultiPress();
+    uint8_t consumeMultiPress();
     void setMultiPressTimer(uint32_t multiPressTimeLimit);
 
-    void setLongPressTime(uint32_t ms);
+    void setLongPressTimer(uint32_t ms);
     uint32_t getLongPressTime() const;
 
     bool consumeLongPressEdge();
     bool isLongPressActive() const;
+    
+    
+
+    void postEventPublic(PushButtonEvent::Type type, uint8_t pressCount = 0);
+
+    QueueHandle_t getButtonEventQueueHandle() {return m_eventQueue;};
+    PushButtonDelivery getPushButtonDelivery() {return m_delivery;};
 
 protected:
         // A callback function that will be applied after the stable state has been found
@@ -112,6 +127,7 @@ private:
     uint32_t _taskStackSize = 2048;
 
     uint8_t _pinBtn;
+    uint8_t _buttonPinMode; // Same as arduino input mode (can either be INPUT, INPUT_PULLUP or INPUT_PULLDOWN)
     uint32_t _dbTime;
     bool _isInterruptPin; // Checker to make sure that attached pin isn't a button (requiring pinMode())
 
@@ -129,13 +145,23 @@ private:
         m_digitalReadCallback = std::move(callback);
     };
 
+    void attachLedWriteCallback(LedWriteCallback callback){
+        m_ledWriteCallback = std::move(callback);
+    };
+
     protected:
         bool readPressed() {
             if (m_digitalReadCallback) return m_digitalReadCallback();
             return digitalRead(_pinBtn) == LOW;
         }
+
+        void digitalLedWrite(bool onOff){
+            if (m_ledWriteCallback) return m_ledWriteCallback(onOff);
+            else return;
+        }
     private:
         DigitalReadCallback m_digitalReadCallback;
+        LedWriteCallback m_ledWriteCallback;
 };
 
 /**
