@@ -47,7 +47,7 @@ void setup()
     testButton->setSinglePressLedIndicator(128, 0, 128);
     testButton->setBrightness(15);
     testButton->setMultiPressTimer(150);
-    testButton->setLongPressTime(LONG_PRESS_MS);
+    testButton->setLongPressTimer(LONG_PRESS_MS);
     
 
     UNITY_BEGIN();
@@ -95,7 +95,7 @@ void longPressTest()
 }
 
 void multiPressTest(){
-    uint8_t numOfPresses = testButton->getAndClearMultiPress();
+    uint8_t numOfPresses = testButton->consumeMultiPress();
     switch (numOfPresses) {
         case 1:
             Serial.println("single press!");
