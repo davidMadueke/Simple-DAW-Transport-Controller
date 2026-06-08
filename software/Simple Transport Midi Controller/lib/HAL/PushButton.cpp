@@ -213,12 +213,12 @@ void PushButton::finalizeMultiPress(uint8_t count)
 
 void PushButton::postEvent(PushButtonEvent::Type type, uint8_t pressCount)
 {
+    if (type == PushButtonEvent::Type::Pressed)  {digitalLedWrite(HIGH);}
+    else if (type == PushButtonEvent::Type::Released){digitalLedWrite(LOW);}
+    
     if (m_delivery != PushButtonDelivery::Queue || m_eventQueue == nullptr) {
         return;
     }
-
-    if (type == PushButtonEvent::Type::Pressed)  {Serial.println("On"); digitalLedWrite(HIGH);}
-    else if (type == PushButtonEvent::Type::Released){Serial.println("Off"); digitalLedWrite(LOW);}
 
     PushButtonEvent event{type, pressCount};
     xQueueSend(m_eventQueue, (void *)&event, 0);
