@@ -2440,6 +2440,16 @@
 		)
 		(uuid "144034c3-a19f-4344-ad2d-771570832621")
 	)
+	(text "Reset Pulled High\nDC connected to uController\nCS Pulled low (SPI OLED Display intended to be the only SPI slave)"
+		(exclude_from_sim no)
+		(at 236.474 124.968 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "22877ab4-9413-4126-b155-d91eac2b3142")
+	)
 	(text "Following Elegoo Pinout for their OLED Display\n"
 		(exclude_from_sim no)
 		(at 119.126 125.984 0)
