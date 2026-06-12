@@ -3,47 +3,59 @@
 #include <BUTTON_MIDI_STATE.h>
 #include <MIDI_Button.h>
 
-
 class RecButton : public MIDI_Button
 {
-    public:
-        RecButton(uint8_t i2cAddr, uint32_t dbTime, 
-            BUTTON_LED_STATE* toggleLedState) : MIDI_Button(i2cAddr, dbTime) 
-            {
-                setup_toggleLedState(toggleLedState);
-            }
+public:
+    enum ButtonMode {
+        OFF,
+        ON
+    };
 
-        void begin();
-        enum ButtonMode {
-            ON,
-            OFF
-        };
-        ButtonMode MODE = ON;
+    ButtonMode MODE = OFF;
 
-        void stateMachine(bool ISR_State, BUTTON_HAL_STATE* HAL) override {
+    RecButton(uint8_t i2cAddr, uint8_t interruptPin, uint32_t dbTime,
+        BUTTON_LED_STATE* toggleLedState) : MIDI_Button(i2cAddr, interruptPin, dbTime)
+        {
+            m_midiStateName = BUTTON_MIDI_STATE::Name::REC;
+            setup_toggleLedState(toggleLedState);
+            LedStateMachine(MODE);
+        }
 
-            switch (MODE)
-            {
+    void LedStateMachine(ButtonMode mode) {
+        switch (mode) {
+            case OFF:
+                toggleLedOff();
+                break;
+            case ON:
+                toggleLedOn();
+                break;
+        }
+    }
+
+    void stateMachine(PushButtonEvent* event) override {
+        if (event != nullptr) {
+
+            ButtonMode nextMode = MODE;
+            switch (MODE) {
                 case OFF:
-                    ledOff();
-
-                    if (button->read(ISR_State)){
-                        HAL->buttonPressEvent = true;
-                        HAL->numOfPresses = 1;
-                        MODE = ON;
+                    if (event->type == PushButtonEvent::Type::RegularPressComplete) {
+                        nextMode = ON;
+                        vPostEvent(m_midiStateName, BUTTON_MIDI_STATE::Type::RegularPress, 1);
                     }
                     break;
-                    
-                case ON:
-                    toggleLedOn();
 
-                    if (button->read(ISR_State)){
-                            HAL->buttonPressEvent = true;
-                            HAL->numOfPresses = 1;
-                            MODE = OFF;
-                        }
+                case ON:
+                    if (event->type == PushButtonEvent::Type::RegularPressComplete) {
+                        nextMode = OFF;
+                        vPostEvent(m_midiStateName, BUTTON_MIDI_STATE::Type::RegularPress, 1);
+                    }
                     break;
-            
             }
-        };
-} ;  
+
+            if (nextMode != MODE) {
+                MODE = nextMode;
+                LedStateMachine(MODE);
+            }
+        }
+    }
+};

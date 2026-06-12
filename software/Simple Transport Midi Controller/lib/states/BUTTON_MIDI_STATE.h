@@ -15,6 +15,11 @@
 struct BUTTON_MIDI_STATE
 {
     enum class Name : uint8_t {
+        PLAY,
+        STOP,
+        REC,
+        QUANT,
+        OVERDUB,
         METRONOME,
         TAP_TEMPO,
     } name;
