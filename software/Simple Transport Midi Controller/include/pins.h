@@ -1,7 +1,5 @@
 #pragma once
-
-#ifndef PINS_H
-#define PINS_H
+#include <U8g2lib.h>
 
 // SX1509 Pin Declarations
 // GPA pins (Port A)
@@ -57,5 +55,9 @@
 #define PIN_SERIAL_RX RX1
 #define PIN_SERIAL_TX TX1
 
-
-#endif /* PINS_H */
+// SPI OLED Display Pins
+#define PIN_OLED_SPI_SCK SCK
+#define PIN_OLED_SPI_SDA MOSI
+#define PIN_OLED_SPI_RES U8X8_PIN_NONE // RES tieded to MCU RESET
+#define PIN_OLED_SPI_CS U8X8_PIN_NONE // CS grounded (We expect OLED display is the only SPI slave on bus)
+#define PIN_OLED_SPI_DC T13
