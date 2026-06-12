@@ -3777,6 +3777,12 @@
 		(uuid "24e11037-4d7d-44d9-966b-8deb4c98266f")
 	)
 	(junction
+		(at 220.98 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "26dd1c8e-2067-40bb-b111-4cc5411d4590")
+	)
+	(junction
 		(at 205.74 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3889,10 +3895,6 @@
 	(no_connect
 		(at 78.74 101.6)
 		(uuid "b7a83910-39fb-425e-9784-c010c2abb94f")
-	)
-	(no_connect
-		(at 193.04 68.58)
-		(uuid "bf0b02b6-0075-4d3f-982d-9108af88cc3b")
 	)
 	(no_connect
 		(at 78.74 68.58)
@@ -4092,6 +4094,16 @@
 			(type default)
 		)
 		(uuid "0e13ce3e-1a7d-40ed-a58c-a9d267b8b191")
+	)
+	(wire
+		(pts
+			(xy 189.23 68.58) (xy 193.04 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e69e38a-4b95-4c71-b794-718a5f09fd24")
 	)
 	(bus
 		(pts
@@ -4915,6 +4927,16 @@
 	)
 	(wire
 		(pts
+			(xy 220.98 53.34) (xy 223.52 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a7470ff-1246-437b-9119-3f092d9ae291")
+	)
+	(wire
+		(pts
 			(xy 60.96 171.45) (xy 83.82 171.45)
 		)
 		(stroke
@@ -5045,7 +5067,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 52.07) (xy 222.25 53.34)
+			(xy 220.98 49.53) (xy 220.98 53.34)
 		)
 		(stroke
 			(width 0)
@@ -5325,7 +5347,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 53.34) (xy 222.25 53.34)
+			(xy 218.44 53.34) (xy 220.98 53.34)
 		)
 		(stroke
 			(width 0)
@@ -5898,6 +5920,28 @@
 			(justify right)
 		)
 		(uuid "948ce0e3-95ec-4205-aa10-5b4094f26605")
+	)
+	(hierarchical_label "DC_SPI_OLED_DISPLAY"
+		(shape output)
+		(at 189.23 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a0f71c6b-4436-49af-9f02-c24b9d4d2998")
+	)
+	(hierarchical_label "RES_SPI_OLED_DISPLAY"
+		(shape output)
+		(at 223.52 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b15d475f-5695-46bd-88d3-6fac5dd8f422")
 	)
 	(hierarchical_label "ENC_INF-SCROLL_SW"
 		(shape bidirectional)
@@ -6702,7 +6746,7 @@
 	)
 	(symbol
 		(lib_id "4ms_Power-symbol:+5V")
-		(at 222.25 52.07 0)
+		(at 220.98 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6711,7 +6755,7 @@
 		(fields_autoplaced yes)
 		(uuid "35325ce0-56c3-49a4-b95c-a02aac3d88ab")
 		(property "Reference" "#PWR04"
-			(at 222.25 55.88 0)
+			(at 220.98 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6720,7 +6764,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 222.25 46.99 0)
+			(at 220.98 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6728,7 +6772,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 222.25 52.07 0)
+			(at 220.98 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6737,7 +6781,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 222.25 52.07 0)
+			(at 220.98 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6746,7 +6790,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 222.25 52.07 0)
+			(at 220.98 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)

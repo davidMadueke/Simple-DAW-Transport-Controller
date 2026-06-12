@@ -2440,7 +2440,7 @@
 		)
 		(uuid "144034c3-a19f-4344-ad2d-771570832621")
 	)
-	(text "Reset Pulled High\nDC connected to uController\nCS Pulled low (SPI OLED Display intended to be the only SPI slave)"
+	(text "Reset connected to uController RESET\nDC connected to uController\nCS Pulled low (SPI OLED Display intended to be the only SPI slave)"
 		(exclude_from_sim no)
 		(at 236.474 124.968 0)
 		(effects
