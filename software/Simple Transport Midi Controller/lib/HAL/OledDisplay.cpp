@@ -1,14 +1,14 @@
 #include "OledDisplay.h"
 
 
-void OledDisplay::setupSPI(uint8_t chipSelectPin, uint8_t dcPin, uint8_t reset){
+void OledDisplay::setupSPI_4Wire(uint8_t chipSelectPin, uint8_t dcPin, uint8_t reset){
     //uint8_t rstPin = (reset != NULL) ? reset : (uint8_t)U8X8_PIN_NONE;
-    _driver = u8g2Driver(U8G2_R0, /* cs=*/ chipSelectPin, /* dc=*/ dcPin, /* reset=*/ ((reset != NULL) ? reset : U8X8_PIN_NONE));
+    _driver = new u8g2Driver(U8G2_R0, /* cs=*/ chipSelectPin, /* dc=*/ dcPin, /* reset=*/ reset);
 }
 
 void OledDisplay::begin(Manager* manager){
     _manager = manager;
-    _driver.begin();
+    _driver->begin();
     xTaskCreatePinnedToCore(
         vOledDisplayTask, 
         "OledTask",
@@ -31,14 +31,13 @@ void OledDisplay::renderTaskLoop() {
             do {
                 _manager->render(_driver);         // draw from current state
             } while (_driver.nextPage());
-            vTaskDelay(pdMS_TO_TICKS(33));        // ~30 fps
+            vTaskDelay(pdMS_TO_TICKS(1000));        // ~30 fps
         #elif defined(OLED_DISPLAY_BUFFER_MODE_FULL)
             _manager->processPendingActions();   // drain queue → reducer
-            _driver.firstPage();
-            do {
-                _manager->render(_driver);         // draw from current state
-            } while (_driver.nextPage());
-            vTaskDelay(pdMS_TO_TICKS(33));        // ~30 fps
+            _driver->clearBuffer();
+            _manager->render(*_driver);         // draw from current state, (dereference _driver as render expects ref to driver)
+            _driver->sendBuffer();
+            vTaskDelay(pdMS_TO_TICKS(100));        // ~30 fps
         #endif
     }
 }

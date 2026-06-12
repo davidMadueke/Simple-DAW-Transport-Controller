@@ -21,15 +21,15 @@
 class OledDisplay
 {
     private:
-    u8g2Driver _driver;
+    u8g2Driver* _driver = nullptr;
     Manager* _manager = nullptr;
     TaskHandle_t hdl_oledTask = nullptr;
 
     void renderTaskLoop();
 
     public:
-    void setupSPI(uint8_t chipSelectPin, uint8_t dcPin, uint8_t reset = NULL);
-
+    void setupSPI_4Wire(uint8_t chipSelectPin, uint8_t dcPin, uint8_t reset = U8X8_PIN_NONE);
+    
     // Begin fn to initialise the task 
     void begin(Manager* manager);
 
