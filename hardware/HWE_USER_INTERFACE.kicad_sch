@@ -12,6 +12,94 @@
 		(comment 1 "Used the combination of the Adafruit Feather ESP32-V2 Dev Board and the SX1509 IO expander")
 	)
 	(lib_symbols
+		(symbol "4ms_Connector:CAPSENSE_PAD"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at -1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "4ms_Connector:CAPSENSE_PAD"
+				(at 9.906 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CAPSENSE_PAD_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CAPSENSE_PAD_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "CS"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "4ms_Power-symbol:+5V"
 			(power)
 			(pin_names
@@ -2523,10 +2611,6 @@
 		(color 0 0 0 0)
 		(uuid "e74fc03b-7796-4924-b87d-bfd4c01299bd")
 	)
-	(no_connect
-		(at 181.61 96.52)
-		(uuid "9e6728dc-6bbe-41ff-9d2b-b5a65fda5941")
-	)
 	(bus_entry
 		(at 170.18 99.06)
 		(size 2.54 -2.54)
@@ -3350,7 +3434,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 99.06) (xy 228.6 99.06)
+			(xy 208.28 99.06) (xy 228.6 99.06)
 		)
 		(stroke
 			(width 0)
@@ -3890,7 +3974,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 92.71) (xy 189.23 99.06)
+			(xy 208.28 92.71) (xy 208.28 99.06)
 		)
 		(stroke
 			(width 0)
@@ -7743,7 +7827,7 @@
 	)
 	(symbol
 		(lib_id "4ms_Power-symbol:+5V")
-		(at 189.23 92.71 0)
+		(at 208.28 92.71 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7752,7 +7836,7 @@
 		(fields_autoplaced yes)
 		(uuid "7d388f78-9b6c-4ec3-9036-faf6b6f7e4bc")
 		(property "Reference" "#PWR048"
-			(at 189.23 96.52 0)
+			(at 208.28 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7761,7 +7845,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 189.23 87.63 0)
+			(at 208.28 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7769,7 +7853,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 92.71 0)
+			(at 208.28 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7778,7 +7862,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 189.23 92.71 0)
+			(at 208.28 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7787,7 +7871,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 189.23 92.71 0)
+			(at 208.28 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8638,6 +8722,71 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Connector:CAPSENSE_PAD")
+		(at 185.42 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b9550429-f44c-4d07-b21f-bf71691b99a0")
+		(property "Reference" "J18"
+			(at 188.722 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 185.42 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "4ms_Connector:CAPSENSE_PAD"
+			(at 195.326 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 185.42 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "42e74b9a-7b40-4a7f-8d1f-f38f0165c482")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "J18")
 					(unit 1)
 				)
 			)

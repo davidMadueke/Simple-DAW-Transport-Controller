@@ -3869,10 +3869,6 @@
 		(uuid "1fd77e13-d9f6-40b2-adaf-3e9f9a7119e4")
 	)
 	(no_connect
-		(at 193.04 71.12)
-		(uuid "408fd3be-53c1-4a9d-a91f-ca62a533b12f")
-	)
-	(no_connect
 		(at 78.74 99.06)
 		(uuid "64decc0e-06cd-423d-8ec3-a529071530c6")
 	)
@@ -4267,7 +4263,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 60.96) (xy 232.41 60.96)
+			(xy 276.86 67.31) (xy 279.4 67.31)
 		)
 		(stroke
 			(width 0)
@@ -4467,6 +4463,16 @@
 	)
 	(wire
 		(pts
+			(xy 279.4 76.2) (xy 279.4 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5bc1a7ba-7686-481f-b595-2f3fd8dd68c0")
+	)
+	(wire
+		(pts
 			(xy 38.1 137.16) (xy 38.1 142.24)
 		)
 		(stroke
@@ -4507,6 +4513,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 72.39) (xy 191.77 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "649763af-a2a6-45ad-8a30-2d21b623ca97")
+	)
+	(wire
+		(pts
 			(xy 119.38 81.28) (xy 125.73 81.28)
 		)
 		(stroke
@@ -4517,7 +4533,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 60.96) (xy 232.41 62.23)
+			(xy 279.4 67.31) (xy 279.4 68.58)
 		)
 		(stroke
 			(width 0)
@@ -4734,6 +4750,16 @@
 			(type default)
 		)
 		(uuid "8181ca14-582e-4b57-bd4a-17cfe4bd820b")
+	)
+	(wire
+		(pts
+			(xy 191.77 72.39) (xy 191.77 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81910627-fdc6-42ca-af94-cd4d6b4dc462")
 	)
 	(bus
 		(pts
@@ -5067,6 +5093,16 @@
 	)
 	(wire
 		(pts
+			(xy 264.16 76.2) (xy 269.24 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be8b589c-47ab-46db-aa96-dca6537d7c10")
+	)
+	(wire
+		(pts
 			(xy 220.98 49.53) (xy 220.98 53.34)
 		)
 		(stroke
@@ -5104,16 +5140,6 @@
 			(type default)
 		)
 		(uuid "c492fb02-a4b3-400f-8642-3a6dd0ecfee4")
-	)
-	(wire
-		(pts
-			(xy 218.44 60.96) (xy 222.25 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c567545e-4e86-4422-ba14-16774cf8936c")
 	)
 	(wire
 		(pts
@@ -5164,6 +5190,16 @@
 			(type default)
 		)
 		(uuid "d21e4ee5-8576-4920-85f0-8bdd73145757")
+	)
+	(wire
+		(pts
+			(xy 218.44 60.96) (xy 219.71 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d54b497b-8b80-47d8-974f-41b330cfc9ed")
 	)
 	(wire
 		(pts
@@ -5255,6 +5291,16 @@
 		)
 		(uuid "e6e030c7-e09a-46a2-a22b-7d8a8a71dc4c")
 	)
+	(wire
+		(pts
+			(xy 264.16 67.31) (xy 269.24 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6e933a2-a25b-4952-b83c-4a10b7d10864")
+	)
 	(bus
 		(pts
 			(xy 176.53 74.93) (xy 179.07 74.93)
@@ -5314,6 +5360,16 @@
 			(type default)
 		)
 		(uuid "eb9ac77a-43c9-465c-b948-643b61d26a0f")
+	)
+	(wire
+		(pts
+			(xy 191.77 71.12) (xy 193.04 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec11d3d9-9fc5-4897-ba26-42768ae7ee0a")
 	)
 	(bus
 		(pts
@@ -5394,6 +5450,16 @@
 			(type default)
 		)
 		(uuid "f8fc2447-fd6c-43d8-bba2-03602dc0ecb2")
+	)
+	(wire
+		(pts
+			(xy 276.86 76.2) (xy 279.4 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa9dddf8-44e6-431c-8e85-fae38147dd58")
 	)
 	(wire
 		(pts
@@ -5515,6 +5581,16 @@
 		)
 		(uuid "25df6287-b287-4d98-9529-a49924ff3098")
 	)
+	(label "MCU_TXD0"
+		(at 264.16 76.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "36f74c52-3536-4591-b8fe-73b79e1286c7")
+	)
 	(label "SX1509_VCC2"
 		(at 21.59 142.24 0)
 		(effects
@@ -5575,6 +5651,16 @@
 		)
 		(uuid "765984d0-f1b3-4c5c-b9b5-b231f8700214")
 	)
+	(label "MCU_TXD0"
+		(at 180.34 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "83c67aee-0c60-49a3-9713-20753bec9130")
+	)
 	(label "SX1509_I2C_SDA"
 		(at 125.73 81.28 0)
 		(effects
@@ -5624,6 +5710,16 @@
 			(justify left bottom)
 		)
 		(uuid "9535c344-b0c3-43d2-b4c8-a6dcaa1b0117")
+	)
+	(label "MCU_EN"
+		(at 219.71 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a70659f6-8acb-45ac-a51b-74b2936cae55")
 	)
 	(label "SX1509_HW-ADDR-A1"
 		(at 121.92 88.9 0)
@@ -5714,6 +5810,16 @@
 			(justify left bottom)
 		)
 		(uuid "e4918163-4850-47b8-96a6-6215335edece")
+	)
+	(label "MCU_EN"
+		(at 264.16 67.31 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "eaa12faa-c6fa-4b4c-84ba-3d1685f57920")
 	)
 	(label "SX1509_I2C_SCL"
 		(at 106.68 123.19 0)
@@ -6261,6 +6367,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Jumper:SolderJumper_2_Open")
+		(at 273.05 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "158166be-f035-4e86-92f9-9fc94b668a3e")
+		(property "Reference" "JP2"
+			(at 273.304 73.914 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SolderJumper_2_Open"
+			(at 282.194 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm"
+			(at 273.05 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 273.05 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Solder Jumper, 2-pole, open"
+			(at 273.05 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9f452980-19ce-43be-aae5-d1483ed7c353")
+		)
+		(pin "2"
+			(uuid "769a1d12-4599-4fc3-96d8-387807151b03")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/701e2ee7-1555-4be3-8e0c-a769d2df25b2"
+					(reference "JP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 128.27 123.19 90)
 		(unit 1)
@@ -6329,7 +6503,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 226.06 60.96 0)
+		(at 273.05 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6337,7 +6511,7 @@
 		(dnp no)
 		(uuid "19df7771-6d51-41e1-895a-5669fc2388b8")
 		(property "Reference" "JP1"
-			(at 226.314 58.674 0)
+			(at 273.304 65.024 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6345,7 +6519,7 @@
 			)
 		)
 		(property "Value" "SolderJumper_2_Open"
-			(at 235.204 57.15 0)
+			(at 282.194 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6354,7 +6528,7 @@
 			)
 		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm"
-			(at 226.06 60.96 0)
+			(at 273.05 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6363,7 +6537,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 226.06 60.96 0)
+			(at 273.05 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6372,7 +6546,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 226.06 60.96 0)
+			(at 273.05 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8118,6 +8292,71 @@
 		)
 	)
 	(symbol
+		(lib_id "4ms_Connector:CAPSENSE_PAD")
+		(at 279.4 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4a857bea-6848-4160-988f-70cee20aafc9")
+		(property "Reference" "J17"
+			(at 279.4 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 276.86 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "4ms_Connector:CAPSENSE_PAD"
+			(at 274.32 91.186 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 279.4 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 279.4 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "82117f0d-d66f-4f71-86a5-273051777c52")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/701e2ee7-1555-4be3-8e0c-a769d2df25b2"
+					(reference "J17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 217.17 40.64 0)
 		(unit 1)
@@ -8659,7 +8898,7 @@
 	)
 	(symbol
 		(lib_id "4ms_Power-symbol:GND")
-		(at 232.41 62.23 0)
+		(at 279.4 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8668,7 +8907,7 @@
 		(fields_autoplaced yes)
 		(uuid "95648feb-2ec9-4dba-aca8-bc04d9cc0e06")
 		(property "Reference" "#PWR05"
-			(at 232.41 68.58 0)
+			(at 279.4 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8677,7 +8916,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 232.41 67.31 0)
+			(at 279.4 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8686,7 +8925,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 232.41 62.23 0)
+			(at 279.4 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8695,7 +8934,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 232.41 62.23 0)
+			(at 279.4 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8704,7 +8943,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 232.41 62.23 0)
+			(at 279.4 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)

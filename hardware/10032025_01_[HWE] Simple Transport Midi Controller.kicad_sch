@@ -224,6 +224,26 @@
 	)
 	(wire
 		(pts
+			(xy 131.445 130.81) (xy 163.83 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d58f5b1d-e945-4fa8-a82a-0758e71d9447")
+	)
+	(wire
+		(pts
+			(xy 131.445 134.62) (xy 163.83 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9acaa4f-070c-4902-a572-08f3f21912e7")
+	)
+	(wire
+		(pts
 			(xy 62.865 81.28) (xy 88.9 81.28)
 		)
 		(stroke
@@ -531,6 +551,26 @@
 		(pin "SPI" bidirectional
 			(at 131.445 74.93 0)
 			(uuid "8997d050-a8fb-4429-872e-db8828814fa8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "DC_SPI_OLED_DISPLAY" output
+			(at 131.445 130.81 0)
+			(uuid "7dfdbce5-89d0-43aa-83b3-98f318d4117c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "RES_SPI_OLED_DISPLAY" output
+			(at 131.445 134.62 0)
+			(uuid "86180124-0a37-487f-abb6-60973672e57b")
 			(effects
 				(font
 					(size 1.27 1.27)
