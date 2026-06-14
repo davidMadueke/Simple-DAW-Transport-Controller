@@ -11,6 +11,9 @@
 #ifndef PUSH_BUTTON_FREERTOS_PRIORITY
     #define PUSH_BUTTON_FREERTOS_PRIORITY 4
 #endif
+#ifndef PUSH_BUTTON_FREERTOS_QUEUE_LENGTH 
+    #define PUSH_BUTTON_FREERTOS_QUEUE_LENGTH 8
+#endif
 
 
 using DigitalReadCallback = std::function<bool()>;
@@ -46,7 +49,7 @@ public:
 
     void begin(PushButtonDelivery delivery = PushButtonDelivery::Polling,
                QueueHandle_t eventQueue = nullptr,
-               UBaseType_t queueLength = 4);
+               UBaseType_t queueLength = PUSH_BUTTON_FREERTOS_QUEUE_LENGTH);
 
     void setButtonMode(uint8_t mode) {_buttonPinMode = mode;}
 

@@ -4,6 +4,10 @@
 #include <Wire.h>
 #pragma once
 
+#ifndef BUTTON_FREERTOS_QUEUE_LENGTH 
+    #define BUTTON_FREERTOS_QUEUE_LENGTH 8
+#endif
+
 /**
  * @class Button
  * @brief A class that represents a RGB I2C button
@@ -32,7 +36,7 @@
 
     void begin(PushButtonDelivery delivery = PushButtonDelivery::Queue,
                QueueHandle_t eventQueue = nullptr,
-               UBaseType_t queueLength = 4);
+               UBaseType_t queueLength = BUTTON_FREERTOS_QUEUE_LENGTH);
     
     void setBrightness(uint8_t brightnessPrescaler);
     void setLedColour(uint8_t r, uint8_t g, uint8_t b);
