@@ -101,7 +101,9 @@ public:
                 case LONG_PRESS:
                     if (event->type == PushButtonEvent::Type::LongPress) {
                         nextMode = toCURR_METRONOME_STATE;
-                        if (_TapTempo != nullptr) { _TapTempo->addInducedTapTempoEventToQueue(PushButtonEvent::Type::Released);}
+                        if (_TapTempo != nullptr) { _TapTempo->addInducedTapTempoEventToQueue(PushButtonEvent::Type::Released); }
+                        // Not registering a single press to TAP TEMPO Queue.
+                        // Do not want to send a Tap Tempo Midi Message when switching back to Metronome Mode
                     }
                     else {
                         
