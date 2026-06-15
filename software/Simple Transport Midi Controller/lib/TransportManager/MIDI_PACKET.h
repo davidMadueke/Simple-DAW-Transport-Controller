@@ -1,7 +1,7 @@
 #pragma once
-
+#include <Arduino.h>
 struct MIDI_PACKET {
-    enum class TYPE : uint8_t  { // Affix enums to be one byte each
+    enum TYPE { // Affix enums to be one byte each
     NOTE_ON,
     NOTE_OFF,
     CC,

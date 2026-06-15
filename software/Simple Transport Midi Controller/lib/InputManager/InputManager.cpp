@@ -13,13 +13,40 @@ void InputManager::registerInputSource(InputSource input)
 
 }
 
-void InputManager::begin()
+void InputManager::begin(QueueHandle_t midiQueue, QueueHandle_t displayQueue)
 {
     m_inputSet = xQueueCreateSet(m_queueSetLength);
-    for (size_t i = 0; i < m_inputCount; ++i) {
+    for (size_t i = 0; i < m_inputCount; ++i) 
+    {
         QueueHandle_t handle = m_inputs[i].queue;
         xQueueAddToSet(handle, m_inputSet);
     }
+
+
+    if (midiQueue != nullptr) 
+    {
+            m_midiQueue = midiQueue;
+
+    } else {
+
+        m_midiQueue = xQueueCreate(
+        INPUT_MANAGER_FREERTOS_OUTPUT_QUEUES_LENGTH,
+        sizeof(MIDI_PACKET)
+        );
+    }
+
+    if (displayQueue != nullptr) 
+    {
+            m_displayQueue = displayQueue;
+            
+    } else {
+
+        m_displayQueue = xQueueCreate(
+        INPUT_MANAGER_FREERTOS_OUTPUT_QUEUES_LENGTH,
+        sizeof(DisplayAction)
+        );
+    }
+
     xTaskCreate(vInputManagerTask,
          "input_mgr", 
          INPUT_MANAGER_FREERTOS_TASK_STACK_SIZE, 
@@ -29,6 +56,7 @@ void InputManager::begin()
     
 }
 
+
 void InputManager::vInputManagerTask(void* pvParameters) 
 {
     static_cast<InputManager*>(pvParameters)->inputManagerTaskLoop();
@@ -36,12 +64,13 @@ void InputManager::vInputManagerTask(void* pvParameters)
 
 void InputManager::inputManagerTaskLoop()
 {
-     for( ;; )
+    QueueSetMemberHandle_t xActivatedMember;
+    for( ;; )
     {
         /* Block to wait for something to be available from the queues or
            semaphore that have been added to the set. Don't block longer than
            200ms. */
-        QueueSetMemberHandle_t xActivatedMember = xQueueSelectFromSet( m_inputSet,
+        xActivatedMember = xQueueSelectFromSet( m_inputSet,
              200 / portTICK_PERIOD_MS );
 
         if (xActivatedMember == nullptr) { continue;}
@@ -49,17 +78,9 @@ void InputManager::inputManagerTaskLoop()
         for (size_t i = 0; i < m_inputCount; ++i)
         {
             if (xActivatedMember != m_inputs[i].queue) continue;
-            switch (m_inputs[i].type) {
-                case InputSource::Type::RgbButton:
-                    dispatchButtonEvent(m_inputs[i].queue);
-                    break;
-                case InputSource::Type::TapTempo:
-                    dispatchTapTempoEvent(m_inputs[i].queue);
-                    break;
-                case InputSource::Type::Encoder:
-                    // dispatchEncoderEvent(m_inputs[i].queue);
-                    break;
-            }
+
+            inputDispatcher(m_inputs[i], getMidiQueue(), getDisplayQueue());
+            
         }
     }
 }

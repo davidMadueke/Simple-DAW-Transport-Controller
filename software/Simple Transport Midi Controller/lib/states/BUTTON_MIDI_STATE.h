@@ -1,6 +1,7 @@
-#include <Arduino.h>
+
 #ifndef BUTTON_MIDI_STATE_H
 #define BUTTON_MIDI_STATE_H
+#include <Arduino.h>
 // struct BUTTON_MIDI_STATE
 // {
 //     BUTTON_HAL_STATE playButton;
@@ -14,7 +15,7 @@
 
 struct BUTTON_MIDI_STATE
 {
-    enum class Name : uint8_t {
+    enum Name {
         PLAY,
         STOP,
         REC,
@@ -24,7 +25,7 @@ struct BUTTON_MIDI_STATE
         TAP_TEMPO,
     } name;
 
-    enum class Type : uint8_t {
+    enum Type {
         RegularPress,
         LongPress,
     } type;
