@@ -58,14 +58,6 @@ public:
     void ISR_PushButton();
     void processTaskLoop();
 
-    bool isPressed();
-    bool isReleased();
-    bool wasPressed();
-    bool wasReleased();
-    bool pressedFor(uint32_t ms);
-    bool releasedFor(uint32_t ms);
-    uint32_t lastChange();
-
     bool consumePressEdge();
     bool consumeReleaseEdge();
 
@@ -125,7 +117,6 @@ private:
 
     PushButtonDelivery m_delivery = PushButtonDelivery::Polling;
     QueueHandle_t m_eventQueue = nullptr;
-    bool m_queueOwned = false;
 
     uint32_t _taskStackSize = 2048;
 

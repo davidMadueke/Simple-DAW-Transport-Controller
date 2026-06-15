@@ -18,10 +18,8 @@ void PushButton::begin(PushButtonDelivery delivery,
     if (m_delivery == PushButtonDelivery::Queue) {
         if (eventQueue != nullptr) {
             m_eventQueue = eventQueue;
-            m_queueOwned = false;
         } else {
             m_eventQueue = xQueueCreate(queueLength, sizeof(PushButtonEvent));
-            m_queueOwned = (m_eventQueue != nullptr);
         }
     }
 
@@ -245,41 +243,6 @@ void PushButton::postEventPublic(PushButtonEvent::Type type, uint8_t pressCount)
         }
 }
 
-bool PushButton::isPressed()
-{
-    return m_state;
-}
-
-bool PushButton::isReleased()
-{
-    return !m_state;
-}
-
-bool PushButton::wasPressed()
-{
-    return m_state && m_changed;
-}
-
-bool PushButton::wasReleased()
-{
-    return !m_state && m_changed;
-}
-
-bool PushButton::pressedFor(uint32_t ms)
-{
-    return m_state && (m_time - m_lastChange >= ms);
-}
-
-bool PushButton::releasedFor(uint32_t ms)
-{
-    return !m_state && (m_time - m_lastChange >= ms);
-}
-
-uint32_t PushButton::lastChange()
-{
-    return m_lastChange;
-}
-
 bool PushButton::consumePressEdge()
 {
     if (!mPOLL_pressEdge) {
@@ -373,7 +336,7 @@ void ToggleSwitch::begin(PushButtonDelivery delivery,
 
 void ToggleSwitch::onStableStateApplied()
 {
-    if (wasPressed()) {
+    if (consumePressEdge()) {
         m_toggleState = !m_toggleState;
         m_changed = true;
     }
