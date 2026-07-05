@@ -1432,7 +1432,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:LED_RGKB"
+		(symbol "Device:LED_RKGB"
 			(pin_names
 				(offset 0)
 				(hide yes)
@@ -1448,7 +1448,7 @@
 					)
 				)
 			)
-			(property "Value" "LED_RGKB"
+			(property "Value" "LED_RKGB"
 				(at 0 -8.89 0)
 				(effects
 					(font
@@ -1474,7 +1474,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "RGB LED, red/green/cathode/blue"
+			(property "Description" "RGB LED, red/cathode/green/blue"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1501,7 +1501,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "LED_RGKB_0_0"
+			(symbol "LED_RKGB_0_0"
 				(text "R"
 					(at 1.905 3.81 0)
 					(effects
@@ -1527,7 +1527,7 @@
 					)
 				)
 			)
-			(symbol "LED_RGKB_0_1"
+			(symbol "LED_RKGB_0_1"
 				(circle
 					(center -2.032 0)
 					(radius 0.254)
@@ -1859,7 +1859,7 @@
 					)
 				)
 			)
-			(symbol "LED_RGKB_1_1"
+			(symbol "LED_RKGB_1_1"
 				(pin passive line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -1870,7 +1870,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1906,7 +1906,7 @@
 							)
 						)
 					)
-					(number "2"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -9170,7 +9170,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED_RGKB")
+		(lib_id "Device:LED_RKGB")
 		(at 162.56 31.75 0)
 		(mirror y)
 		(unit 1)
@@ -9187,7 +9187,7 @@
 				)
 			)
 		)
-		(property "Value" "LED_RGKB"
+		(property "Value" "LED_RKGB"
 			(at 162.56 20.32 0)
 			(effects
 				(font
@@ -9213,7 +9213,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "RGB LED, red/green/cathode/blue"
+		(property "Description" "RGB LED, red/cathode/green/blue"
 			(at 162.56 31.75 0)
 			(effects
 				(font
