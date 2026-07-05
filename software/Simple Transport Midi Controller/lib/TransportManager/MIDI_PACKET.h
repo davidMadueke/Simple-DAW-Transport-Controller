@@ -7,8 +7,8 @@ struct MIDI_PACKET {
     CC,
     PITCH_BEND,
     } type;       // Type of message (Note On, CC, Pitch Bend)
-    uint8_t data1;      // Note number or CC number
-    uint8_t data2;      // Velocity or CC value
-    uint8_t channel;    // MIDI Channel (1-16)
+    uint8_t data1 = 0;      // Note number or CC number
+    uint8_t data2 = 0;      // Velocity or CC value
+    uint8_t channel = 1;    // MIDI Channel (1-16)
 };
 

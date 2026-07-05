@@ -26,6 +26,7 @@ public:
 
     void addInducedTapTempoEventToQueue(PushButtonEvent::Type event){
         button->postEventPublic(event);
+        if (event == PushButtonEvent::Type::Released) { button->postEventPublic(PushButtonEvent::Type::RegularPressComplete);};
         #ifdef METRONOME_BUTTON_DEBUG
             Serial.printf("Posting Press/Release Metronome Event as TAP TEMPO %u\n", static_cast<unsigned>(event));
         #endif

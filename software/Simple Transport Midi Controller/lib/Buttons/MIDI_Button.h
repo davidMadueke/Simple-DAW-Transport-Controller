@@ -154,7 +154,7 @@ protected:
     void vPostEvent(BUTTON_MIDI_STATE::Name name, BUTTON_MIDI_STATE::Type type, uint8_t pressCount = 0){
         BUTTON_MIDI_STATE event{name, type, pressCount};
         
-        if (xQueueSend(m_eventQueue, (void *)&event, 0) == pdTRUE) {
+        if (xQueueSend(m_eventQueue, (void *)&event, 0) != pdTRUE) {
                 #ifdef MIDI_BUTTON_DEBUG
                     Serial.printf("Debug for %s, line 145 of Midi Button. Queue Full", taskName);
                 #endif

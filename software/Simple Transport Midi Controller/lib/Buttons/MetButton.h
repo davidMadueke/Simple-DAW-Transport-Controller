@@ -107,11 +107,9 @@ public:
                     }
                     else {
                         
-                        // if (event->type == PushButtonEvent::Type::Released) {
-                        //     Serial.println("TT Pressing");
-                        // }
 
-                        if (_TapTempo != nullptr && (event->type == PushButtonEvent::Type::Released || event->type == PushButtonEvent::Type::Pressed)) {
+                        if (_TapTempo != nullptr && (event->type == PushButtonEvent::Type::Released || event->type == PushButtonEvent::Type::Pressed)) 
+                        {
                             // When in Tap Tempo mode, any button presses are registered in the
                             // TapTempo Object Event Queue as a Press/Release
                             _TapTempo->addInducedTapTempoEventToQueue(event->type);
