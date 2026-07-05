@@ -45,7 +45,7 @@ enum class PushButtonDelivery {
  */
 class PushButton {
 public:
-    PushButton(const char* name, uint8_t pinAddr, uint32_t dbTime, bool isInterruptPin = false);
+    PushButton(const char* name, uint8_t pinAddr, uint32_t dbTime, bool isInterruptPin = false, uint8_t mcuInputMode = INPUT_PULLUP);
 
     void begin(PushButtonDelivery delivery = PushButtonDelivery::Polling,
                QueueHandle_t eventQueue = nullptr,
@@ -104,7 +104,8 @@ private:
     
    
     uint32_t m_longPressTimeMs = 500; 
-
+    
+    bool m_longPressEnabled = false;
     bool m_longPressActive = false;
     bool mPOLL_longPressEdgeFired = false;
     bool mPOLL_longPressEdge = false;
@@ -146,7 +147,12 @@ private:
     protected:
         bool readPressed() {
             if (m_digitalReadCallback) return m_digitalReadCallback();
-            return digitalRead(_pinBtn) == LOW;
+            if ((_buttonPinMode == INPUT_PULLDOWN) && !_isInterruptPin)
+            {
+                return digitalRead(_pinBtn) == HIGH;
+            }
+            else return digitalRead(_pinBtn) == LOW;
+            
         }
 
         void digitalLedWrite(bool onOff){
@@ -164,7 +170,7 @@ private:
  */
 class ToggleSwitch : public PushButton {
 public:
-    ToggleSwitch(const char* name, uint8_t pin, bool initialState = false, uint32_t dbTime = 25);
+    ToggleSwitch(const char* name, uint8_t pin, bool initialState = false, uint32_t dbTime = 25, uint8_t inputMode = INPUT_PULLUP);
 
     void begin(PushButtonDelivery delivery = PushButtonDelivery::Polling,
                QueueHandle_t eventQueue = nullptr,

@@ -23,7 +23,10 @@ void PushButton::begin(PushButtonDelivery delivery,
         }
     }
 
-    if (!_isInterruptPin) {Serial.println("Pulled it Up"); pinMode(_pinBtn, INPUT_PULLUP);}
+    if (!_isInterruptPin) 
+    {
+        pinMode(_pinBtn, _buttonPinMode);
+    }
     
 
     m_multiPressTimer = xTimerCreate(
@@ -322,8 +325,8 @@ bool PushButton::isLongPressActive() const
 
 // --- ToggleSwitch ---
 
-ToggleSwitch::ToggleSwitch(const char* name, uint8_t pin, bool initialState, uint32_t dbTime)
-    : PushButton(name, pin, dbTime), m_toggleState(initialState)
+ToggleSwitch::ToggleSwitch(const char* name, uint8_t pin, bool initialState, uint32_t dbTime, uint8_t inputMode)
+    : PushButton(name, pin, dbTime, false, inputMode), m_toggleState(initialState)
 {
 }
 
