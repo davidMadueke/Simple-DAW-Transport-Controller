@@ -2,6 +2,7 @@
 #include <unity.h>
 #include <Wire.h>
 #include <HAL_RotaryEncoder.h>
+#include <rSerial.h>
 
 #define PIN_IN1 A2
 #define PIN_IN2 A3
@@ -22,9 +23,9 @@ HAL_RotaryEncoder* test_module = nullptr;
 
 void setup()
 {
-    Serial.begin(115200);
+    rSerial.begin(115200);
 
-    test_module = new HAL_RotaryEncoder(PIN_IN1, PIN_IN2, PIN_BTN, 50);
+    test_module = new HAL_RotaryEncoder(PIN_IN1, PIN_IN2, PIN_BTN, 50, INPUT_PULLDOWN);
 
     test_module->begin();
 

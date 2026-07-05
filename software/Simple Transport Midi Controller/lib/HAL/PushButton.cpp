@@ -1,7 +1,8 @@
 #include "PushButton.h"
+#include <rSerial.h>
 
-PushButton::PushButton(const char* name, uint8_t pinAddr, uint32_t dbTime, bool isInterruptPin)
-    : _pinBtn(pinAddr), _dbTime(dbTime), _isInterruptPin(isInterruptPin)
+PushButton::PushButton(const char* name, uint8_t pinAddr, uint32_t dbTime, bool isInterruptPin, uint8_t mcuInputMode)
+    : _pinBtn(pinAddr), _dbTime(dbTime), _isInterruptPin(isInterruptPin), _buttonPinMode(mcuInputMode)
 {
     snprintf(this->taskName, sizeof(this->taskName), "%s_btn", name);
     m_time = millis();
@@ -71,8 +72,8 @@ void PushButton::processTaskLoop()
 #ifdef BUTTON_DEBUG
         pinMode(LED_BUILTIN, OUTPUT);
         digitalWrite(LED_BUILTIN, pressed);
-        Serial.print("Button ");
-        Serial.println(pressed ? "Pressed" : "Released");
+        rSerial.print("Button ");
+        rSerial.println(pressed ? "Pressed" : "Released");
 #endif
     }
 }
@@ -185,7 +186,7 @@ void PushButton::applyStableState(bool pressed)
 
     if (m_state && m_longPressTimeMs > 0 && !mPOLL_longPressEdgeFired) {
         if (ms - m_lastChange >= m_longPressTimeMs) {
-            Serial.println("ln148 PB: Long Press Active");
+            rSerial.println("ln148 PB: Long Press Active");
             mPOLL_longPressEdgeFired = true;
             m_longPressActive = true;
             mPOLL_longPressEdge = true;
