@@ -43,7 +43,7 @@ void InputManager::begin(QueueHandle_t midiQueue, QueueHandle_t displayQueue)
 
         m_displayQueue = xQueueCreate(
         INPUT_MANAGER_FREERTOS_OUTPUT_QUEUES_LENGTH,
-        sizeof(DisplayAction)
+        sizeof(DISPLAY_ACTION)
         );
     }
 
