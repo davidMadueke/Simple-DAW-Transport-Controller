@@ -1,3 +1,9 @@
+#include <Arduino.h>
+#include <HAL_RotaryEncoder.h>
+#include <LedRing_DUPPA.h>
+
+#pragma once
+
 enum VOL_ENCODER_MODE 
 {
     MODE1,
@@ -5,23 +11,10 @@ enum VOL_ENCODER_MODE
     MODE3,
 };
 
-struct VOL_ENCODER_RGB_LED_RING_STATE
-{
-    uint8_t COLOUR_RED;
-    uint8_t COLOUR_GREEN;
-    uint8_t COLOUR_BLUE;
-    uint8_t POSITION;
-};
-
-
 struct VOL_ENCODER_MIDI_STATE {
     
     VOL_ENCODER_MODE MODE = VOL_ENCODER_MODE::MODE1;
-    VOL_ENCODER_RGB_LED_RING_STATE ledRingState;
-    bool SW_pressEvent;
-    uint8_t SW_numOfPresses;
-    uint8_t SW_longPress;
-    bool POT_changeEvent;
-    uint8_t POT_value;
+    LED_RING_DIAL_STATE ledRingState;
+    RotaryEncoderEvent event = {};
 };
 

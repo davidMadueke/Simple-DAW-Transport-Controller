@@ -1,24 +1,46 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <LEDRingSmall.h>
+#include <freertos/queue.h>
+#pragma once
 
+#ifndef LED_RING_DIAL_FREERTOS_PRIORITY
+    #define LED_RING_DIAL_FREERTOS_PRIORITY 3
+#endif
+
+#ifndef LED_RING_DIAL_FREERTOS_TASK_STACK_SIZE
+    #define LED_RING_DIAL_FREERTOS_TASK_STACK_SIZE 512
+#endif
+
+#ifndef LED_RING_DIAL_FREERTOS_EVENT_QUEUE_LENGTH
+    #define LED_RING_DIAL_FREERTOS_EVENT_QUEUE_LENGTH 8
+#endif
+
+
+#define LED_RING_LED_OFF     0,   0,   0
+#define LED_RING_LED_RED     255, 0,   0
+#define LED_RING_LED_GREEN   0,   255, 0
+#define LED_RING_LED_BLUE    0,   0,   255
+#define LED_RING_LED_TEST    128,   36,   99
+#define LED_RING_LED_WHITE   255, 255, 255
+
+struct LED_RING_LED_STATE {
+        uint8_t Red;
+        uint8_t Green;
+        uint8_t Blue;
+};
+
+struct LED_RING_DIAL_STATE {
+    LED_RING_LED_STATE LED;
+    uint8_t POSITION;
+};
 
 /**
  * @class LedRing
- * @brief A class that represents an RGB I2C LED rING
+ * @brief A class that represents an RGB I2C LED Ring
  */
 
  class LedRing {
-    public:
-    /**
-     * @struct Led_Colour_State
-     * @brief Stores RGB values for a single LED
-     */
-    struct Led_Colour_State {
-        uint8_t red;
-        uint8_t green;
-        uint8_t blue;
-    };
 
     private:
     LEDRingSmall *Ring;
@@ -30,7 +52,7 @@
 //    uint8_t m_LedColourState_blue;
 
     // Array to store colour state for each LED
-    Led_Colour_State m_ledColourStates[TOTAL_LEDS];
+    LED_RING_LED_STATE m_ledColourStates[TOTAL_LEDS];
 
 
     public:
@@ -77,15 +99,28 @@
     void dial_setLedFromState(uint8_t logicalLEDPosition);
 
     // Retrieve the colour state of a chosen logical LED position
-    Led_Colour_State getLedColourState(uint8_t logicalLEDPosition) const {
-        int pos = getLEDPosition(logicalLEDPosition);
-        return m_ledColourStates[pos];
-    }
+    LED_RING_LED_STATE getLedColourState(uint8_t logicalLEDPosition);
 
     // Change the colour state of a chosen logical LED position
-    void setLedColourState(uint8_t logicalLEDPosition, uint8_t r, uint8_t g, uint8_t b) {
-        int pos = getLEDPosition(logicalLEDPosition);
-        Led_Colour_State newState = {r, g, b};
-        m_ledColourStates[pos] = newState;
+    void setLedColourState(uint8_t logicalLEDPosition, uint8_t r, uint8_t g, uint8_t b);
+
+    /* FREE RTOS ASSOCIATED METHODS*/
+    public:
+    // Sets up the LED Ring dial task and creates the LED_Ring_Dial Queue
+    void begin_dial();
+
+    // Static Wrapper for vAddTask function
+    static void vLedRingDialTask(void *pvParameters);
+
+    // Main Task loop
+    void processTaskLoop();
+
+    void overwriteLedRingDialState(const LED_RING_DIAL_STATE& state)
+    {
+        xQueueOverwrite(m_ledRingDialQueue, &state);   // never blocks, always keeps the newest
     }
+
+    private:
+    volatile QueueHandle_t m_ledRingDialQueue = nullptr;
+    volatile TaskHandle_t hdl_ledRingDialTask;
 };
