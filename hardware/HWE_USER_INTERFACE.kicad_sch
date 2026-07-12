@@ -100,6 +100,119 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "4ms_Power-symbol:+3.3V"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3.3V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3.3V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3.3V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(hide yes)
+					(name "+3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "4ms_Power-symbol:+5V"
 			(power)
 			(pin_names
@@ -709,6 +822,410 @@
 						(effects
 							(font
 								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "4ms_Transistor:2N7002K"
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "2N7002K"
+				(at -1.27 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "4ms_Package_SOT:SOT23-3_PO132"
+				(at -5.08 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.mouser.com/datasheet/2/427/72322-1765729.pdf"
+				(at -3.81 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "MOSFET N-chan, 40Vds, Vgs_th=1.2V, Rds=42mOhms"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Specifications" "MOSFET N-chan, 40Vds, Vgs_th=1.2V, Rds=42mOhms"
+				(at -2.54 -7.874 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "Panjit"
+				(at -2.54 -9.398 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Part Number" "2N7002K_R1_00001"
+				(at -2.54 -10.922 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Display" "2N7002"
+				(at 8.89 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "JLCPCB ID" ""
+				(at 1.27 -6.35 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+					(hide yes)
+				)
+			)
+			(property "Production Stage" "A"
+				(at -2.54 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Si2318"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "2N7002K_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0.254 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 1.778) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 2.54 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.8194)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.2794)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -1.778) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -1.778) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.2794)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "2N7002K_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 5.08)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
 							)
 						)
 					)
@@ -2578,6 +3095,12 @@
 		(uuid "1f50b82e-faab-4ad3-98d1-148068fd0bdc")
 	)
 	(junction
+		(at 135.89 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5f68ecd1-da69-43b3-9b48-68caee527f8a")
+	)
+	(junction
 		(at 242.57 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2826,7 +3349,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 134.62) (xy 102.87 134.62)
+			(xy 86.36 133.35) (xy 102.87 133.35)
 		)
 		(stroke
 			(width 0)
@@ -2843,6 +3366,16 @@
 			(type default)
 		)
 		(uuid "07304668-9db6-4bc1-a2c0-f23bf6e54303")
+	)
+	(wire
+		(pts
+			(xy 143.51 180.34) (xy 143.51 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0752907d-433a-478e-bbe2-31e470832e1a")
 	)
 	(wire
 		(pts
@@ -2996,6 +3529,16 @@
 	)
 	(wire
 		(pts
+			(xy 102.87 185.42) (xy 116.84 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19563a0a-71c0-4456-a483-cd161e1bfc4d")
+	)
+	(wire
+		(pts
 			(xy 85.09 92.71) (xy 106.68 92.71)
 		)
 		(stroke
@@ -3013,6 +3556,16 @@
 			(type default)
 		)
 		(uuid "1b03bde7-9184-4242-b673-7b6d3599d37f")
+	)
+	(wire
+		(pts
+			(xy 115.57 190.5) (xy 115.57 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b58e1ad-9a15-4782-889b-b89fd7d008bc")
 	)
 	(wire
 		(pts
@@ -3246,6 +3799,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 185.42) (xy 133.35 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36c90b02-dcc1-43ce-9f3a-2aa6694760b0")
+	)
+	(wire
+		(pts
 			(xy 100.33 50.8) (xy 100.33 53.34)
 		)
 		(stroke
@@ -3263,6 +3826,16 @@
 			(type default)
 		)
 		(uuid "3ce5e00e-37ba-42e3-9de0-a559367c8fdb")
+	)
+	(wire
+		(pts
+			(xy 102.87 184.15) (xy 102.87 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d22cbc1-34a5-4365-9f5d-5bc924980a40")
 	)
 	(bus
 		(pts
@@ -3383,6 +3956,16 @@
 			(type default)
 		)
 		(uuid "52db73d4-4ced-4666-a2fe-bfbe3c8be285")
+	)
+	(wire
+		(pts
+			(xy 148.59 187.96) (xy 156.21 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53413c12-d8c2-4bc9-92e9-b571edb5d462")
 	)
 	(wire
 		(pts
@@ -3536,6 +4119,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 190.5) (xy 115.57 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6359880f-8bb6-42ff-8d67-c1bde0debb4c")
+	)
+	(wire
+		(pts
 			(xy 96.52 27.94) (xy 96.52 29.21)
 		)
 		(stroke
@@ -3593,6 +4186,16 @@
 			(type default)
 		)
 		(uuid "6e5574b6-82c9-41d1-b801-c4e9b725fbb5")
+	)
+	(wire
+		(pts
+			(xy 133.35 187.96) (xy 135.89 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "720a4d5f-6aec-4ce5-bb5d-49ed853b9cd8")
 	)
 	(bus
 		(pts
@@ -3886,6 +4489,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 193.04) (xy 116.84 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a088af5a-e023-47df-ac1d-ad9959f9f502")
+	)
+	(wire
+		(pts
 			(xy 101.6 82.55) (xy 101.6 85.09)
 		)
 		(stroke
@@ -4006,6 +4619,16 @@
 	)
 	(wire
 		(pts
+			(xy 135.89 187.96) (xy 138.43 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0452150-2274-4bd6-89c4-4a58639777bb")
+	)
+	(wire
+		(pts
 			(xy 60.96 102.87) (xy 60.96 105.41)
 		)
 		(stroke
@@ -4013,6 +4636,16 @@
 			(type default)
 		)
 		(uuid "b40249e1-dbcf-4d6b-9140-ef21cda31d5d")
+	)
+	(wire
+		(pts
+			(xy 135.89 193.04) (xy 135.89 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b406830e-c920-4ac6-a8f0-01c37a46003d")
 	)
 	(bus
 		(pts
@@ -4256,6 +4889,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 189.23) (xy 105.41 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cdfac2b6-4b82-4e43-80d9-4aa14d06fc81")
+	)
+	(wire
+		(pts
 			(xy 154.94 36.83) (xy 157.48 36.83)
 		)
 		(stroke
@@ -4263,6 +4906,16 @@
 			(type default)
 		)
 		(uuid "d115acc1-8103-449d-9eba-a22c105b6b23")
+	)
+	(wire
+		(pts
+			(xy 124.46 193.04) (xy 135.89 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d21eebcb-7040-4919-bb8d-d266f2333d8f")
 	)
 	(wire
 		(pts
@@ -4396,13 +5049,13 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 133.35) (xy 100.33 134.62)
+			(xy 102.87 133.35) (xy 102.87 134.62)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ea273870-8cb5-482d-8324-fbd467ae882c")
+		(uuid "e983e661-b43d-443e-88d5-dcd85fe2ef17")
 	)
 	(wire
 		(pts
@@ -4563,6 +5216,16 @@
 			(type default)
 		)
 		(uuid "fcf7fdbd-fe66-464c-a9bf-a10b6186175d")
+	)
+	(wire
+		(pts
+			(xy 124.46 185.42) (xy 133.35 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe5feec0-504e-49b3-b0bc-b4d5bfd53f7f")
 	)
 	(image
 		(at 114.935 160.02)
@@ -5640,6 +6303,16 @@
 		)
 		(uuid "184a1b77-9f2e-4b24-ac87-52b8891d2896")
 	)
+	(label "LED_RING_FET"
+		(at 86.36 133.35 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1b8fe823-feb1-48a1-a613-0c740041c6ae")
+	)
 	(label "SDA"
 		(at 90.17 121.92 0)
 		(effects
@@ -5699,6 +6372,16 @@
 			(justify right bottom)
 		)
 		(uuid "4f0dea8d-1c07-4735-842e-da8da047ca32")
+	)
+	(label "LED_RING_FET"
+		(at 156.21 187.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5116be36-3573-48d0-bd3a-eafd9a1bf87f")
 	)
 	(label "SCL"
 		(at 60.96 64.77 0)
@@ -5876,6 +6559,17 @@
 			(justify right)
 		)
 		(uuid "2c8e0406-5465-4082-831f-449ef08c9dd2")
+	)
+	(hierarchical_label "LED_RING_VCC_RESET"
+		(shape input)
+		(at 143.51 179.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3b222622-e098-4281-b433-2e62c5f8a415")
 	)
 	(hierarchical_label "BTN_OVERDUB_INT"
 		(shape output)
@@ -6216,6 +6910,73 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 120.65 193.04 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(uuid "2ad7500d-cb48-4a83-b704-5cb865c69f71")
+		(property "Reference" "R28"
+			(at 120.0785 188.1505 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_US"
+			(at 120.3325 190.1825 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.904 192.024 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 120.65 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f272fea8-538a-4af4-8349-0910b6c9ffba")
+		)
+		(pin "1"
+			(uuid "195138b7-84d9-4a81-b0c4-e6bae3a1e5b2")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "R28")
 					(unit 1)
 				)
 			)
@@ -6789,6 +7550,73 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 120.65 185.42 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4b66e1b1-78e0-4aec-abae-ee45a7ba8a41")
+		(property "Reference" "R27"
+			(at 120.0785 180.5305 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R_US"
+			(at 120.3325 182.5625 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 120.904 184.404 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 120.65 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "bf0659e0-ce6e-4a8b-a7e7-eced7d946b40")
+		)
+		(pin "1"
+			(uuid "48eef6b9-1f11-4a64-84d3-dd20429d57b6")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -8003,6 +8831,141 @@
 		)
 	)
 	(symbol
+		(lib_id "4ms_Transistor:2N7002K")
+		(at 143.51 185.42 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "84b4ec24-a200-486f-b072-eca3c18209c1")
+		(property "Reference" "Q3"
+			(at 144.78 191.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2N7002K"
+			(at 166.37 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "4ms_Package_SOT:SOT-23"
+			(at 160.02 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/427/72322-1765729.pdf"
+			(at 157.48 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "MOSFET N-chan, 40Vds, Vgs_th=1.2V, Rds=42mOhms"
+			(at 143.51 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Specifications" "MOSFET N-chan, 40Vds, Vgs_th=1.2V, Rds=42mOhms"
+			(at 151.384 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Panjit"
+			(at 152.908 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "2N7002K_R1_00001"
+			(at 154.432 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Display" "2N7002"
+			(at 146.812 193.548 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "JLCPCB ID" ""
+			(at 149.86 186.69 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Production Stage" "A"
+			(at 160.02 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "565c3747-d9ee-4f0f-baf7-ff34ae1e566c")
+		)
+		(pin "2"
+			(uuid "617456b5-14a8-4483-b2ff-34ebdbe5ac12")
+		)
+		(pin "1"
+			(uuid "9856a52e-8298-49da-addc-822812c72720")
+		)
+		(instances
+			(project ""
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "4ms_Power-symbol:GND")
 		(at 64.77 59.69 0)
 		(mirror y)
@@ -8838,16 +9801,15 @@
 	)
 	(symbol
 		(lib_id "4ms_Power-symbol:+5V")
-		(at 100.33 133.35 0)
+		(at 105.41 189.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c093a8fb-9aac-4118-8875-87fe0c2fb269")
 		(property "Reference" "#PWR037"
-			(at 100.33 137.16 0)
+			(at 105.41 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8856,7 +9818,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 100.33 128.27 0)
+			(at 108.204 187.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8864,7 +9826,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 100.33 133.35 0)
+			(at 105.41 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8873,7 +9835,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 133.35 0)
+			(at 105.41 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8882,7 +9844,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 100.33 133.35 0)
+			(at 105.41 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9516,6 +10478,71 @@
 			(project "10032025_01_[HWE] Simple Transport Midi Controller"
 				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
 					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "4ms_Power-symbol:+3.3V")
+		(at 102.87 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f987c53b-ac7d-4890-b0f2-50c81fe4b226")
+		(property "Reference" "#PWR055"
+			(at 102.87 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 106.934 181.864 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.87 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 102.87 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ecc1df4d-cc7b-4295-9930-1f6357f447e5")
+		)
+		(instances
+			(project "10032025_01_[HWE] Simple Transport Midi Controller"
+				(path "/4f4cdf46-015d-4b38-9cc1-de7a767260f6/96b58b50-e06e-4f86-ba39-1d02b5cd5477"
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)

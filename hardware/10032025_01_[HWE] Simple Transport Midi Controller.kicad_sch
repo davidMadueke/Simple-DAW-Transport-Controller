@@ -12,6 +12,12 @@
 		(comment 1 "Used the combination of the Adafruit Feather ESP32-V2 Dev Board and the SX1509 IO expander")
 	)
 	(lib_symbols)
+	(junction
+		(at 148.59 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1fad649f-0718-4558-8f4b-a08faf784e02")
+	)
 	(wire
 		(pts
 			(xy 62.865 87.63) (xy 88.9 87.63)
@@ -61,6 +67,26 @@
 			(type default)
 		)
 		(uuid "25f5f561-8dd1-4d5a-8311-7e457df4af5d")
+	)
+	(wire
+		(pts
+			(xy 148.59 134.62) (xy 163.83 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "285a0c53-0518-4fbe-a194-24facef84cea")
+	)
+	(wire
+		(pts
+			(xy 148.59 134.62) (xy 148.59 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31480c9f-3c8a-48bb-82f3-ea9fdb9ed542")
 	)
 	(wire
 		(pts
@@ -234,7 +260,7 @@
 	)
 	(wire
 		(pts
-			(xy 131.445 134.62) (xy 163.83 134.62)
+			(xy 131.445 134.62) (xy 148.59 134.62)
 		)
 		(stroke
 			(width 0)
@@ -251,6 +277,16 @@
 			(type default)
 		)
 		(uuid "f53f19bd-f25d-4ed0-8ec0-ad31b91d8659")
+	)
+	(wire
+		(pts
+			(xy 163.83 138.43) (xy 148.59 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f991da59-d08d-46e7-aab2-055f05fa93b6")
 	)
 	(sheet
 		(at 37.465 68.58)
@@ -326,7 +362,7 @@
 	)
 	(sheet
 		(at 88.9 46.355)
-		(size 42.545 93.345)
+		(size 42.545 100.33)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -350,7 +386,7 @@
 			)
 		)
 		(property "Sheetfile" "MCU.kicad_sch"
-			(at 88.9 140.2846 0)
+			(at 88.9 147.2696 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -588,7 +624,7 @@
 	)
 	(sheet
 		(at 163.83 46.99)
-		(size 33.02 92.71)
+		(size 33.02 99.06)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -612,7 +648,7 @@
 			)
 		)
 		(property "Sheetfile" "HWE_USER_INTERFACE.kicad_sch"
-			(at 163.83 140.2846 0)
+			(at 163.83 146.6346 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -803,6 +839,16 @@
 		(pin "RESET_SPI_OLED_DISPLAY" output
 			(at 163.83 134.62 180)
 			(uuid "9f37e071-20e9-41ee-acfe-405abf086b96")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LED_RING_VCC_RESET" input
+			(at 163.83 138.43 180)
+			(uuid "046a85cd-e34f-49ac-b1ba-fef08f83bfa3")
 			(effects
 				(font
 					(size 1.27 1.27)
