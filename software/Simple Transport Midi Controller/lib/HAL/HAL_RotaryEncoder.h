@@ -23,6 +23,9 @@
     #define ROTARY_ENCODER_BUTTON_FREERTOS_EVENT_QUEUE_LENGTH 8
 #endif
 
+#ifndef ROTARY_ENCODER_ENCODER_POSITION_MAX_ACCELERATION
+    #define ROTARY_ENCODER_ENCODER_POSITION_MAX_ACCELERATION 10
+#endif
 
 struct RotaryEncoderEvent {
     enum class Type : uint8_t {
@@ -32,7 +35,7 @@ struct RotaryEncoderEvent {
 
     PushButtonEvent btnEvent = {};
     uint8_t encValue = 0;
-    uint8_t delta = 0;
+    int8_t delta = 0;
 
 };
 
@@ -84,7 +87,7 @@ class HAL_RotaryEncoder
   // Define some constants (For encoder Acceleration functionality).
 
   // the maximum acceleration is 10 times.
-  float m = 10;
+  float m = ROTARY_ENCODER_ENCODER_POSITION_MAX_ACCELERATION;
 
   // at 200ms or slower, there should be no acceleration. (factor 1)
   float longCutoff = 50;

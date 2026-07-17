@@ -66,25 +66,32 @@ void HAL_RotaryEncoder::processTaskLoop()
         }
 
         float ticksActual_float = a * ms + b;
-        rSerial.print("  f= ");
-        rSerial.println(ticksActual_float);
-
         long deltaTicks = (long)ticksActual_float * (newPos - lastPos);
-        rSerial.print("  d= ");
-        rSerial.println(deltaTicks);
+        
+        #ifdef HAL_ROTARY_ENCODER_DEBUG
+          rSerial.print("  f= ");
+          rSerial.println(ticksActual_float);
+
+          
+          rSerial.print("  d= ");
+          rSerial.println(deltaTicks);
+        #endif
 
         newPos = newPos + deltaTicks;
         _encoder->setPosition(newPos);
       }
 
-      rSerial.print(newPos);
-      rSerial.print("  ms: ");
-      rSerial.println(ms);
+      #ifdef HAL_ROTARY_ENCODER_DEBUG
+        rSerial.print(newPos);
+        rSerial.print("  ms: ");
+        rSerial.println(ms);
+      #endif
 
       RotaryEncoderEvent ev{};
       ev.type     = RotaryEncoderEvent::Type::Encoder;
       ev.encValue = (uint8_t)newPos;
-      ev.delta = (uint8_t)(newPos - lastPos); // Guarunteed to be != 0 due to the queue set selection
+      ev.delta = (int8_t)(newPos - lastPos); // Guarunteed to be != 0 due to the queue set selection
+      // Also, we can permit it be constrained to -127 to 127
       xQueueSend(m_rotaryEncoderQueue, &ev, 0);
       lastPos = newPos;
     }
