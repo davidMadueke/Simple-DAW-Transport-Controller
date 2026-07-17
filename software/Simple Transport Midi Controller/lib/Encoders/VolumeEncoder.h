@@ -53,6 +53,8 @@ class VolumeEncoder {
     VOL_ENCODER_MODE m_mode = (VOL_ENCODER_MODE) 1U; // Cast second MODE (i.e. First mode that is not NONE)
     uint8_t m_position = 0;
 
+    uint8_t m_positions[VOL_ENCODER_MODE_COUNT] = {}; // Track the positions of each encoder mode
+
     // Injected pointers to the shared global display state and its mutex.
     // Attached via attachDisplayState(); used to re-sync the mode while idle.
     DISPLAY_STATE* m_displayState = nullptr;
@@ -93,7 +95,11 @@ class VolumeEncoder {
         ring->begin_dial();
 
         
-        
+        for (uint8_t i = 0; i < VOL_ENCODER_MODE_COUNT; ++i) 
+        {
+            m_positions[i] = 0u;
+        }
+    m_position = m_positions[(uint8_t)m_mode];
 
         // Output queue of mode/encoder events for the InputManager to consume.
         m_volEncoderQueue = xQueueCreate(
@@ -140,11 +146,16 @@ class VolumeEncoder {
                 globalPosition = m_displayState->volEncoder_potValue;
                 portEXIT_CRITICAL(m_displayStateMux);
 
-                if (globalMode != m_mode || m_position != globalPosition)
+                if (globalMode != m_mode )
                 {
-                    m_mode = globalMode;
+                    setMode(globalMode);
+                }
+
+                if (m_position != globalPosition)
+                {
                     m_position = globalPosition;
                     m_position = constrain(m_position, 0, 127); // Guard to ensure position stays in MIDI number space
+                    m_positions[(uint8_t)m_mode] = m_position; 
                     LedStateMachine(m_mode, m_position);
                 }
 
@@ -175,7 +186,8 @@ class VolumeEncoder {
                         int8_t delta = ev.delta;
                         int16_t nextPosition = (int16_t)m_position + (int16_t)delta;
                         m_position = (uint8_t)constrain(nextPosition, 0, 127);
-                        
+                        m_positions[(uint8_t)m_mode] = m_position; 
+
                         #ifdef VOL_ENCODER_DEBUG
                             rSerial.print("  Pos= ");
                             rSerial.println(m_position);
@@ -196,9 +208,24 @@ class VolumeEncoder {
         }
     }; 
 
+    void setMode(VOL_ENCODER_MODE newMode)
+{
+    if (newMode == m_mode) return;
+    // Save outgoing mode’s position
+    if ((uint8_t)m_mode < VOL_ENCODER_MODE_COUNT) {
+        m_positions[(uint8_t)m_mode] = m_position;
+    }
+    m_mode = newMode;
+    // Restore incoming mode’s position
+    m_position = m_positions[(uint8_t)m_mode];
+    m_position = constrain(m_position, 0, 127);
+    
+}
+
     void incrementMode()
     {
-        m_mode = (VOL_ENCODER_MODE)((m_mode + 1) % VOL_ENCODER_MODE_COUNT);
+        VOL_ENCODER_MODE next = (VOL_ENCODER_MODE)((m_mode + 1) % VOL_ENCODER_MODE_COUNT);
+        setMode(next);
         #ifdef VOL_ENCODER_DEBUG
             rSerial.println("Next Increment");
         #endif
