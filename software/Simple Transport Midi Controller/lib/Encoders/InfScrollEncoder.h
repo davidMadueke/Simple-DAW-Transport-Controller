@@ -3,6 +3,7 @@
 #include <HAL_RotaryEncoder.h>
 #include <INF_SCROLL_MIDI_STATE.h>
 #include <DISPLAY_STATE.h>
+#include <rSerial.h>
 #include <functional>
 
 #ifndef INF_SCROLL_ENCODER_FREERTOS_PRIORITY
@@ -31,17 +32,17 @@ static_assert(INF_SCROLL_LED_BRIGHTNESS_PRESCALER <= 255);
 
 #define INF_SCROLL_LED_MAX_VALUE 255 / INF_SCROLL_LED_BRIGHTNESS_PRESCALER
 #define INF_SCROLL_LED_OFF     0,   0,   0
-#define INF_SCROLL_LED_RED     INF_SCROLL_LED_MAX_VALUE, 0,   0
-#define INF_SCROLL_LED_GREEN   0,   INF_SCROLL_LED_MAX_VALUE, 0
-#define INF_SCROLL_LED_BLUE    0,   0,   INF_SCROLL_LED_MAX_VALUE
-#define INF_SCROLL_LED_TEST    128,   36,   99
-#define INF_SCROLL_LED_WHITE   INF_SCROLL_LED_MAX_VALUE, INF_SCROLL_LED_MAX_VALUE, INF_SCROLL_LED_MAX_VALUE
+#define INF_SCROLL_LED_PRESET_RED     INF_SCROLL_LED_MAX_VALUE, 0,   0
+#define INF_SCROLL_LED_PRESET_GREEN   0,   INF_SCROLL_LED_MAX_VALUE, 0
+#define INF_SCROLL_LED_PRESET_BLUE    0,   0,   INF_SCROLL_LED_MAX_VALUE
+#define INF_SCROLL_LED_PRESET_TEST    128,   36,   99
+#define INF_SCROLL_LED_PRESET_WHITE   INF_SCROLL_LED_MAX_VALUE, INF_SCROLL_LED_MAX_VALUE, INF_SCROLL_LED_MAX_VALUE
 
 #include "constants.h"
 
 using InfScrollLedWriteCallback = std::function<void(uint8_t, uint8_t)>;
 using LedPinModeCallback = std::function<void(uint8_t, uint8_t)>;
-struct ENCODER_LED_STATE
+struct INF_ENCODER_LED_STATE
 {
     uint8_t Red;
     uint8_t Blue;
@@ -51,7 +52,7 @@ class InfScrollEncoder {
     private:
     HAL_RotaryEncoder *encoder;
     
-    ENCODER_LED_STATE m_ledState = {INF_SCROLL_LED_OFF};
+    INF_ENCODER_LED_STATE m_ledState = {INF_SCROLL_LED_OFF};
 
     uint8_t m_ledPin_R; // Pin number for the red LED
     uint8_t m_ledPin_G; // Pin number for the green LED
@@ -65,7 +66,7 @@ class InfScrollEncoder {
     QueueHandle_t m_infScrollQueue = nullptr;
     TaskHandle_t hdl_infScrollTask = nullptr;
 
-    INF_SCROLL_MODE m_mode = TEMPO_ADJUST;
+    INF_SCROLL_MODE m_mode = (INF_SCROLL_MODE)1U; // Cast second MODE (i.e. First mode that is not NONE)
 
     // Injected pointers to the shared global display state and its mutex.
     // Attached via attachDisplayState(); used to re-sync the mode while idle.
@@ -246,7 +247,6 @@ class InfScrollEncoder {
                     // mode. No LED change for rotation.
                     INF_SCROLL_MIDI_STATE state{m_mode, ev};
                     xQueueSend(m_infScrollQueue, (void *)&state, 0);
-                    Serial.println("###");
                 }
             }
             
