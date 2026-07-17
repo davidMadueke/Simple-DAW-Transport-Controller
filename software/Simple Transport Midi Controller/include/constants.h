@@ -1,8 +1,10 @@
 #pragma once
+
+
 #define BUTTON_DEBOUNCE_TIME_MS 25U
 #define TOGGLE_SWITCH_DEBOUNCE_TIME_MS 500U
 
-#define RGB_BUTTON_FREERTOS_STACK_SIZE  8192U 
+#define RGB_BUTTON_FREERTOS_STACK_SIZE  8192U
 
 #define PWR_WAKEUP_GPIO GPIO_NUM_6
 
@@ -22,38 +24,31 @@
 // INF_SCROLL and VOL_ENC encoder buttons do not transmit an MIDI information
 // Rather, they just change its respective Encoder Modes
 
-#define MIDI_CC_INF_SCROLL_TEMPO_ADJUST 8
-#define MIDI_CC_INF_SCROLL_RECORD_QUANTISATION 9
+
 
 // ---------------------------------------------------------------------------
-// InfScrollEncoder FreeRTOS task configuration
+// Mode tables: the single source of truth for each encoder's modes.
+//   X(mode_name, led_preset, midi_cc)
+// The led_preset tokens are defined in the encoder headers and are only
+// expanded at the LED switch call-site (where they are in scope), so it is safe
+// to reference them here. The matching ..._MIDI_STATE.h headers provide an
+// #ifndef fallback copy for standalone/unit-test compilation.
 // ---------------------------------------------------------------------------
-#ifndef INF_SCROLL_ENCODER_FREERTOS_PRIORITY
-    #define INF_SCROLL_ENCODER_FREERTOS_PRIORITY 3
+
+
+
+//#define INF_SCROLL_MODE_TABLE_ENABLE_EXTERNAL_DEF 1
+#ifndef INF_SCROLL_MODE_TABLE
+#define INF_SCROLL_MODE_TABLE(X)                    \
+    X(TEMPO_ADJUST,        PRESET_RED,   8) \
+    X(RECORD_QUANTISATION, PRESET_BLUE,  9)
 #endif
 
-#ifndef INF_SCROLL_ENCODER_FREERTOS_TASK_STACK_SIZE
-    #define INF_SCROLL_ENCODER_FREERTOS_TASK_STACK_SIZE 4096
-#endif
+#ifndef VOL_ENCODER_MODE_TABLE
+#define VOL_ENCODER_MODE_TABLE(X)              \
+    X(VOL_ENCODER_MODE1, PRESET_BLUE,  10)   \
+    X(VOL_ENCODER_MODE2, PRESET_GREEN, 11)   \
+    X(VOL_ENCODER_MODE3, PRESET_RED,   12)    \
+    X(VOL_ENCODER_MODE4, PRESET_WHITE, 13)    
 
-#ifndef INF_SCROLL_ENCODER_FREERTOS_EVENT_QUEUE_LENGTH
-    #define INF_SCROLL_ENCODER_FREERTOS_EVENT_QUEUE_LENGTH 8
 #endif
-
-#ifndef INF_SCROLL_ENCODER_QUEUE_RECEIVE_TIMEOUT_MS
-    #define INF_SCROLL_ENCODER_QUEUE_RECEIVE_TIMEOUT_MS 200
-#endif
-
-// ---------------------------------------------------------------------------
-// InfScrollEncoder per-mode LED colours.
-// These reference the named colour presets defined in InfScrollEncoder.h.
-// ---------------------------------------------------------------------------
-#ifndef INF_SCROLL_LED_TEMPO_ADJUST
-    #define INF_SCROLL_LED_TEMPO_ADJUST        INF_SCROLL_LED_BLUE
-#endif
-
-#ifndef INF_SCROLL_LED_RECORD_QUANTISATION
-    #define INF_SCROLL_LED_RECORD_QUANTISATION INF_SCROLL_LED_GREEN
-#endif
-
-#define INF_SCROLL_LED_BRIGHTNESS_PRESCALER 2

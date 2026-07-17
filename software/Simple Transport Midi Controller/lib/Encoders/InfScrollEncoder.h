@@ -128,19 +128,19 @@ class InfScrollEncoder {
     void incrementMode()
     {
         m_mode = (INF_SCROLL_MODE)((m_mode + 1) % INF_SCROLL_MODE_COUNT);
-        Serial.println("Next Increment");
+        #ifdef INF_SCROLL_DEBUG
+            rSerial.println("Next Increment");
+        #endif
     }
 
     void LedStateMachine(INF_SCROLL_MODE mode)
     {
         switch (mode)
         {
-            case TEMPO_ADJUST:
-                setLedState(INF_SCROLL_LED_TEMPO_ADJUST);
-                break;
-            case RECORD_QUANTISATION:
-                setLedState(INF_SCROLL_LED_RECORD_QUANTISATION);
-                break;
+            #define X(name, led, cc) case name: setLedState(INF_SCROLL_LED_##led); break;
+                INF_SCROLL_MODE_TABLE(X)
+            #undef X
+
             default:
                 setLedState(INF_SCROLL_LED_OFF);
                 break;
