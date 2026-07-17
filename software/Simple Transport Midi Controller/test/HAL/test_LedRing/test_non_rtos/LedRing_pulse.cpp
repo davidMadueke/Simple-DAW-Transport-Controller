@@ -31,7 +31,7 @@ static const RGB COLOUR_CYCLE[] = {
 static const uint8_t COLOUR_COUNT = sizeof(COLOUR_CYCLE) / sizeof(COLOUR_CYCLE[0]);
 
 // One full up + down dial sweep must fit inside this window.
-static const uint16_t PERIOD_MS = 500;
+static const uint16_t PERIOD_MS = 2000;
 
 static uint8_t colourIdx = 0;
 

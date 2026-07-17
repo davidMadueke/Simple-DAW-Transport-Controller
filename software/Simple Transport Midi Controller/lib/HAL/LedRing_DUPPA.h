@@ -9,7 +9,7 @@
 #endif
 
 #ifndef LED_RING_DIAL_FREERTOS_TASK_STACK_SIZE
-    #define LED_RING_DIAL_FREERTOS_TASK_STACK_SIZE 512
+    #define LED_RING_DIAL_FREERTOS_TASK_STACK_SIZE 4096
 #endif
 
 #ifndef LED_RING_DIAL_FREERTOS_EVENT_QUEUE_LENGTH
@@ -44,7 +44,7 @@ struct LED_RING_DIAL_STATE {
 
     private:
     LEDRingSmall *Ring;
-    static const int TOTAL_LEDS = 25;
+    static const int TOTAL_LEDS = 24;
     int m_startLedValue;
 
 //    uint8_t m_LedColourState_red; // Used to keep track of the LED non-off state
@@ -60,7 +60,8 @@ struct LED_RING_DIAL_STATE {
 
     // Helper function to map logical LED position to physical LED position
     int getLEDPosition(int logicalPosition) const {
-        return (m_startLedValue + logicalPosition) % TOTAL_LEDS;
+        const int clamped = constrain(logicalPosition, 0, getMaxLEDPosition());
+        return (m_startLedValue + clamped) % TOTAL_LEDS;
     }
     
     int getMaxLEDPosition() const {
@@ -77,19 +78,19 @@ struct LED_RING_DIAL_STATE {
      // Turns of  all the LEDs to the default state
     void clearAll();
 
-    // Turns of the chosen LEDs to the default state
-    void clearLed(uint8_t logicalLEDPosition);
+    // Turns of the chosen LEDs to the default state Choose bufferMode = True if you want to turn off multiple LEDs via one i2c transaction
+    void clearLed(uint8_t logicalLEDPosition, bool bufferMode = false);
 
-    //Set a value (between 0 and 24) that will serve as the 1st LED in the Array
+    //Set a value (between 0 and TOTAL_LEDS) that will serve as the 1st LED in the Array
     //Any calls of other functions will convert that corresponding value arg to the respective element of the set (startValue, startValue - 1) mod 24
     void setLedStartValue(uint8_t startValue);
     
-    // Sets a specific LED in the ring array to light up, unaffecting all the others
-    void setLed(uint8_t logicalLEDPosition, uint8_t r, uint8_t g, uint8_t b);
+    // Sets a specific LED in the ring array to light up, unaffecting all the others, Choose bufferMode = True if you want to set multiple LEDs at once
+    void setLed(uint8_t logicalLEDPosition, uint8_t r, uint8_t g, uint8_t b, bool bufferMode = false);
 
     // Sets a specific LED in the ring array to light up, unaffecting all the others
     // Uses the internally stored LED colour states
-    void setLedFromState(uint8_t logicalLEDPosition);
+    void setLedFromState(uint8_t logicalLEDPosition, bool bufferMode = false);
 
     // Sets all LEDs before and including the logical LED Position to the same given RGB values
     void dial_setLed(uint8_t logicalLEDPosition, uint8_t r, uint8_t g, uint8_t b);
@@ -98,12 +99,23 @@ struct LED_RING_DIAL_STATE {
     // Uses the internally stored LED colour states
     void dial_setLedFromState(uint8_t logicalLEDPosition);
 
+    // If you have called setLed functions before using BufferMode = True, this method flushes the buffer with one i2c transaction
+    void buffer_flush(void);
+
     // Retrieve the colour state of a chosen logical LED position
     LED_RING_LED_STATE getLedColourState(uint8_t logicalLEDPosition);
 
     // Change the colour state of a chosen logical LED position
     void setLedColourState(uint8_t logicalLEDPosition, uint8_t r, uint8_t g, uint8_t b);
 
+    // Simple Helper Functions
+
+    // Converts dial positions from percentages to exact logical LED positions
+    uint8_t dial_midiToPosition(uint8_t midiValue) const
+    {
+        return (uint8_t)map(constrain(midiValue, 0, 127), 0, 127, 0, getMaxLEDPosition());
+    }
+    
     /* FREE RTOS ASSOCIATED METHODS*/
     public:
     // Sets up the LED Ring dial task and creates the LED_Ring_Dial Queue
