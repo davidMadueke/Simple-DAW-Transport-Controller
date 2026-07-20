@@ -21,6 +21,8 @@
 #define MIDI_CC_OVERDUB_BTN 5
 #define MIDI_CC_TAP_TEMPO 7
 
+#define MIDI_CC_INVALID 255// if =255, then nothing is added to the MIDI transport Manager queue
+
 // INF_SCROLL and VOL_ENC encoder buttons do not transmit an MIDI information
 // Rather, they just change its respective Encoder Modes
 

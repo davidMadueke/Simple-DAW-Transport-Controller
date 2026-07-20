@@ -82,6 +82,8 @@ class VolumeEncoder {
         m_displayStateMux = mux;
     };
 
+    QueueHandle_t getVolEncoderEventQueueHandle() { return m_volEncoderQueue; }
+
     // Sets up the Encoder and LED Ring tasks, along with a seperate tasks handling the logic between these elements
     // NOTE: ledRingStartValue must be a value between 0 and TOTAL_LEDS within LedRing Object
     void begin(uint8_t ledRingStartValue)

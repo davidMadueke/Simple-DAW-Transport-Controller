@@ -1,17 +1,20 @@
 #include <freertos/queue.h>
 #include <InputSource.h>
 #include <BUTTON_MIDI_STATE.h>
+#include <VOL_ENCODER_MIDI_STATE.h>
 #include <PushButton.h>
 #include "constants.h"
+#include <rSerial.h>
 
 
 #ifndef INPUT_COMPILER_BUTTON_CC_VALUE
     #define INPUT_COMPILER_BUTTON_CC_VALUE 127
 #endif
 
-void dispatchButtonEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
+inline void dispatchButtonEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
 {
     BUTTON_MIDI_STATE evt;
+    DISPLAY_ACTION action;
     if (xQueueReceive(inputQueue, &evt, 0) != pdTRUE) return;
     // map evt.name / evt.type / evt.pressCount -> MIDI_PACKET + display action,
     // then xQueueSend to your midi-compile queue / display action queue
@@ -50,8 +53,8 @@ void dispatchButtonEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, Queu
             #endif
         }
 
-        DISPLAY_ACTION action = createButtonPressAction(packet);
-        if (xQueueSend(midiQueue, (void *)&action, 0) != pdTRUE) 
+        action = createButtonPressAction(packet);
+        if (xQueueSend(displayQueue, (void *)&action, 0) != pdTRUE) 
         {
             #ifdef INPUT_DISPATCHER_DEBUG
                 Serial.printf("Debug for %s, line 57 of InputCompiler.h. Queue Full", (char*) midiQueue);
@@ -60,9 +63,10 @@ void dispatchButtonEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, Queu
     }
 };
 
-void dispatchTapTempoEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
+inline void dispatchTapTempoEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
 {
     PushButtonEvent evt;
+    DISPLAY_ACTION action;
     if (xQueueReceive(inputQueue, &evt, 0) != pdTRUE) return;
     // map tap-tempo edge -> MIDI_CC_TAP_TEMPO etc.
     if (evt.type == PushButtonEvent::Type::RegularPressComplete) 
@@ -75,8 +79,8 @@ void dispatchTapTempoEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, Qu
             #endif
         }
 
-        DISPLAY_ACTION action = createTapTempoAction(packet);
-        if (xQueueSend(midiQueue, (void *)&action, 0) != pdTRUE) 
+        action = createTapTempoAction(packet);
+        if (xQueueSend(displayQueue, (void *)&action, 0) != pdTRUE) 
         {
             #ifdef INPUT_DISPATCHER_DEBUG
                 Serial.printf("Debug for %s, line 57 of InputCompiler.h. Queue Full", (char*) midiQueue);
@@ -85,21 +89,82 @@ void dispatchTapTempoEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, Qu
     }
 };
 
-void dispatchInfScrollEncoderEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
+inline void dispatchInfScrollEncoderEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
 {
     // Use the Arduino inbuilt constrain function to ensure that the new encoder value
     // is between 0 and 127
     //m_encoderValue = constrain(m_encoderValue, 0, 127);
 };
 
-void dispatchVolumeEncoderEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
+inline void dispatchVolumeEncoderEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
 {
-    // Use the Arduino inbuilt constrain function to ensure that the new encoder value
-    // is between 0 and 127
-    //m_encoderValue = constrain(m_encoderValue, 0, 127);
+    VOL_ENCODER_MIDI_STATE state;
+    DISPLAY_ACTION action;
+
+    if (xQueueReceive(inputQueue, &state, 0) != pdTRUE) return;
+
+    // derive CC value from encoder mode
+    uint8_t CC = MIDI_CC_INVALID;
+    uint8_t pos = 0;
+    switch (state.MODE)
+        {
+            case VOL_ENCODER_MODE::VOL_ENCODER_MODE_NONE:
+                CC = MIDI_CC_INVALID;
+                break;
+
+            #define X(name, led, cc) case name: CC = cc; break;
+                VOL_ENCODER_MODE_TABLE(X)
+            #undef X
+
+            default:
+                CC = MIDI_CC_INVALID;
+                break;
+    }
+
+    // map encoder turn -> MIDI_CC_TAP_TEMPO etc.
+    if (state.event.type == RotaryEncoderEvent::Type::Button)
+    {
+        // We assume VOL_Encoder mode button changes of state are handled in underlying VolEncoder task
+        action = createVolEncoderModeAction(state.MODE);
+
+        if (xQueueSend(displayQueue, (void *)&action, 0) != pdTRUE) 
+        {
+            #ifdef INPUT_DISPATCHER_DEBUG
+                Serial.printf("Debug for %s, line 133 of InputCompiler.h. Queue Full", (char*) midiQueue);
+            #endif
+        }
+    }
+    else if (state.event.type == RotaryEncoderEvent::Type::Encoder)
+    {
+        // Constrain midi value and check that CC number is not invalid
+        if (CC != MIDI_CC_INVALID)
+        {
+            pos = constrain(state.event.encValue, 0, 127);
+
+            MIDI_PACKET packet{MIDI_PACKET::TYPE::CC, CC, pos, MIDI_CHANNEL};
+            if (xQueueSend(midiQueue, (void *)&packet, 0) != pdTRUE) 
+            {
+                #ifdef INPUT_DISPATCHER_DEBUG
+                    Serial.printf("Debug for %s, line 113 of InputCompiler.h. Queue Full", (char*) midiQueue);
+                #endif
+            }
+
+            action = createVolEncoderPositionAction(packet);
+        
+
+        if (xQueueSend(displayQueue, (void *)&action, 0) != pdTRUE) 
+        {
+            #ifdef INPUT_DISPATCHER_DEBUG
+                Serial.printf("Debug for %s, line 158 of InputCompiler.h. Queue Full", (char*) midiQueue);
+            #endif
+        }
+        }
+    }
+        
+   
 };
 
-void inputDispatcher(InputSource input, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
+inline void inputDispatcher(InputSource input, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
 {
     switch (input.type) 
     {
@@ -113,7 +178,7 @@ void inputDispatcher(InputSource input, QueueHandle_t midiQueue, QueueHandle_t d
             // dispatchEncoderEvent(input.queue, midiQueue, displayQueue);
             break;
         case InputSource::Type::VolEncoder:
-            // dispatchEncoderEvent(input.queue, midiQueue, displayQueue);
+            dispatchVolumeEncoderEvent(input.queue, midiQueue, displayQueue);
             break;
         default:
             return;
