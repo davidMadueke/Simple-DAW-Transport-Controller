@@ -14,12 +14,14 @@
 
 #define MIDI_CHANNEL 1
 
-#define MIDI_CC_PLAY_BTN 1
-#define MIDI_CC_STOP_BTN 2
-#define MIDI_CC_REC_BTN 3
-#define MIDI_CC_QUANT_BTN 4
-#define MIDI_CC_OVERDUB_BTN 5
-#define MIDI_CC_TAP_TEMPO 7
+#define MIDI_CC_DAW_PLAY 22
+#define MIDI_CC_DAW_PAUSE 23
+#define MIDI_CC_DAW_STOP 24 // Initiates a stop and return to start of Arrangement
+#define MIDI_CC_DAW_REC 25
+#define MIDI_CC_DAW_QUANT 26
+#define MIDI_CC_DAW_OVERDUB 27
+#define MIDI_CC_DAW_METRONOME 28
+#define MIDI_CC_DAW_TAP_TEMPO 29
 
 #define MIDI_CC_INVALID 255// if =255, then nothing is added to the MIDI transport Manager queue
 
@@ -48,7 +50,7 @@
 
 #ifndef VOL_ENCODER_MODE_TABLE
 #define VOL_ENCODER_MODE_TABLE(X)              \
-    X(VOL_ENCODER_MODE1, PRESET_BLUE,  10)   \
+    X(MASTER_VOLUME, PRESET_BLUE,  10)   \
     X(VOL_ENCODER_MODE2, PRESET_GREEN, 11)   \
     X(VOL_ENCODER_MODE3, PRESET_RED,   12)    \
     X(VOL_ENCODER_MODE4, PRESET_WHITE, 13)    

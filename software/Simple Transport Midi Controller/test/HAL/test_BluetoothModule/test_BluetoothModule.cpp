@@ -37,11 +37,7 @@ BluetoothModule* test_module = new BluetoothModule(
 const byte SX1509_ADDRESS = 0x3E; // SX1509 I2C address
 SX1509* io = new SX1509();                        // Create an SX1509 object to be used throughout
 */
-// Create Bluetooth Module Enable Button ISR
-volatile bool BUTTON_BUILTIN_ISR_State = false;
-void BUTTON_BUILTIN_isr() {
-    BUTTON_BUILTIN_ISR_State = !BUTTON_BUILTIN_ISR_State;
-}
+
 
 void ReadCB(void *parameter);
 

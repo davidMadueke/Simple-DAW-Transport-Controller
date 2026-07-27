@@ -27,20 +27,24 @@ inline void dispatchButtonEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueu
         switch (evt.name)
         {
             case BUTTON_MIDI_STATE::Name::PLAY:
-                midiCC = MIDI_CC_PLAY_BTN;
+                midiCC = MIDI_CC_DAW_PLAY;
                 break;
             case BUTTON_MIDI_STATE::Name::STOP:
-                midiCC = MIDI_CC_STOP_BTN;
+                midiCC = MIDI_CC_DAW_STOP;
                 break;
             case BUTTON_MIDI_STATE::Name::REC:
-                midiCC = MIDI_CC_REC_BTN;
+                midiCC = MIDI_CC_DAW_REC;
                 break;
             case BUTTON_MIDI_STATE::Name::QUANT:
-                midiCC = MIDI_CC_QUANT_BTN;
+                midiCC = MIDI_CC_DAW_QUANT;
                 break;
             case BUTTON_MIDI_STATE::Name::OVERDUB:
-                midiCC = MIDI_CC_OVERDUB_BTN;
+                midiCC = MIDI_CC_DAW_OVERDUB;
                 break;
+            case BUTTON_MIDI_STATE::Name::METRONOME:
+                midiCC = MIDI_CC_DAW_METRONOME;
+                break;
+            
             default:
                 return; // Should not reach this state, hence skip adding to the queues
         }
@@ -71,7 +75,7 @@ inline void dispatchTapTempoEvent(QueueHandle_t inputQueue, QueueHandle_t midiQu
     // map tap-tempo edge -> MIDI_CC_TAP_TEMPO etc.
     if (evt.type == PushButtonEvent::Type::RegularPressComplete) 
     {
-        MIDI_PACKET packet{MIDI_PACKET::TYPE::CC, MIDI_CC_TAP_TEMPO, INPUT_COMPILER_BUTTON_CC_VALUE, MIDI_CHANNEL};
+        MIDI_PACKET packet{MIDI_PACKET::TYPE::CC, MIDI_CC_DAW_TAP_TEMPO, INPUT_COMPILER_BUTTON_CC_VALUE, MIDI_CHANNEL};
         if (xQueueSend(midiQueue, (void *)&packet, 0) != pdTRUE) 
         {
             #ifdef INPUT_DISPATCHER_DEBUG

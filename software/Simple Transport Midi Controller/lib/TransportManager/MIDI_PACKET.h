@@ -6,6 +6,7 @@ struct MIDI_PACKET {
     NOTE_OFF,
     CC,
     PITCH_BEND,
+    ENDLESS_ENCODER
     } type;       // Type of message (Note On, CC, Pitch Bend)
     uint8_t data1 = 0;      // Note number or CC number
     uint8_t data2 = 0;      // Velocity or CC value
