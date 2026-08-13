@@ -243,7 +243,7 @@ class VolumeEncoder {
                 state.LED = {VOL_ENCODER_LED_RING_OFF};
                 break;
 
-            #define X(name, led, cc) case name: state.LED = {VOL_ENCODER_LED_RING_##led}; break;
+            #define X(name, led, cc, ...) case name: state.LED = {VOL_ENCODER_LED_RING_##led}; break;
                 VOL_ENCODER_MODE_TABLE(X)
             #undef X
 

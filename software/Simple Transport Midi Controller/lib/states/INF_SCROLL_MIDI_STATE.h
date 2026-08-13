@@ -18,7 +18,7 @@
 enum INF_SCROLL_MODE
 {
     INF_SCROLL_MODE_NONE,
-#define X(name, led, cc) name,
+#define X(name, led, cc, ...) name,
     INF_SCROLL_MODE_TABLE(X)
 #undef X
     INF_SCROLL_MODE_COUNT

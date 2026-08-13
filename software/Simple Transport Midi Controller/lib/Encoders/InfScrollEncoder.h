@@ -138,7 +138,7 @@ class InfScrollEncoder {
     {
         switch (mode)
         {
-            #define X(name, led, cc) case name: setLedState(INF_SCROLL_LED_##led); break;
+            #define X(name, led, cc, ...) case name: setLedState(INF_SCROLL_LED_##led); break;
                 INF_SCROLL_MODE_TABLE(X)
             #undef X
 

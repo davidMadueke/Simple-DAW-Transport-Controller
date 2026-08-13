@@ -116,7 +116,7 @@ inline void dispatchVolumeEncoderEvent(QueueHandle_t inputQueue, QueueHandle_t m
                 CC = MIDI_CC_INVALID;
                 break;
 
-            #define X(name, led, cc) case name: CC = cc; break;
+            #define X(name, led, cc, ...) case name: CC = cc; break;
                 VOL_ENCODER_MODE_TABLE(X)
             #undef X
 

@@ -20,7 +20,7 @@
 enum VOL_ENCODER_MODE
 {
     VOL_ENCODER_MODE_NONE,
-    #define X(name, led, cc) name,
+    #define X(name, led, cc, ...) name,
         VOL_ENCODER_MODE_TABLE(X)
     #undef X
     VOL_ENCODER_MODE_COUNT
