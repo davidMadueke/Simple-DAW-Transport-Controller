@@ -35,7 +35,7 @@ struct RotaryEncoderEvent {
 
     PushButtonEvent btnEvent = {};
     uint8_t encValue = 0;
-    int8_t delta = 0;
+    int16_t delta = 0;
 
 };
 
