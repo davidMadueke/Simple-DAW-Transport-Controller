@@ -2,6 +2,7 @@
 
 #include <MIDI_PACKET.h>
 #include <InputManager.h>
+#include <BluetoothModule.h>
 #include <MIDI.h>
 #include <Arduino.h>
 #include <freertos/FreeRTOS.h>
@@ -11,21 +12,6 @@
     #define MIDI_SYSEX_MFR_ID 0x7D
 #endif
 
-#ifndef DEFINE_MIDI_MACRO
-#include "deviceNames.h"
-#include <BLEMIDI_Transport.h>
-#include <hardware/BLEMIDI_ESP32_NimBLE.h>
-#include <Adafruit_TinyUSB.h>
-
-
-BLEMIDI_CREATE_INSTANCE(BT_DEVICE_NAME, MIDI_bt);
-MIDI_CREATE_INSTANCE(HardwareSerial, Serial0, MIDI_ser);
-Adafruit_USBD_MIDI usb_midi;
-
-MIDI_CREATE_INSTANCE(Adafruit_USBD_MIDI, usb_midi, MIDI_usb);
-
-#define DEFINE_MIDI_MACRO 1
-#endif
 
 #ifndef TRANSPORT_MANAGER_FREERTOS_PRIORITY
     #define TRANSPORT_MANAGER_FREERTOS_PRIORITY 3
@@ -46,6 +32,12 @@ MIDI_CREATE_INSTANCE(Adafruit_USBD_MIDI, usb_midi, MIDI_usb);
 
 class TransportManager
 {
+    public:
+
+
+    TransportManager(InputManager* mgr, BluetoothModule* ble = nullptr)
+        : inputMgr(mgr), bleModule(ble) {};
+
     private:
 
     // Static instance for FortySevenEffects MIDI.read callbacks
@@ -55,6 +47,7 @@ class TransportManager
     static inline MIDI_PACKET::INTERFACE s_activeInterface = MIDI_PACKET::INTERFACE::ANY;
 
     InputManager* inputMgr = nullptr;
+    BluetoothModule* bleModule = nullptr;
 
     // FreeRTOS task
     MIDI_PACKET m_midiPacket;
@@ -69,18 +62,18 @@ class TransportManager
 
     template <typename MidiT>
     void attachListeners(MidiT& midi) {
-        midi.setHandleSystemExclusive(HandleSysex);
+        midi.setHandleSystemExclusive(handleSysex);
         midi.setHandleControlChange(handleControlChange);
     }
 
-    static void HandleSysex(byte* array, unsigned size);
+    static void handleSysex(byte* array, unsigned size);
     static void handleControlChange(byte channel, byte number, byte value);
 
     public:
 
-    TransportManager(InputManager* mgr) : inputMgr(mgr) {};
-
-    void begin();
+    void begin(uint8_t bleChannel = MIDI_CHANNEL_OMNI,
+                uint8_t serChannel = MIDI_CHANNEL_OMNI,
+                uint8_t usbChannel = MIDI_CHANNEL_OMNI);
     static void vTransportManagerTask(void *pvParameters);
     void processTaskLoop();
 
@@ -89,6 +82,24 @@ class TransportManager
 
     void send(MIDI_PACKET* p);
 
+    template <typename MidiT>
+    void sendControlChange(MidiT& midi, byte ccNumber, byte ccValue, byte channel)
+    {
+        midi.sendControlChange(ccNumber, ccValue, channel);
+    }
+
+    template <typename MidiT>
+    //Note: you can send NoteOn with zero velocity to make a NoteOff, this is based on the Running Status principle, to avoid sending status messages and thus sending only NoteOn data. sendNoteOff will always send a real NoteOff message. Take a look at the values, names and frequencies of notes here: http://www.phys.unsw.edu.au/jw/notes.html
+    void sendNoteOn(MidiT& midi, byte inNoteNumber, byte inVelocity, byte channel)
+    {
+        midi.sendNoteOn(inNoteNumber, inVelocity, channel);
+    }
+
+    template <typename MidiT>
+    void sendSysex(MidiT& midi, unsigned inLength, const byte* inArray)
+    {
+        midi.sendSysEx(inLength, inArray);
+    }
     QueueHandle_t getMidiReadQueue() { return m_midiReadQueue; }
     QueueHandle_t getMidiSendQueue() { return m_midiSendQueue; }
 };

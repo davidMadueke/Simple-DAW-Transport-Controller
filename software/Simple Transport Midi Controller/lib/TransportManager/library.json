@@ -1,0 +1,10 @@
+{
+  "name": "TransportManager",
+  "version": "1.0.0",
+  "dependencies": {
+    "h2zero/NimBLE-Arduino": "1.4.3",
+    "lathoub/BLE-MIDI": "^2.2",
+    "fortyseveneffects/MIDI Library": "^5.0.2",
+    "adafruit/Adafruit TinyUSB Library": "^3.7.7"
+  }
+}

@@ -10,6 +10,10 @@
 #include <DisplayAction.h>
 #include <constants.h>
 #include <rSerial.h>
+#include <TransportManager.h>
+#include <BluetoothModule.h>
+#include <BLUETOOTH_MIDI_STATE.h>
+#include <deviceNames.h>
 
 #define PIN_IN1 A2
 #define PIN_IN2 A3
@@ -18,19 +22,22 @@
 #define PIN_LED_G_SX1509 1
 #define PIN_LED_B_SX1509 2
 
-#ifndef TEST_INPUT_MANAGER_CONSUMER_STACK_SIZE
-    #define TEST_INPUT_MANAGER_CONSUMER_STACK_SIZE 4096
+#ifndef TEST_TRANSPORT_MANAGER_CONSUMER_STACK_SIZE
+    #define TEST_TRANSPORT_MANAGER_CONSUMER_STACK_SIZE 4096
 #endif
 
-#ifndef TEST_INPUT_MANAGER_CONSUMER_PRIORITY
-    #define TEST_INPUT_MANAGER_CONSUMER_PRIORITY 2
+#ifndef TEST_TRANSPORT_MANAGER_CONSUMER_PRIORITY
+    #define TEST_TRANSPORT_MANAGER_CONSUMER_PRIORITY 2
 #endif
 
 byte SX1509_ADDRESS = 0x3E;
 SX1509 io;
 
 InfScrollEncoder* testEncoder = nullptr;
-static InputManager* manager = nullptr;
+static InputManager* inputMgr = nullptr;
+static TransportManager* transportMgr = nullptr;
+static BLUETOOTH_MIDI_STATE bleState{false, false, false};
+static BluetoothModule* bleModule = nullptr;
 
 void setUp(void) {}
 void tearDown(void) {}
@@ -51,27 +58,6 @@ static const char* displayActionTypeToString(DISPLAY_ACTION::TYPE type)
     }
 }
 
-static void vMidiConsumerTask(void* pvParameters)
-{
-    InputManager* mgr = static_cast<InputManager*>(pvParameters);
-    MIDI_PACKET packet;
-
-    for (;;)
-    {
-        if (xQueueReceive(mgr->getMidiQueue(), &packet, portMAX_DELAY) == pdTRUE)
-        {
-            rSerial.printf(
-                "[MIDI] type=%u note=%u velocity=%u ch=%u %s\n",
-                static_cast<unsigned>(packet.type),
-                packet.data1,
-                packet.data2,
-                packet.channel,
-                packet.isCoarse ? "Coarse" : "Fine"
-            );
-        }
-    }
-}
-
 static void vDisplayConsumerTask(void* pvParameters)
 {
     InputManager* mgr = static_cast<InputManager*>(pvParameters);
@@ -89,10 +75,21 @@ static void vDisplayConsumerTask(void* pvParameters)
                     static_cast<unsigned>(action.inf_scroll_mode)
                 );
             }
+            else if (action.type == DISPLAY_ACTION::TYPE::INF_SCROLL_DELTA)
+            {
+                rSerial.printf(
+                    "[DISPLAY] type=%s midiCC=%u midiValue=%u ch=%u %s\n",
+                    displayActionTypeToString(action.type),
+                    action.midi_packet.data1,
+                    action.midi_packet.data2,
+                    action.midi_packet.channel,
+                    action.midi_packet.isCoarse ? "Coarse" : "Fine"
+                );
+            }
             else
             {
                 rSerial.printf(
-                    "[DISPLAY] type=%s midiNote=%u midiVelocity=%u\n",
+                    "[DISPLAY] type=%s midiCC=%u midiValue=%u\n",
                     displayActionTypeToString(action.type),
                     action.midi_packet.data1,
                     action.midi_packet.data2
@@ -102,9 +99,17 @@ static void vDisplayConsumerTask(void* pvParameters)
     }
 }
 
+void test_outbound_queue_is_shared_with_input_manager(void)
+{
+    TEST_ASSERT_NOT_NULL(inputMgr);
+    TEST_ASSERT_NOT_NULL(transportMgr);
+    TEST_ASSERT_NOT_NULL(inputMgr->getMidiQueue());
+    TEST_ASSERT_NOT_NULL(transportMgr->getMidiSendQueue());
+    TEST_ASSERT_EQUAL_PTR(inputMgr->getMidiQueue(), transportMgr->getMidiSendQueue());
+}
+
 void setup()
 {
-    UNITY_BEGIN();
     rSerial.begin(115200);
 
     Wire1.setPins(SDA, SCL);
@@ -117,6 +122,8 @@ void setup()
         rSerial.println("Failed to communicate with SX1509.");
         while (1) { ; }
     }
+
+    pinMode(LED_BUILTIN, OUTPUT);
 
     // Duppa RGB LED encoder is common anode.
     testEncoder = new InfScrollEncoder(
@@ -142,32 +149,36 @@ void setup()
 
     testEncoder->begin();
 
-    manager = new InputManager();
-    manager->registerInputSource(
+    inputMgr = new InputManager();
+    inputMgr->registerInputSource(
         InputSource{testEncoder->getInfScrollEventQueueHandle(), InputSource::Type::InfScrollEncoder}
     );
-    manager->begin();
+    inputMgr->begin();
 
-    xTaskCreate(
-        vMidiConsumerTask,
-        "midi_cons",
-        TEST_INPUT_MANAGER_CONSUMER_STACK_SIZE,
-        manager,
-        TEST_INPUT_MANAGER_CONSUMER_PRIORITY,
-        nullptr
+    bleModule = new BluetoothModule(LED_BUILTIN, &bleState);
+    bleModule->setDigitalLedWriteCallback(
+        [](uint8_t pin, uint8_t value) { digitalWrite(pin, value); }
     );
+
+    transportMgr = new TransportManager(inputMgr, bleModule);
+    transportMgr->begin(MIDI_CHANNEL);
 
     xTaskCreate(
         vDisplayConsumerTask,
         "disp_cons",
-        TEST_INPUT_MANAGER_CONSUMER_STACK_SIZE,
-        manager,
-        TEST_INPUT_MANAGER_CONSUMER_PRIORITY,
+        TEST_TRANSPORT_MANAGER_CONSUMER_STACK_SIZE,
+        inputMgr,
+        TEST_TRANSPORT_MANAGER_CONSUMER_PRIORITY,
         nullptr
     );
+
+    UNITY_BEGIN();
+    //RUN_TEST(test_outbound_queue_is_shared_with_input_manager);
+
+
 }
 
 void loop()
 {
-    vTaskDelay(pdMS_TO_TICKS(1000));
+    vTaskDelay(pdMS_TO_TICKS(100));
 }

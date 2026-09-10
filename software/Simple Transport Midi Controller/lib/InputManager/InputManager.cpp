@@ -22,7 +22,7 @@ void InputManager::begin(QueueHandle_t midiQueue, QueueHandle_t displayQueue)
         xQueueAddToSet(handle, m_inputSet);
     }
 
-
+    // Note either InputManager can own the Display and MIDI queues or a Transport Manager can own the MIDI Queue
     if (midiQueue != nullptr) 
     {
             m_midiQueue = midiQueue;

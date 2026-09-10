@@ -1,8 +1,5 @@
 #pragma once
 #include <Arduino.h>
-#include <INF_SCROLL_MIDI_STATE.h>
-#include <BUTTON_MIDI_STATE.h>
-#include <VOL_ENCODER_MIDI_STATE.h>
 #include <MIDI_PACKET.h>
 #include <DisplayAction.h>
 #include <InputCompiler.h>
@@ -39,10 +36,6 @@ class InputManager
     static constexpr size_t kMaxInputs = INPUT_MANAGER_MAX_INPUT_SOURCES;
     InputSource m_inputs[kMaxInputs] = {};
     size_t m_inputCount = 0;
-
-    INF_SCROLL_MIDI_STATE* pInf_scroll = nullptr;
-    BUTTON_MIDI_STATE* pButton_state = nullptr;
-    VOL_ENCODER_MIDI_STATE* pVolume_state = nullptr;
 
 
 

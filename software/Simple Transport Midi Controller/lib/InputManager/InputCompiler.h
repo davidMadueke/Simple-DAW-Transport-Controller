@@ -2,9 +2,12 @@
 #include <InputSource.h>
 #include <BUTTON_MIDI_STATE.h>
 #include <VOL_ENCODER_MIDI_STATE.h>
+#include <INF_SCROLL_MIDI_STATE.h>
 #include <PushButton.h>
-#include "constants.h"
 #include <rSerial.h>
+#if __has_include("constants.h")
+    #include "constants.h"
+#endif
 
 
 #ifndef INPUT_COMPILER_BUTTON_CC_VALUE
@@ -95,9 +98,61 @@ inline void dispatchTapTempoEvent(QueueHandle_t inputQueue, QueueHandle_t midiQu
 
 inline void dispatchInfScrollEncoderEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
 {
-    // Use the Arduino inbuilt constrain function to ensure that the new encoder value
-    // is between 0 and 127
-    //m_encoderValue = constrain(m_encoderValue, 0, 127);
+    INF_SCROLL_MIDI_STATE state;
+    DISPLAY_ACTION action;
+
+    if (xQueueReceive(inputQueue, &state, 0) != pdTRUE) return;
+
+    uint8_t ccValue = MIDI_CC_INVALID;
+    switch (state.MODE)
+    {
+        case INF_SCROLL_MODE::INF_SCROLL_MODE_NONE:
+            ccValue = MIDI_CC_INVALID;
+            break;
+
+        #define X(name, led, cc, ...) case name: ccValue = cc; break;
+            INF_SCROLL_MODE_TABLE(X)
+        #undef X
+
+        default:
+            ccValue = MIDI_CC_INVALID;
+            break;
+    }
+
+    if (state.event.type == RotaryEncoderEvent::Type::Button)
+    {
+        // Inf-scroll mode changes are handled in the InfScrollEncoder task
+        action = createInfScrollModeAction(state.MODE);
+
+        if (xQueueSend(displayQueue, (void *)&action, 0) != pdTRUE)
+        {
+            #ifdef INPUT_DISPATCHER_DEBUG
+                Serial.printf("Debug for %s, line 132 of InputCompiler.h. Queue Full", (char*) midiQueue);
+            #endif
+        }
+    }
+    else if (state.event.type == RotaryEncoderEvent::Type::Encoder)
+    {
+        if (ccValue != MIDI_CC_INVALID && state.event.delta != 0)
+        {
+            MIDI_PACKET packet = createEndlessEncoderPacket(ccValue, state.event.delta, MIDI_CHANNEL);
+            if (xQueueSend(midiQueue, (void *)&packet, 0) != pdTRUE)
+            {
+                #ifdef INPUT_DISPATCHER_DEBUG
+                    Serial.printf("Debug for %s, line 145 of InputCompiler.h. Queue Full", (char*) midiQueue);
+                #endif
+            }
+
+            action = createInfScrollEncoderDeltaAction(packet);
+
+            if (xQueueSend(displayQueue, (void *)&action, 0) != pdTRUE)
+            {
+                #ifdef INPUT_DISPATCHER_DEBUG
+                    Serial.printf("Debug for %s, line 154 of InputCompiler.h. Queue Full", (char*) midiQueue);
+                #endif
+            }
+        }
+    }
 };
 
 inline void dispatchVolumeEncoderEvent(QueueHandle_t inputQueue, QueueHandle_t midiQueue, QueueHandle_t displayQueue)
@@ -179,7 +234,7 @@ inline void inputDispatcher(InputSource input, QueueHandle_t midiQueue, QueueHan
             dispatchTapTempoEvent(input.queue, midiQueue, displayQueue);
             break;
         case InputSource::Type::InfScrollEncoder:
-            // dispatchEncoderEvent(input.queue, midiQueue, displayQueue);
+            dispatchInfScrollEncoderEvent(input.queue, midiQueue, displayQueue);
             break;
         case InputSource::Type::VolEncoder:
             dispatchVolumeEncoderEvent(input.queue, midiQueue, displayQueue);

@@ -27,6 +27,17 @@
 #define MIDI_CC_INVALID 255// if =255, then nothing is added to the MIDI transport Manager queue
 #define MIDI_SYSEX_TYPE_INVALID 0xFF
 
+// Constants for how the system turns endless encoder controls into MIDI signals.
+// Left = minus delta, right = plus delta. Velocity = x + start, where x in
+// [0, MAX_DELTA] and x = 0 means |delta| of 1. |delta| above COARSE_THRESHOLD
+// switches from the fine start value to the coarse start value.
+#define MIDI_PACKET_ENDLESS_ENCODER_MAX_DELTA 10
+#define MIDI_PACKET_ENDLESS_ENCODER_COARSE_THRESHOLD 3
+#define MIDI_PACKET_ENDLESS_ENCODER_LEFT_COARSE_START_VAL 88
+#define MIDI_PACKET_ENDLESS_ENCODER_LEFT_FINE_START_VAL 44
+
+#define MIDI_PACKET_ENDLESS_ENCODER_RIGHT_COARSE_START_VAL 100
+#define MIDI_PACKET_ENDLESS_ENCODER_RIGHT_FINE_START_VAL 22
 // INF_SCROLL and VOL_ENC encoder buttons do not transmit an MIDI information
 // Rather, they just change its respective Encoder Modes
 
